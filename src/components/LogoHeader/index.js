@@ -7,8 +7,8 @@ const LogoHeader = () => {
         query {
             Image: file(relativePath: { eq: "Logo do IPASC.png"}) {
             childImageSharp {
-                fixed(height: 60) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxHeight: 100, quality: 100) {
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
             }
         }
@@ -16,7 +16,7 @@ const LogoHeader = () => {
 `)
 
 
-    return <S.WrapperLink to='/'><S.WrapperImage fixed={Image.childImageSharp.fixed} /></S.WrapperLink>
+    return <S.WrapperLink to='/'><S.WrapperImage fixed={Image.childImageSharp.fluid} /></S.WrapperLink>
 }
 
 export default LogoHeader

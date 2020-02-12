@@ -20,7 +20,7 @@ export const InnerHeaderWrapper = styled.aside`
 `
 
 export const LogoContainer = styled.div`
-    padding: 2rem 7rem 0rem;
+    padding: 2rem 7rem 0;
     max-width: 25%;
 
     ${media.lessThan("large")`
