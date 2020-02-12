@@ -3,7 +3,7 @@ module.exports = {
     title: `Prefeitura`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@ipasc`,
-    siteUrl: `https://prefeitura-ipasc.com.br`
+    siteUrl: `https://prefeitura-ipasc.netlify.com/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

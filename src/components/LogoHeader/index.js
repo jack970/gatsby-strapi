@@ -5,9 +5,9 @@ import * as S from './styled'
 const LogoHeader = () => {
     const {Image} = useStaticQuery(graphql`
         query {
-            Image: file(relativePath: { eq: "gatsby-logo.png"}) {
+            Image: file(relativePath: { eq: "Logo do IPASC.png"}) {
             childImageSharp {
-                fixed(width: 60, height: 60) {
+                fixed(height: 60) {
                   ...GatsbyImageSharpFixed
                 }
             }
