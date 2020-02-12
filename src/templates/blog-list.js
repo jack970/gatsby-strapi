@@ -66,6 +66,13 @@ export const query = graphql`
                 title
                 description
                 date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                image {
+                childImageSharp {
+                    fluid(maxWidth: 1920, maxHeight: 1080) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+                }
             }
             excerpt
             }
