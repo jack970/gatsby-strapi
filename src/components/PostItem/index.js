@@ -20,6 +20,7 @@ PostItem.proTypes = {
     title: propTypes.string.isRequired,
     date: propTypes.string.isRequired,
     description: propTypes.string.isRequired,
+    fluid: propTypes.string.isRequired
 }
 
 export default PostItem

@@ -16,7 +16,7 @@ const LogoHeader = () => {
 `)
 
 
-    return <S.WrapperLink to='/'><S.WrapperImage fixed={Image.childImageSharp.fluid} /></S.WrapperLink>
+    return <S.WrapperLink to='/'><S.WrapperImage fluid={Image.childImageSharp.fluid} /></S.WrapperLink>
 }
 
 export default LogoHeader

@@ -24,7 +24,7 @@ const BlogList = props => {
         <Layout>
             <SEO title="Notícias" />
             <TitleWrapper>
-            <h1> Notícias</h1>
+                Notícias
             </TitleWrapper>
             { postList.map(({ 
             node: { 
@@ -37,7 +37,7 @@ const BlogList = props => {
                 title={title}
                 description={description}
                 date={date}
-                fluid = { fluid }
+                fluid={ fluid}
                 />
             ))}
             <Pagination isFirst={isFirst}
@@ -67,11 +67,11 @@ export const query = graphql`
                 description
                 date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
                 image {
-                childImageSharp {
-                    fluid(maxWidth: 1920, maxHeight: 1080) {
-                        ...GatsbyImageSharpFluid
+                    childImageSharp {
+                        fluid(maxWidth: 1920, maxHeight: 1080) {
+                            ...GatsbyImageSharpFluid
+                        }
                     }
-                }
                 }
             }
             excerpt

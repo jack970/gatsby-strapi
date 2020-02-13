@@ -36,13 +36,7 @@ exports.createPages = ({ graphql, actions}) => {
               title
               description
               date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 2048, quality: 100) {
-                    originalImg
-                  }
-                }
-              }
+              image_thumb
             }
           excerpt
           }

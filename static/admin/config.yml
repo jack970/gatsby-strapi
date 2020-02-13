@@ -6,7 +6,7 @@ backend:
 
 publish_mode: editorial_workflow
 media_folder: "static/utils/img/"
-public_folder: "../static/utils/img"
+public_folder: "/utils/img"
 
 collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
@@ -15,8 +15,9 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime", format: YYYY-MM-DD hh:mm:ss}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Descrição", name: "description", widget: "string"}
+      - {label: "Data", name: "date", widget: "datetime", format: YYYY-MM-DD hh:mm:ss}
+      - {label: "Thumbnail", name: "image_thumb", widget: "image"}
+      - {label: "Imagem do Post", name: "image", widget: "image", media_folder: ../static/utils/img/}
+      - {label: "Corpo", name: "body", widget: "markdown"}
