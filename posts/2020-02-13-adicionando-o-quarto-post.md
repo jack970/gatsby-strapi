@@ -1,6 +1,6 @@
 ---
 title: Adicionando o quarto Post
-description: Adicionando o Quanto Post
+description: Adicionando o Quarto Post
 date: '2020-02-13 03:49:04'
 image_thumb: /utils/img/ocean.jpg
 image: /utils/img/mountains.jpg
