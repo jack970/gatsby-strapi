@@ -1,8 +1,8 @@
 ---
 title: Primeiro Post
-description: Lorem IpsulumLorem IpsulumLorem
-date: '2014-01-03 05:54:23'
 image: ../static/utils/img/deserto.jpg
+description: Lorem IpsulumLorem IpsulumLorem
+date: 2014-01-03T05:54:23.000Z
 ---
 
 #Lorem Ipsum
