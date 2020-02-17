@@ -10,11 +10,14 @@ const BlogPost = ({ data }) => {
         <Layout>
             <SEO title={post.frontmatter.title} 
             description={post.frontmatter.description} 
-            image={post.frontmatter.image_thumb}/>
+            image={post.frontmatter.image.childImageSharp.fluid}/>
             <S.PostHeader>
                 <S.PostDate>
                     Publicado em {post.frontmatter.date}
                 </S.PostDate>
+                <S.PostImage fluid =
+                {post.frontmatter.image.childImageSharp.fluid}
+                />
                 <S.PostTitle>
                     {post.frontmatter.title}
                 </S.PostTitle>
@@ -36,7 +39,13 @@ export const query = graphql`
                 title
                 date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
                 description
-                image_thumb
+                image {
+                    childImageSharp {
+                        fluid(maxWidth: 1920, maxHeight: 1080) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
             }
             html
             }

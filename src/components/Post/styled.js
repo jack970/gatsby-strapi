@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import media from 'styled-media-query'
+import Img from 'gatsby-image'
 
 export const PostHeader = styled.header`
   margin: auto;
@@ -20,6 +21,7 @@ export const PostTitle = styled.h1`
 
   ${media.lessThan("large")`
     max-width: 100%;
+    font-size: 3rem;
 `}
 `
 
@@ -35,9 +37,15 @@ export const PostDescription = styled.h2`
   `}
 `
 
+export const PostImage = styled(Img)`
+  display: block;
+  max-width: 100%;
+  margin: 1.875rem auto;
+`
+
 export const PostDate = styled.p`
   font-size: 1.1rem;
-  font-weight: 100;
+  font-weight: 400;
   padding: 0 1.4rem;
 
   ${media.lessThan("large")`
