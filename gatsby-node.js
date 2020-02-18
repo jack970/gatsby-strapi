@@ -25,9 +25,28 @@ exports.createPages = ({ graphql, actions}) => {
     const {createPage} = actions
 
     return graphql(`
-    {
+    query MyQuery{
       notices: allMarkdownRemark(
         filter: {fields: {slug: {eq: "posts"}}},
+        sort: {order: DESC, fields: frontmatter___date}) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter { 
+              title
+              description
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              
+            }
+          excerpt
+          }
+        }
+      }
+      institucional: allMarkdownRemark(
+        filter: {fields: {slug: {eq: "institucional"}}},
         sort: {order: DESC, fields: frontmatter___date}) {
         edges {
           node {
@@ -50,16 +69,27 @@ exports.createPages = ({ graphql, actions}) => {
 
     `).then(result =>  {
       const posts = result.data.notices.edges
+      const posts_insti = result.data.institucional.edges
 
-      posts.forEach(({node}) => {
+      posts_insti.forEach(({node}) => {
           createPage ({
               path: `${node.fields.slug}/${node.id}`,
-              component: path.resolve('./src/templates/blog-post.js'),
+              component: path.resolve('./src/templates/institucional.js'),
               context: {
                   id: node.id
               }
           })
       })
+
+      posts.forEach(({node}) => {
+        createPage ({
+            path: `${node.fields.slug}/${node.id}`,
+            component: path.resolve('./src/templates/blog-post.js'),
+            context: {
+                id: node.id
+            }
+        })
+    })
     
 
       const postsPerPage = 6
