@@ -89,7 +89,18 @@ exports.createPages = ({ graphql, actions}) => {
                 id: node.id
             }
         })
-    })
+      })
+
+      //Create Multiples Nodes
+      /*posts.forEach(({node}) => {
+        createPage ({
+            path: `${node.fields.slug}/${node.id}`,
+            component: path.resolve('./src/templates/blog-post.js'),
+            context: {
+                id: node.id
+            }
+        })
+      })*/
     
 
       const postsPerPage = 6

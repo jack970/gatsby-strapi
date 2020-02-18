@@ -76,10 +76,9 @@ export const MenuSubMenu = styled.ul`
 export const MenuSpanNav = styled.span``
 
 export const MenuSubLink = styled(Link)`
-    width: 100%; 
-    color: white;
+    width: 100%;
     font-size: 14px;
-    border-bottom: 3px solid #222;
+    border-bottom: 3px solid #fff;
     padding: 0;
     text-decoration: none;
 
@@ -87,6 +86,8 @@ export const MenuSubLink = styled(Link)`
 `
 
 export const MenuSubText = styled.span`
+    text-transform: uppercase;
     font-size: 1rem;
+    color: #fff;
     font-weight: 400;
 `
