@@ -29,11 +29,12 @@ const BlogList = props => {
             { postList.map(({ 
             node: { 
                 frontmatter: { title, description, date, image: { childImageSharp: { fluid }}},
-                fields: {slug}
+                fields: {slug},
+                id
             }
             }, i) => (
             <PostItemNotices key={i}
-                slug={slug}
+                slug={`${slug}/${id}`}
                 title={title}
                 description={description}
                 date={date}
@@ -53,12 +54,14 @@ const BlogList = props => {
 export const query = graphql`
     query postList($skip: Int!, $limit: Int!) {
         allMarkdownRemark(
+            filter: {fields: {slug: {eq: "posts"}}},
             sort: {order: DESC, fields: frontmatter___date},
             limit: $limit,
             skip: $skip
             ) {
         edges {
             node {
+                id
             fields {
                 slug
             }

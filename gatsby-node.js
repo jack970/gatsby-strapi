@@ -16,7 +16,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: "slug",
-      value: `/${slug.slice(12)}`,
+      value: getNode(node.parent).sourceInstanceName,
     })
   }
 }
@@ -25,10 +25,13 @@ exports.createPages = ({ graphql, actions}) => {
     const {createPage} = actions
 
     return graphql(`
-    query Notices {
-      allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
+    {
+      notices: allMarkdownRemark(
+        filter: {fields: {slug: {eq: "posts"}}},
+        sort: {order: DESC, fields: frontmatter___date}) {
         edges {
           node {
+            id
             fields {
               slug
             }
@@ -43,19 +46,21 @@ exports.createPages = ({ graphql, actions}) => {
         }
       }
     }
+  
 
     `).then(result =>  {
-      const posts = result.data.allMarkdownRemark.edges
+      const posts = result.data.notices.edges
 
-        posts.forEach(({node}) => {
-            createPage ({
-                path: node.fields.slug,
-                component: path.resolve('./src/templates/blog-post.js'),
-                context: {
-                    slug: node.fields.slug
-                }
-            })
-        })
+      posts.forEach(({node}) => {
+          createPage ({
+              path: `${node.fields.slug}/${node.id}`,
+              component: path.resolve('./src/templates/blog-post.js'),
+              context: {
+                  id: node.id
+              }
+          })
+      })
+    
 
       const postsPerPage = 6
       const numPages = Math.ceil(posts.length / postsPerPage)

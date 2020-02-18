@@ -31,6 +31,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `institucional`,
+        path: `${__dirname}/posts_institucional`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `pdf`,
         path: `${__dirname}/static/utils/pdf`,
       },

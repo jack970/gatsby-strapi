@@ -44,9 +44,12 @@ const IndexPage = () => {
 
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query PostList {
-      allMarkdownRemark(limit: 3,  sort: {order: DESC, fields: frontmatter___date}) {
+      allMarkdownRemark(limit: 3,  
+        sort: {order: DESC, fields: frontmatter___date},
+        filter: {fields: {slug: {eq: "posts"}}}) {
         edges {
           node {
+            id
             fields {
               slug
             }
@@ -80,11 +83,12 @@ const IndexPage = () => {
         { postList.map(({ 
           node: { 
             frontmatter: { title, description, date, image: { childImageSharp: { fluid }}},
-            fields: {slug}
+            fields: {slug},
+            id
           }
         }, i) => (
           <PostItem key={i}
-            slug={slug}
+            slug={`${slug}/${id}`}
             title={title}
             description={description}
             date={date}
