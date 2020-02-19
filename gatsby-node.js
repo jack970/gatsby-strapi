@@ -64,12 +64,34 @@ exports.createPages = ({ graphql, actions}) => {
           }
         }
       }
+      beneficios: allMarkdownRemark(
+        filter: {fields: {slug: {eq: "beneficios"}}},
+        sort: {order: DESC, fields: frontmatter___date}) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter { 
+              title
+              description
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              
+            }
+          excerpt
+          }
+        }
+      }
     }
+
+
   
 
     `).then(result =>  {
       const posts = result.data.notices.edges
       const posts_insti = result.data.institucional.edges
+      const posts_beneficios = result.data.beneficios.edges
 
       posts_insti.forEach(({node}) => {
           createPage ({
@@ -92,15 +114,15 @@ exports.createPages = ({ graphql, actions}) => {
       })
 
       //Create Multiples Nodes
-      /*posts.forEach(({node}) => {
+      posts_beneficios.forEach(({node}) => {
         createPage ({
             path: `${node.fields.slug}/${node.id}`,
-            component: path.resolve('./src/templates/blog-post.js'),
+            component: path.resolve('./src/templates/beneficios.js'),
             context: {
                 id: node.id
             }
         })
-      })*/
+      })
     
 
       const postsPerPage = 6
