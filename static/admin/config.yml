@@ -2,11 +2,11 @@ backend:
   name: github
   repo: jack970/gatsby-site
   branch: master
-  site_domain: https://prefeitura-ipasc.netlify.com/
+  site_domain: prefeitura-ipasc.netlify.com
 
 publish_mode: editorial_workflow
 media_folder: "static/utils/img/"
-public_folder: "../static/utils/img"
+public_folder: "/utils/img"
 
 collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
@@ -18,6 +18,5 @@ collections:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime", format: YYYY-MM-DD hh:mm:ss}
-      - {label: "Thumbnail", name: "image_thumb", widget: "image"}
-      - {label: "Imagem do Post", name: "image", widget: "image", media_folder: ../static/utils/img/}
+      - {label: "Imagem do Post", name: "image", widget: "image", public_folder: ../static/utils/img/}
       - {label: "Corpo", name: "body", widget: "markdown"}
