@@ -5,6 +5,6 @@ import { Link } from 'gatsby'
 export const WrapperLink = styled(Link)``
 
 export const WrapperImage = styled(Img)`
-    width: 11rem;
-    height: 4.2rem;
+    width: 9rem;
+    
 `

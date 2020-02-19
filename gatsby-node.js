@@ -83,6 +83,44 @@ exports.createPages = ({ graphql, actions}) => {
           }
         }
       }
+      servicos: allMarkdownRemark(
+        filter: {fields: {slug: {eq: "serviços"}}},
+        sort: {order: DESC, fields: frontmatter___date}) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter { 
+              title
+              description
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              
+            }
+          excerpt
+          }
+        }
+      }
+      publicacoes: allMarkdownRemark(
+        filter: {fields: {slug: {eq: "publicações"}}},
+        sort: {order: DESC, fields: frontmatter___date}) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter { 
+              title
+              description
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              
+            }
+          excerpt
+          }
+        }
+      }
     }
 
 
@@ -92,10 +130,12 @@ exports.createPages = ({ graphql, actions}) => {
       const posts = result.data.notices.edges
       const posts_insti = result.data.institucional.edges
       const posts_beneficios = result.data.beneficios.edges
+      const posts_servicos = result.data.servicos.edges
+      const posts_publicacoes = result.data.publicacoes.edges
 
       posts_insti.forEach(({node}) => {
           createPage ({
-              path: `${node.fields.slug}/${node.id}`,
+              path: `${node.fields.slug}/${node.frontmatter.title}`,
               component: path.resolve('./src/templates/institucional.js'),
               context: {
                   id: node.id
@@ -116,8 +156,28 @@ exports.createPages = ({ graphql, actions}) => {
       //Create Multiples Nodes
       posts_beneficios.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}/${node.id}`,
+            path: `${node.fields.slug}/${node.frontmatter.title}`,
             component: path.resolve('./src/templates/beneficios.js'),
+            context: {
+                id: node.id
+            }
+        })
+      })
+
+      posts_servicos.forEach(({node}) => {
+        createPage ({
+            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            component: path.resolve('./src/templates/serviços.js'),
+            context: {
+                id: node.id
+            }
+        })
+      })
+
+      posts_publicacoes.forEach(({node}) => {
+        createPage ({
+            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            component: path.resolve('./src/templates/publicações.js'),
             context: {
                 id: node.id
             }

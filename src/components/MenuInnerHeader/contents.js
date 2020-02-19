@@ -5,15 +5,15 @@ const links = [
         submenu: [
             {
                 label: 'História',
-                url: '/institucional/6b99c4e3-5d08-5263-b440-a41aeef4c51e'
+                url: '/institucional/História'
             },
             {
                 label: 'equipe',
-                url: '/institucional/dfff3f75-2519-5a73-b982-2ec21a94c027'
+                url: '/institucional/Equipe'
             },
             {
                 label: 'junta médica',
-                url: '/institucional/42e2a47f-ca2e-5549-bf46-cd16628fb817'
+                url: '/institucional/Junta Médica'
             }
         ]
     },
@@ -23,31 +23,31 @@ const links = [
         submenu: [
             {
                 label: 'aposentadoria por invalidez',
-                url: '/beneficios/c0024ea2-85d0-5b9f-9005-0ef35de42a76'
+                url: '/beneficios/Aposentadoria por Invalidez'
             },
             {
                 label: 'aposentadoria compulsória',
-                url: '/beneficios/918c8000-3766-5a7c-be50-32fa51e6e48c'
+                url: '/beneficios/Aposentadoria Compulsória'
             },
             {
                 label: 'aposentadoria por idade',
-                url: '/beneficios/549c7f73-9e3e-5554-b14b-6e5b6edac12f'
+                url: '/beneficios/Aposentadoria por Idade'
             },
             {
                 label: 'aposentadoria por contribuição',
-                url: '/beneficios/2aecb790-0714-5806-a806-65480c72a182'
+                url: '/beneficios/Aposentadoria por Contribuição'
             },
             {
                 label: 'salário maternidade',
-                url: '/beneficios/55467842-eb6f-50a5-bc1a-0f191c5601fa'
+                url: '/beneficios/Salário Maternidade'
             },
             {
                 label: 'salário família',
-                url: '/beneficios/663ca7d5-fc52-5fbd-a170-c707471eb0d1'
+                url: '/beneficios/Salário Família'
             },
             {
                 label: 'folha de pagamento',
-                url: '/beneficios/80e06c47-b6b5-583d-a188-c1cf985f2d02'
+                url: '/beneficios/Folha de Pagamento'
             }
         ]
     },
@@ -67,15 +67,15 @@ const links = [
         submenu: [
             {
                 label: 'certidão previdenciária',
-                url:'/'
+                url:'/serviços/Certidão Previdenciária'
             },
             {
                 label: 'contra cheque',
-                url:'/'
+                url:'/serviços/Contra Cheque'
             },
             {
                 label: 'comprovante rendimentos',
-                url:'/'
+                url:'/serviços/Comprovante Rendimentos'
             }
             ]
     },
@@ -85,31 +85,31 @@ const links = [
         submenu: [
             {
                 label: 'portarias do ipasc',
-                url:'/'
+                url:'/publicações/Portarias do Ipasc'
             },
             {
                 label: 'portarias do mps',
-                url:'/'
+                url:'/publicações/Portarias do MPS'
             },
             {
                 label: 'legislação municipal',
-                url:'/'
+                url:'/publicações/Legislação Municipal'
             },
             {
                 label: 'crp',
-                url:'/'
+                url:'/publicações/CRP'
             },
             {
                 label: 'demonstrativos contábeis',
-                url:'/'
+                url:'/publicações/Demonstrativos Contábeis'
             },
             {
                 label: 'conselho de previdência',
-                url:'/'
+                url:'/publicações/Conselho de Previdência'
             },
             {
                 label: 'comitê de investimentos',
-                url:'/'
+                url:'/publicações/Comitê de Investimentos'
             }
             ]
     },

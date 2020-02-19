@@ -26,6 +26,7 @@ export const LogoContainer = styled.div`
     ${media.lessThan("large")`
         max-width: 100%;
         display: inline-block;
+        padding: 2rem 0 0;
     `}
 `
 
