@@ -2,7 +2,7 @@ backend:
   name: github
   repo: jack970/gatsby-site
   branch: master
-  site_domain: prefeitura-ipasc.netlify.com/
+  site_domain: prefeitura-ipasc.netlify.com
 
 publish_mode: editorial_workflow
 media_folder: "static/utils/img/"
