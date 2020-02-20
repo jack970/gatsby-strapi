@@ -57,11 +57,11 @@ const IndexPage = () => {
               title
               description
               date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 1920, maxHeight: 1080) {
-                    ...GatsbyImageSharpFluid
-                  }
+            }
+            featuredImg {
+              childImageSharp {
+                fluid(maxWidth: 1920, maxHeight: 1080) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -82,13 +82,14 @@ const IndexPage = () => {
         <ContainersubNoticias>
         { postList.map(({ 
           node: { 
-            frontmatter: { title, description, date, image: { childImageSharp: { fluid }}},
+            featuredImg: { childImageSharp: { fluid }},
+            frontmatter: { title, description, date},
             fields: {slug},
             id
           }
         }, i) => (
           <PostItem key={i}
-            slug={`${slug}/${id}`}
+            slug={`/${slug}/${id}`}
             title={title}
             description={description}
             date={date}

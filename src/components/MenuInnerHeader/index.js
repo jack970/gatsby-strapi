@@ -7,12 +7,12 @@ const MenuLink = () => (
         <S.MenuUlBar>
         {links.map((link, i) => (
             <S.MenuItemBar key={i}>
-                <S.MenuLinkItem to={link.url}>
-                    <S.MenuTextItem>{link.label}</S.MenuTextItem>
+                <S.MenuLinkItem >
+                    <S.MenuTextItem to='/'>{link.label}</S.MenuTextItem>
                     <S.MenuSubMenu>
                         {link.submenu.map((subMenu, i) => (
-                        <S.MenuSubLink to={subMenu.url}>
-                            <S.MenuSubItem key={i}>
+                        <S.MenuSubLink to={subMenu.url} key={i}>
+                            <S.MenuSubItem>
                                 <S.MenuSubText>{subMenu.label}</S.MenuSubText>
                             </S.MenuSubItem>
                         </S.MenuSubLink>

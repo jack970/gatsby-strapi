@@ -19,8 +19,7 @@ export const MenuItemBar = styled.li`
     display: list-item;
     `
 
-export const MenuLinkItem = styled(Link)`
-    color: #111;
+export const MenuLinkItem = styled.div`
     font-weight: 700;
     display: block;
     border-bottom: 2px solid #fff;
@@ -33,8 +32,10 @@ export const MenuLinkItem = styled(Link)`
     
     `
 
-export const MenuTextItem = styled.span`
+export const MenuTextItem = styled(Link)`
+    color: #111;
     font-size: 0.9rem;
+    text-decoration: none;
     display: block;
     padding: 1rem 1rem;
     text-transform: uppercase;

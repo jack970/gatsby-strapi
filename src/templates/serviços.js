@@ -10,13 +10,13 @@ const Serviços = ({ data }) => {
         <Layout>
             <SEO title={post_servicos.frontmatter.title} 
             description={post_servicos.frontmatter.description} 
-            image={post_servicos.frontmatter.image.childImageSharp.fluid}/>
+            image={post_servicos.featuredImg.childImageSharp.fluid}/>
             <S.PostHeader>
                 <S.PostDate>
                     Publicado em {post_servicos.frontmatter.date}
                 </S.PostDate>
                 <S.PostImage fluid =
-                {post_servicos.frontmatter.image.childImageSharp.fluid}
+                {post_servicos.featuredImg.childImageSharp.fluid}
                 />
                 <S.PostTitle>
                     {post_servicos.frontmatter.title}
@@ -35,21 +35,21 @@ const Serviços = ({ data }) => {
 export const query = graphql`
         query Postservicos($id: String!) {
             markdownRemark(id: { eq: $id}) {
-            frontmatter {
-                title
-                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                description
-                image {
+                frontmatter {
+                    title
+                    date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                    description
+                }
+                featuredImg {
                     childImageSharp {
                         fluid(maxWidth: 1920, maxHeight: 1080) {
                             ...GatsbyImageSharpFluid
                         }
                     }
                 }
-            }
             html
             }
-        }      
+        }   
     `
 
 export default Serviços

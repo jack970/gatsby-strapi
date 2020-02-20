@@ -10,13 +10,13 @@ const Benefícios = ({ data }) => {
         <Layout>
             <SEO title={post_beneficios.frontmatter.title} 
             description={post_beneficios.frontmatter.description} 
-            image={post_beneficios.frontmatter.image.childImageSharp.fluid}/>
+            image={post_beneficios.featuredImg.childImageSharp.fluid}/>
             <S.PostHeader>
                 <S.PostDate>
                     Publicado em {post_beneficios.frontmatter.date}
                 </S.PostDate>
                 <S.PostImage fluid =
-                {post_beneficios.frontmatter.image.childImageSharp.fluid}
+                {post_beneficios.featuredImg.childImageSharp.fluid}
                 />
                 <S.PostTitle>
                     {post_beneficios.frontmatter.title}
@@ -33,23 +33,23 @@ const Benefícios = ({ data }) => {
 }
 
 export const query = graphql`
-        query Postbeneficios($id: String!) {
-            markdownRemark(id: { eq: $id}) {
+    query Postbeneficios($id: String!) {
+        markdownRemark(id: { eq: $id}) {
             frontmatter {
                 title
                 date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
                 description
-                image {
-                    childImageSharp {
-                        fluid(maxWidth: 1920, maxHeight: 1080) {
-                            ...GatsbyImageSharpFluid
-                        }
+            }
+            featuredImg {
+                childImageSharp {
+                    fluid(maxWidth: 1920, maxHeight: 1080) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
-            html
-            }
-        }      
+        html
+        }
+    }   
     `
 
 export default Benefícios

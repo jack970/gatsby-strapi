@@ -10,13 +10,13 @@ const BlogPost = ({ data }) => {
         <Layout>
             <SEO title={post.frontmatter.title} 
             description={post.frontmatter.description} 
-            image={post.frontmatter.image.childImageSharp.fluid}/>
+            image={post.featuredImg.childImageSharp.fluid}/>
             <S.PostHeader>
                 <S.PostDate>
                     Publicado em {post.frontmatter.date}
                 </S.PostDate>
                 <S.PostImage fluid =
-                {post.frontmatter.image.childImageSharp.fluid}
+                {post.featuredImg.childImageSharp.fluid}
                 />
                 <S.PostTitle>
                     {post.frontmatter.title}
@@ -35,18 +35,18 @@ const BlogPost = ({ data }) => {
 export const query = graphql`
         query Post($id: String!) {
             markdownRemark(id: { eq: $id}) {
-            frontmatter {
-                title
-                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                description
-                image {
+                frontmatter {
+                    title
+                    date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                    description
+                }
+                featuredImg {
                     childImageSharp {
                         fluid(maxWidth: 1920, maxHeight: 1080) {
                             ...GatsbyImageSharpFluid
                         }
                     }
                 }
-            }
             html
             }
         }      

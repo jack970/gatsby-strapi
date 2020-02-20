@@ -1,10 +1,36 @@
 const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      title: String!
+      description: String!
+      image: String
+    }
+  `)
+}
+
+
+exports.onCreateNode = async({ 
+  node, 
+  getNode, 
+  actions,
+  store,
+  cache,
+  createNodeId
+ }) => {
   const { createNodeField } = actions
+  const { createNode } = actions
   // Ensures we are processing only markdown files
-  if (node.internal.type === "MarkdownRemark") {
+  if (node.internal.type === "MarkdownRemark" && 
+      node.frontmatter.image !== null
+      ) {
     // Use `createFilePath` to turn markdown files in our `data/faqs` directory into `/faqs/slug`
     const slug = createFilePath({
       node,
@@ -18,6 +44,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: "slug",
       value: getNode(node.parent).sourceInstanceName,
     })
+
+    let fileNode = await createRemoteFileNode({
+      url: node.frontmatter.image, // string that points to the URL of the image
+      parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
+      createNode, // helper function in gatsby-node to generate the node
+      createNodeId, // helper function in gatsby-node to generate the node id
+      cache, // Gatsby's cache
+      store, // Gatsby's redux store
+    })
+
+    if (fileNode) {
+      node.featuredImg___NODE = fileNode.id
+    }
+    
   }
 }
 

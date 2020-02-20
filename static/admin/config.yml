@@ -5,9 +5,11 @@ backend:
   site_domain: prefeitura-ipasc.netlify.com
 
 publish_mode: editorial_workflow
-media_folder: "static/utils/img/"
-public_folder: "/utils/img"
-
+media_library:
+    name: uploadcare
+    config:
+      publicKey: 7d9fd3eb6a535705f6bf
+      
 collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts de Notícias" # Used in the UI
@@ -18,7 +20,7 @@ collections:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime", format: YYYY-MM-DD hh:mm:ss}
-      - {label: "Imagem do Post", name: "image", widget: "image", public_folder: ../static/utils/img/}
+      - {label: "Imagem do Post", name: "image", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}
   - name: "institucional" # Used in routes, e.g., /admin/collections/blog
     label: "Posts de Institucional" # Used in the UI
@@ -29,7 +31,7 @@ collections:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime", format: YYYY-MM-DD hh:mm:ss}
-      - {label: "Imagem do Post", name: "image", widget: "image", public_folder: ../static/utils/img/}
+      - {label: "Imagem do Post", name: "image", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}
   - name: "beneficios" # Used in routes, e.g., /admin/collections/blog
     label: "Posts de Benefícios" # Used in the UI
@@ -40,7 +42,7 @@ collections:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime", format: YYYY-MM-DD hh:mm:ss}
-      - {label: "Imagem do Post", name: "image", widget: "image", public_folder: ../static/utils/img/}
+      - {label: "Imagem do Post", name: "image", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}
   - name: "serviços" # Used in routes, e.g., /admin/collections/blog
     label: "Posts de Serviços" # Used in the UI
@@ -51,7 +53,7 @@ collections:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime", format: YYYY-MM-DD hh:mm:ss}
-      - {label: "Imagem do Post", name: "image", widget: "image", public_folder: ../static/utils/img/}
+      - {label: "Imagem do Post", name: "image", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}
   - name: "publicações" # Used in routes, e.g., /admin/collections/blog
     label: "Posts de Publicações" # Used in the UI
@@ -62,6 +64,6 @@ collections:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime", format: YYYY-MM-DD hh:mm:ss}
-      - {label: "Imagem do Post", name: "image", widget: "image", public_folder: ../static/utils/img/}
+      - {label: "Imagem do Post", name: "image", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}
       
