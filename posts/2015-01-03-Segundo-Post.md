@@ -2,7 +2,8 @@
 title: Segundo Post
 description: Lorem IpsulumLorem IpsulumLorem
 date: '2013-01-03 05:54:23'
-image:  https://ucarecdn.com/1474648e-222d-4b79-9bf0-fc6f62067293/-/crop/835x370/191,174/-/preview/-/enhance/55/-/grayscale/
+image: >-
+  https://ucarecdn.com/13c03429-0958-46f7-81a6-835bdb5a19b0/-/crop/1035x756/1033,336/-/preview/
 ---
 
 #Lorem Ipsum
