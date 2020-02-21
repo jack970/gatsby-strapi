@@ -19,20 +19,39 @@ export const InnerHeaderWrapper = styled.aside`
     `}
 `
 
-export const LogoContainer = styled.div`
-    padding: 2rem 7rem 0;
-    max-width: 25%;
+export const MenuNavBtn = styled.button`
+    border: 2px solid #8c8c8c;
+    background: #fff;
+    border-radius: 20%;
+    width: 3rem;
+    display: none;
 
     ${media.lessThan("large")`
-        max-width: 100%;
-        display: inline-block;
-        padding: 2rem 0 0;
+        display: block;
     `}
 `
 
+export const LogoContainer = styled.div`
+    padding: 2rem 7rem 0;
+    max-width: 25%;
+    
+
+    ${media.lessThan("large")`
+        width: 100%;
+        max-width: none;
+        display: inline-flex;
+        justify-content: space-around;
+        padding: 2rem 0 2rem;
+    `}
+`
 export const MenuContainer = styled.div`
     padding:3.6rem 3.3rem 0;
     width: 100%;
+    display: none;
+
+    ${MenuNavBtn}:hover & {
+        display: block;
+    }
 
     ${media.lessThan("large")`
         padding: 0;

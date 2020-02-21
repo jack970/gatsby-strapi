@@ -13,6 +13,7 @@ export const FooterWrapper = styled.aside`
 
     ${media.lessThan("large")`
         padding: 0;
+        width: auto;
     `}
 `
 

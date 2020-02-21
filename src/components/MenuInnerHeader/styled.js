@@ -17,6 +17,10 @@ export const MenuUlBar = styled.ul``
 export const MenuItemBar = styled.li`
     float: left;
     display: list-item;
+
+    ${media.lessThan("large")`
+    float: none;
+    `}
     `
 
 export const MenuLinkItem = styled.div`
@@ -40,10 +44,6 @@ export const MenuTextItem = styled(Link)`
     padding: 1rem 1rem;
     text-transform: uppercase;
 
-    ${media.lessThan("large")`
-        font-size: 0.7rem;
-        padding: 1rem 0.5rem;
-    `}
 `
 export const MenuSubItem = styled.li`
     float: none;
@@ -82,8 +82,6 @@ export const MenuSubLink = styled(Link)`
     border-bottom: 3px solid #fff;
     padding: 0;
     text-decoration: none;
-
-    
 `
 
 export const MenuSubText = styled.span`
