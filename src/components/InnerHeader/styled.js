@@ -47,13 +47,9 @@ export const LogoContainer = styled.div`
 export const MenuContainer = styled.div`
     padding:3.6rem 3.3rem 0;
     width: 100%;
-    display: none;
-
-    ${MenuNavBtn}:hover & {
-        display: block;
-    }
 
     ${media.lessThan("large")`
         padding: 0;
+        display: none;
     `}
 `
