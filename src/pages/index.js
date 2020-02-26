@@ -55,7 +55,6 @@ const IndexPage = () => {
             }
             frontmatter {
               title
-              description
               date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
             }
             featuredImg {
@@ -65,7 +64,7 @@ const IndexPage = () => {
                 }
               }
             }
-          excerpt
+          excerpt(pruneLength: 35)
           }
         }
       }
@@ -83,15 +82,16 @@ const IndexPage = () => {
         { postList.map(({ 
           node: { 
             featuredImg: { childImageSharp: { fluid }},
-            frontmatter: { title, description, date},
+            frontmatter: { title, date},
             fields: {slug},
-            id
+            id,
+            excerpt
           }
         }, i) => (
           <PostItem key={i}
             slug={`/${slug}/${id}`}
             title={title}
-            description={description}
+            description={excerpt}
             date={date}
             fluid={ fluid }
             />

@@ -110,7 +110,7 @@ export const MenuWrapper = styled.div`
         padding: 250px 110px 0 230px;
         padding-top: 25px;
         background-color: #F5F6FA;
-       
+        opacity: 0.95;
     }
     
     #menu li
