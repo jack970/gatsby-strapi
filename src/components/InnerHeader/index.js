@@ -2,15 +2,17 @@ import React from 'react'
 import LogoHeader from '../LogoHeader'
 import * as S from './styled'
 import MenuLink from '../MenuInnerHeader'
-import { ThList as List} from 'styled-icons/typicons/ThList'
+import MenuMobile from '../MenuMobile'
 
 const InnerHeader = () => (
     <S.InnerHeaderWrapper>
         <S.LogoContainer>
             <LogoHeader />
-            <S.MenuNavBtn><List /></S.MenuNavBtn>
+            <div id='mobile'>
+                <MenuMobile class='.mobile' />
+            </div>
         </S.LogoContainer>
-        <S.MenuContainer >
+        <S.MenuContainer class='.active'>
             <MenuLink /> 
         </S.MenuContainer>
     </S.InnerHeaderWrapper>
