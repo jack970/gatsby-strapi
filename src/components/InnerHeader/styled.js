@@ -46,6 +46,5 @@ export const MenuContainer = styled.div`
     ${media.lessThan("large")`
         padding: 0;
         display: none;
-
     `}
 `
