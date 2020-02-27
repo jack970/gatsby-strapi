@@ -52,16 +52,6 @@ const links = [
         ]
     },
     {
-        label: 'Conselhos',
-        url: '/',
-        submenu: [
-            {
-                label: 'submenu',
-                url:'/'
-            }
-            ]
-    },
-    {
         label: 'serviços',
         url: '/',
         submenu: [

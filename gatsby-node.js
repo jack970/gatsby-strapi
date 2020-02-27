@@ -161,17 +161,53 @@ exports.createPages = ({ graphql, actions}) => {
           }
         }
       }
+      conselho_previdencia: allMarkdownRemark(
+        filter: {fields: {slug: {eq: "conselho-previdencia"}}},
+        sort: {order: DESC, fields: frontmatter___date}) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter { 
+              title
+              description
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              
+            }
+          excerpt
+          }
+        }
+      }
+      conselho_investimentos: allMarkdownRemark(
+        filter: {fields: {slug: {eq: "conselho-investimentos"}}},
+        sort: {order: DESC, fields: frontmatter___date}) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter { 
+              title
+              description
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              
+            }
+          excerpt
+          }
+        }
+      }
     }
-
-
-  
-
     `).then(result =>  {
       const posts = result.data.notices.edges
       const posts_insti = result.data.institucional.edges
       const posts_beneficios = result.data.beneficios.edges
       const posts_servicos = result.data.servicos.edges
       const posts_publicacoes = result.data.publicacoes.edges
+      const posts_investimentos = result.data.conselho_investimentos.edges
+      const posts_previdencia = result.data.conselho_previdencia.edges
 
       posts_insti.forEach(({node}) => {
           createPage ({
@@ -223,7 +259,26 @@ exports.createPages = ({ graphql, actions}) => {
             }
         })
       })
-    
+
+      posts_investimentos.forEach(({node}) => {
+        createPage ({
+            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            component: path.resolve('./src/templates/investimentos.js'),
+            context: {
+                id: node.id
+            }
+        })
+      })
+
+      posts_previdencia.forEach(({node}) => {
+        createPage ({
+            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            component: path.resolve('./src/templates/previdencia.js'),
+            context: {
+                id: node.id
+            }
+        })
+      })
 
       const postsPerPage = 6
       const numPages = Math.ceil(posts.length / postsPerPage)

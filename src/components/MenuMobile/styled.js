@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const Title = styled.p`
+    font-size: 1.5em;
+    font-weight: 700;
+`
+
 export const MenuWrapper = styled.div`
     body {
         background-color: #f9f9f9;
@@ -8,7 +13,7 @@ export const MenuWrapper = styled.div`
     }
     a {
         text-decoration: none;
-        color: #1E1E23;
+        color: #fff;
         opacity:1;
         transition: 200ms;
     }
@@ -107,10 +112,15 @@ export const MenuWrapper = styled.div`
         width: 210px;
         box-shadow: 0 0 10px #85888C;
         margin: -60px 0 0 -450px;
-        padding: 250px 110px 0 230px;
+        padding: 250px 110px 50px 230px;
         padding-top: 25px;
-        background-color: #F5F6FA;
+        background-color: #FDB700;
         opacity: 0.95;
+    }
+
+    #submenu 
+    {
+        display: none;
     }
     
     #menu li
@@ -125,9 +135,6 @@ export const MenuWrapper = styled.div`
     {
         display: block;
         transform: none;
+        transition: display 2s;
     }`
 
-export const Title = styled.p`
-    font-size: 1.5em;
-    font-weight: 700;
-`

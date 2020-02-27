@@ -21,7 +21,7 @@ export const PostTitle = styled.h1`
 
   ${media.lessThan("large")`
     max-width: 100%;
-    font-size: 3rem;
+    font-size: 2.5rem;
 `}
 `
 

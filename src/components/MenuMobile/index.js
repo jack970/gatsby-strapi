@@ -5,8 +5,8 @@ import {Link} from 'gatsby'
 
 const MenuMobile = () => (
     <S.MenuWrapper>
-        <div class="container">
-            <div class="content">
+        <div className="container">
+            <div className="content">
             <nav role="navigation">
                 <div id="menuToggle">
                 <input type="checkbox" />
@@ -16,16 +16,19 @@ const MenuMobile = () => (
                 <ul id="menu">
                     {links.map((link, i) => (
                         <li key={i}>
+                            <input type="checkbox" style={{'width':'200px'}}/>
                             <S.Title>{link.label}</S.Title>
+                            <ul id="submenu">
                             {
                                 link.submenu.map((sublink, i) => (
                                 <li key={i}>
-                                    <Link to={sublink.url}>
+                                    <Link to={sublink.url} style={{'fontWeight':'700'}}>
                                         {sublink.label}
                                     </Link>
                                 </li>
                                 ))
                             }
+                            </ul>
                         </li>
                     ))}
                 </ul>

@@ -45,6 +45,20 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `conselho-previdencia`,
+        path: `${__dirname}/posts_previdencia`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `conselho-investimentos`,
+        path: `${__dirname}/posts_investimentos`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `serviços`,
         path: `${__dirname}/posts_serviços`,
       },

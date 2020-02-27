@@ -29,15 +29,16 @@ const BlogList = props => {
             { postList.map(({ 
             node: { 
                 featuredImg: { childImageSharp: { fluid }},
-                frontmatter: { title, description, date},
+                frontmatter: { title, date},
                 fields: {slug},
-                id
+                id,
+                excerpt
             }
             }, i) => (
             <PostItemNotices key={i}
                 slug={`/${slug}/${id}`}
                 title={title}
-                description={description}
+                description={excerpt}
                 date={date}
                 fluid={ fluid}
                 />
@@ -68,7 +69,6 @@ export const query = graphql`
                     }
                     frontmatter {
                         title
-                        description
                         date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
                     }
                     featuredImg {
@@ -78,7 +78,7 @@ export const query = graphql`
                             }
                         }
                     }
-                    excerpt
+                    excerpt(pruneLength: 35)
                 }
             }
         }
