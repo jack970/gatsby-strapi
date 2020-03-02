@@ -105,11 +105,11 @@ const links = [
         submenu: [
             {
                 label: 'Conselho de Investimentos',
-                url:'/conselho-investimentos/Certidão-Previdenciária copy/'
+                url:'/conselho-investimentos/o-que-é/'
             },
             {
                 label: 'conselho de previdência',
-                url:'/conselho-investimentos/Certidão-Previdenciária copy/'
+                url:'/conselho-previdencia/o-que-é/'
             }
             ]
     }

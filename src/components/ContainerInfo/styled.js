@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import media from 'styled-media-query'
 
 export const ContainerInfoSection = styled.section``
@@ -33,7 +32,7 @@ export const ContainerInfoColumn = styled(Link)`
 
 export const ContainerInfoSpan = styled.span``
 
-export const ContainerImage = styled(Img)`
+export const ContainerImage = styled.i`
     display:block;
     margin:0 auto;
     height: auto;
