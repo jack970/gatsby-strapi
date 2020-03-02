@@ -104,7 +104,7 @@ const links = [
         url: '/',
         submenu: [
             {
-                label: 'Conselho de Investimentos',
+                label: 'comitê de Investimentos',
                 url:'/conselho-investimentos/o-que-é/'
             },
             {

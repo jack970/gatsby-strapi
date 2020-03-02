@@ -3,6 +3,13 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import * as S from '../components/Post/styled'
+import SubMenu from '../components/Submenu'
+import styled from 'styled-components'
+
+export const Divisao = styled.div`
+    display: flex;
+`
+export const DivPost = styled.div``
 
 const Investimentos = ({ data }) => {
     const post_investimentos = data.markdownRemark
@@ -11,23 +18,28 @@ const Investimentos = ({ data }) => {
             <SEO title={post_investimentos.frontmatter.title} 
             description={post_investimentos.frontmatter.description} 
             image={post_investimentos.featuredImg.childImageSharp.fluid}/>
-            <S.PostHeader>
-                <S.PostDate>
-                    Publicado em {post_investimentos.frontmatter.date}
-                </S.PostDate>
-                <S.PostImage fluid =
-                {post_investimentos.featuredImg.childImageSharp.fluid}
-                />
-                <S.PostTitle>
-                    {post_investimentos.frontmatter.title}
-                </S.PostTitle>
-                <S.PostDescription>
-                    {post_investimentos.frontmatter.description}
-                </S.PostDescription>
-            </S.PostHeader>
-            <S.MainContent>
-                <div dangerouslySetInnerHTML={{__html: post_investimentos.html}}></div>
-            </S.MainContent>
+            <Divisao>
+                <SubMenu/>
+                <divPost>
+                    <S.PostHeader>
+                        <S.PostDate>
+                            Publicado em {post_investimentos.frontmatter.date}
+                        </S.PostDate>
+                        <S.PostImage fluid =
+                        {post_investimentos.featuredImg.childImageSharp.fluid}
+                        />
+                        <S.PostTitle>
+                            {post_investimentos.frontmatter.title}
+                        </S.PostTitle>
+                        <S.PostDescription>
+                            {post_investimentos.frontmatter.description}
+                        </S.PostDescription>
+                    </S.PostHeader>
+                    <S.MainContent>
+                        <div dangerouslySetInnerHTML={{__html: post_investimentos.html}}></div>
+                    </S.MainContent>
+                </divPost>
+            </Divisao>
         </Layout>
     )
 }
