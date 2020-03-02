@@ -1,6 +1,5 @@
 backend: 
-  name: github
-  repo: jack970/gatsby-site
+  name: git-gateway
   branch: master
   site_domain: prefeitura-ipasc.netlify.com
 
