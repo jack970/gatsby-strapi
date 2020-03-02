@@ -49,9 +49,9 @@ const IndexPage = () => {
         filter: {fields: {slug: {eq: "posts"}}}) {
         edges {
           node {
-            id
             fields {
               slug
+              slugUrl
             }
             frontmatter {
               title
@@ -83,13 +83,12 @@ const IndexPage = () => {
           node: { 
             featuredImg: { childImageSharp: { fluid }},
             frontmatter: { title, date},
-            fields: {slug},
-            id,
+            fields: {slug, slugUrl},
             excerpt
           }
         }, i) => (
           <PostItem key={i}
-            slug={`/${slug}/${id}`}
+            slug={`/${slug}${slugUrl}`}
             title={title}
             description={excerpt}
             date={date}

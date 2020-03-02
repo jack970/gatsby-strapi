@@ -8,7 +8,7 @@ export const MenuLinksList = styled.ul`
     color: #ececec;
     font-size: 13px;
     display: inline-block;
-    padding: 2px 5rem 2px;
+    padding: 0 5rem 0;
     display: flex;
 
     ${media.lessThan('large')`

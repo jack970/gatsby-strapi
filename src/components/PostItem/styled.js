@@ -5,7 +5,7 @@ import media from 'styled-media-query'
 
 export const PostItemLink = styled(Link)`
     color: black;
-    display: inline-grid;
+    display: table-cell;
     text-decoration: none;
     transition: color 0.5s;
     padding: 1rem 1.6rem;

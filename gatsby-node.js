@@ -45,6 +45,12 @@ exports.onCreateNode = async({
       value: getNode(node.parent).sourceInstanceName,
     })
 
+    createNodeField({
+      node,
+      name: "slugUrl",
+      value: `/${slug.slice(12)}`,
+    })
+
     let fileNode = await createRemoteFileNode({
       url: node.frontmatter.image, // string that points to the URL of the image
       parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
@@ -74,6 +80,7 @@ exports.createPages = ({ graphql, actions}) => {
             id
             fields {
               slug
+              slugUrl
             }
             frontmatter { 
               title
@@ -93,6 +100,7 @@ exports.createPages = ({ graphql, actions}) => {
             id
             fields {
               slug
+              slugUrl
             }
             frontmatter { 
               title
@@ -112,6 +120,7 @@ exports.createPages = ({ graphql, actions}) => {
             id
             fields {
               slug
+              slugUrl
             }
             frontmatter { 
               title
@@ -131,6 +140,7 @@ exports.createPages = ({ graphql, actions}) => {
             id
             fields {
               slug
+              slugUrl
             }
             frontmatter { 
               title
@@ -150,6 +160,7 @@ exports.createPages = ({ graphql, actions}) => {
             id
             fields {
               slug
+              slugUrl
             }
             frontmatter { 
               title
@@ -169,6 +180,7 @@ exports.createPages = ({ graphql, actions}) => {
             id
             fields {
               slug
+              slugUrl
             }
             frontmatter { 
               title
@@ -188,6 +200,7 @@ exports.createPages = ({ graphql, actions}) => {
             id
             fields {
               slug
+              slugUrl
             }
             frontmatter { 
               title
@@ -211,7 +224,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts_insti.forEach(({node}) => {
           createPage ({
-              path: `${node.fields.slug}/${node.frontmatter.title}`,
+              path: `${node.fields.slug}${node.fields.slugUrl}`,
               component: path.resolve('./src/templates/institucional.js'),
               context: {
                   id: node.id
@@ -221,7 +234,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}/${node.id}`,
+            path: `${node.fields.slug}${node.fields.slugUrl}`,
             component: path.resolve('./src/templates/blog-post.js'),
             context: {
                 id: node.id
@@ -232,7 +245,7 @@ exports.createPages = ({ graphql, actions}) => {
       //Create Multiples Nodes
       posts_beneficios.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            path: `${node.fields.slug}${node.fields.slugUrl}`,
             component: path.resolve('./src/templates/beneficios.js'),
             context: {
                 id: node.id
@@ -242,7 +255,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts_servicos.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            path: `${node.fields.slug}${node.fields.slugUrl}`,
             component: path.resolve('./src/templates/serviços.js'),
             context: {
                 id: node.id
@@ -252,7 +265,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts_publicacoes.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            path: `${node.fields.slug}${node.fields.slugUrl}`,
             component: path.resolve('./src/templates/publicações.js'),
             context: {
                 id: node.id
@@ -262,7 +275,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts_investimentos.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            path: `${node.fields.slug}${node.fields.slugUrl}`,
             component: path.resolve('./src/templates/investimentos.js'),
             context: {
                 id: node.id
@@ -272,7 +285,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts_previdencia.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}/${node.frontmatter.title}`,
+            path: `${node.fields.slug}${node.fields.slugUrl}`,
             component: path.resolve('./src/templates/previdencia.js'),
             context: {
                 id: node.id

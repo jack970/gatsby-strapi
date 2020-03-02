@@ -108,7 +108,7 @@ export const MenuWrapper = styled.div`
     #menu
     {
         display:none;
-        position: absolute;
+        position: fixed;
         width: 210px;
         box-shadow: 0 0 10px #85888C;
         margin: -60px 0 0 -450px;
@@ -116,6 +116,12 @@ export const MenuWrapper = styled.div`
         padding-top: 25px;
         background-color: #FDB700;
         opacity: 0.95;
+        overflow-x: hidden;
+        height: 100%;
+    }
+
+    #menu li:last-child {
+        padding-bottom: 2rem; 
     }
 
     #submenu 

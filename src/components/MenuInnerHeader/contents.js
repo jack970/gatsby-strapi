@@ -1,7 +1,6 @@
 const links = [
     {
         label: 'institucional',
-        url: '/',
         submenu: [
             {
                 label: 'História',
@@ -13,77 +12,74 @@ const links = [
             },
             {
                 label: 'junta médica',
-                url: '/institucional/Junta Médica'
+                url: '/institucional/Junta-Médica'
             }
         ]
     },
     {
         label: 'benefícios',
-        url: '/',
         submenu: [
             {
                 label: 'aposentadoria por invalidez',
-                url: '/beneficios/Aposentadoria por Invalidez'
+                url: '/beneficios/Aposentadoria-por-Invalidez'
             },
             {
                 label: 'aposentadoria compulsória',
-                url: '/beneficios/Aposentadoria Compulsória'
+                url: '/beneficios/Aposentadoria-Compulsória'
             },
             {
                 label: 'aposentadoria por idade',
-                url: '/beneficios/Aposentadoria por Idade'
+                url: '/beneficios/Aposentadoria-por-Idade'
             },
             {
                 label: 'aposentadoria por contribuição',
-                url: '/beneficios/Aposentadoria por Contribuição'
+                url: '/beneficios/Aposentadoria-por-Contribuição'
             },
             {
                 label: 'salário maternidade',
-                url: '/beneficios/Salário Maternidade'
+                url: '/beneficios/Salário-Maternidade'
             },
             {
                 label: 'salário família',
-                url: '/beneficios/Salário Família'
+                url: '/beneficios/Salário-Família'
             },
             {
                 label: 'folha de pagamento',
-                url: '/beneficios/Folha de Pagamento'
+                url: '/beneficios/Folha-de-Pagamento'
             }
         ]
     },
     {
         label: 'serviços',
-        url: '/',
         submenu: [
             {
                 label: 'certidão previdenciária',
-                url:'/serviços/Certidão Previdenciária'
+                url:'/serviços/Certidão-Previdenciária'
             },
             {
                 label: 'contra cheque',
-                url:'/serviços/Contra Cheque'
+                url:'/serviços/Contra-Cheque'
             },
             {
                 label: 'comprovante rendimentos',
-                url:'/serviços/Comprovante Rendimentos'
+                url:'/serviços/Comprovante-Rendimentos'
             }
             ]
     },
     {
         label: 'publicações',
-        url: '/',
         submenu: [
             {
                 label: 'portarias do ipasc',
-                url:'/publicações/Portarias do Ipasc'
+                url:'/publicações/Portarias-do-Ipasc'
             },
             {
                 label: 'portarias do mps',
-                url:'/publicações/Portarias do MPS'
+                url:'/publicações/Portarias-do-MPS'
             },
             {
                 label: 'legislação municipal',
-                url:'/publicações/Legislação Municipal'
+                url:'/publicações/Legislação-Municipal'
             },
             {
                 label: 'crp',
@@ -91,18 +87,32 @@ const links = [
             },
             {
                 label: 'demonstrativos contábeis',
-                url:'/publicações/Demonstrativos Contábeis'
+                url:'/publicações/Demonstrativos-Contábeis'
             },
             {
                 label: 'conselho de previdência',
-                url:'/publicações/Conselho de Previdência'
+                url:'/publicações/Conselho-de-Previdência'
             },
             {
                 label: 'comitê de investimentos',
-                url:'/publicações/Comitê de Investimentos'
+                url:'/publicações/Comitê-de-Investimentos'
             }
             ]
     },
+    {
+        label: 'conselho',
+        url: '/',
+        submenu: [
+            {
+                label: 'Conselho de Investimentos',
+                url:'/conselho-investimentos/Certidão-Previdenciária copy/'
+            },
+            {
+                label: 'conselho de previdência',
+                url:'/conselho-investimentos/Certidão-Previdenciária copy/'
+            }
+            ]
+    }
     
 ]
 

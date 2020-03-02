@@ -31,18 +31,19 @@ export const MenuLinkItem = styled.div`
     transition: border-bottom 0.5s;
 
     &:hover {
-        border-bottom: 2px solid #4d4d4d;
+        border-bottom: 2px solid #FDB700;
     }
     
     `
 
-export const MenuTextItem = styled(Link)`
+export const MenuTextItem = styled.div`
     color: #111;
     font-size: 0.9rem;
     text-decoration: none;
     display: block;
     padding: 1rem 1rem;
     text-transform: uppercase;
+    cursor: pointer;
 
 `
 export const MenuSubItem = styled.li`

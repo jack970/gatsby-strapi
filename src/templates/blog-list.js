@@ -30,13 +30,13 @@ const BlogList = props => {
             node: { 
                 featuredImg: { childImageSharp: { fluid }},
                 frontmatter: { title, date},
-                fields: {slug},
+                fields: {slug, slugUrl},
                 id,
                 excerpt
             }
             }, i) => (
             <PostItemNotices key={i}
-                slug={`/${slug}/${id}`}
+                slug={`/${slug}${slugUrl}`}
                 title={title}
                 description={excerpt}
                 date={date}
@@ -66,6 +66,7 @@ export const query = graphql`
                     id
                     fields {
                         slug
+                        slugUrl
                     }
                     frontmatter {
                         title
