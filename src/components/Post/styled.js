@@ -209,7 +209,7 @@ export const MainContent = styled.section`
     text-decoration: none;
     transition: opacity 0.5s;
     svg {
-      color: #fff;
+      color: var(--white);
     }
     &:hover {
       opacity: 0.8;

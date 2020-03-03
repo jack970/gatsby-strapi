@@ -13,7 +13,7 @@ const MenuLink = () => (
                         {link.submenu.map((subMenu, i) => (
                         <S.MenuSubLink to={subMenu.url} key={i}>
                             <S.MenuSubItem>
-                                <S.MenuSubText>{subMenu.label}</S.MenuSubText>
+                                {subMenu.label}
                             </S.MenuSubItem>
                         </S.MenuSubLink>
                 ))}

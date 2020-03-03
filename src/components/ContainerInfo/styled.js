@@ -55,7 +55,7 @@ export const ContainerInfoParagraph = styled.p`
 `
 
 export const ContainerInfoButton = styled.span`
-    border: 1px solid white;
+    border: 1px solid var(--white);
     border-radius: .2rem;
     padding: .25rem .5rem;
     font-size: .875rem;
@@ -64,7 +64,7 @@ export const ContainerInfoButton = styled.span`
     padding: .25rem .5rem;
 
     &:hover {
-        background: white;
-        color: black;
+        background: var(--white);
+        color: var(--black);
     }
 `

@@ -7,8 +7,9 @@ import styled from 'styled-components'
 import Pagination from '../components/Pagination'
 
 export const TitleWrapper = styled.h1`
-font-size: 4rem;
-font-weight: 700;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--texto);
 `
 
 const BlogList = props => {

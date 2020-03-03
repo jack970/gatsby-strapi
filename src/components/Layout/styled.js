@@ -9,7 +9,8 @@ export const LayoutWrapper = styled.section`
 export const LayoutMain = styled.main`
     display: block;
     float: none;
-    background: #fff;
+    color: var(--texto);
+    background: var(--white);
     margin: 0 auto;
     min-height: 100vh;
     padding: 8rem 6.75rem 13rem;

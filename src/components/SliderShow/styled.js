@@ -17,19 +17,19 @@ export const SliderShowWrapper = styled.div`
 `
 
 export const SliderShowComment1 = styled.div`
-    color: white;
+    color: #fff;
     font-weight: 700;
     font-size: 25px;
 `
 
 export const SliderShowComment2 = styled.div`
-    color: white;
+    color: #fff;
     font-weight: 700;
     font-size: 25px;
 `
 
 export const SliderShowComment3 = styled.a`
-    color: white;
+    color: #fff;
     font-weight: 700;
     font-size: 25px;
 `

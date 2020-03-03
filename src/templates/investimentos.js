@@ -20,7 +20,7 @@ const Investimentos = ({ data }) => {
             image={post_investimentos.featuredImg.childImageSharp.fluid}/>
             <Divisao>
                 <SubMenu/>
-                <divPost>
+                <DivPost>
                     <S.PostHeader>
                         <S.PostDate>
                             Publicado em {post_investimentos.frontmatter.date}
@@ -38,7 +38,7 @@ const Investimentos = ({ data }) => {
                     <S.MainContent>
                         <div dangerouslySetInnerHTML={{__html: post_investimentos.html}}></div>
                     </S.MainContent>
-                </divPost>
+                </DivPost>
             </Divisao>
         </Layout>
     )

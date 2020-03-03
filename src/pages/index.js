@@ -27,13 +27,13 @@ export const BtnWrapper = styled(Link)`
   font-size: 1rem;
   line-height: 1.5;
   border-radius: .2rem;
-  color: #007bff;
+  color: var(--texto);
   border: 1px solid #007bff;
   transition: all 0.4s;
   text-decoration: none;
 
   &:hover {
-      color: #fff;
+      color: var(--white);
       background-color: #007bff;
       border-color: #007bff;
   }

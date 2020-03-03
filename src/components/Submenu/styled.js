@@ -8,7 +8,7 @@ export const SubMenuWrapper = styled.aside`
     h3 {
         font-size: 22px;
         font-weight: 600;
-        color: #FDB700;
+        color: var(--amarelo);
         padding: 15px;
         border-bottom: 1px solid #ccc;
         margin: 0;
@@ -27,6 +27,10 @@ export const SubMenuWrapper = styled.aside`
         border-bottom: none;
     }
 
+    #item-texto {
+        border-left: 3px solid var(--amarelo);
+    }
+
     ${media.lessThan('large')`
         display: none;
     `}
@@ -35,7 +39,7 @@ export const SubMenuWrapper = styled.aside`
 export const SubMenuLinks = styled.section`
     background: #f4f6f7;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid var(--black);
 `
 
 export const SubMenuNav = styled.ul`
@@ -61,7 +65,7 @@ export const SubMenuNavTextItem = styled(Link)`
     transition: all ease .3s;
 
     &:hover {
-        background-color: #FDB700;
-        color: white;
+        background-color: var(--amarelo);
+        color: var(--texto);
     }
 `

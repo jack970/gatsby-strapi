@@ -4,12 +4,12 @@ import  media from 'styled-media-query'
 export const LayoutWrapper = styled.section`
     display: flex;
     position: relative;
+    background: var(--white);
 `
 
 export const LayoutMain = styled.main`
     display: block;
     float: none;
-    background: #fff;
     margin: 0 auto;
     min-height: 100vh;
     padding: 9.2rem 6.75rem 15rem;

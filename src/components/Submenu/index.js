@@ -12,7 +12,7 @@ const SubMenu = () => (
                         <h2>{link.label}</h2>
                         {link.submenu.map((sublink, i) => (
                             <S.SubMenuNav key={i}>
-                                <S.SubMenuNavTextItem to={sublink.url}>
+                                <S.SubMenuNavTextItem id='item-texto' to={sublink.url}>
                                     <S.SubMenuNavItem id='texto'>{sublink.label}</S.SubMenuNavItem>
                                 </S.SubMenuNavTextItem>
                             </S.SubMenuNav>

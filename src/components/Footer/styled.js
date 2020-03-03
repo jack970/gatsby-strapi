@@ -3,8 +3,7 @@ import {Link} from 'gatsby'
 import media from 'styled-media-query'
 
 export const FooterWrapper = styled.aside`
-    border-top: 1px solid #dedede;
-    background: #343a40;
+    background: var(--black);
     bottom: 0;
     flex-direction: row;
     padding: 10px 0;
@@ -18,7 +17,7 @@ export const FooterWrapper = styled.aside`
 `
 
 export const FooterDescription = styled.p`
-    color: white;
+    color: var(--white);
     text-align: center;
     font-weight: 600;
     font-size: 50px;
@@ -49,13 +48,13 @@ export const FooterTitleColumnLinks = styled.h3`
 export const FooterLinkRodape = styled(Link)`
     float: left;
     font-size: 16px;
-    color: white;
+    color: var(--white);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     transition: color 0.5s;
 
     &:hover {
-        color: #ffcc29;
+        color: var(--amarelo);
     }
     `

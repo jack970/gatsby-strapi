@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 export const InnerHeaderWrapper = styled.aside`
     display: flex;
-    background: #fff;
+    background: var(--MenuInner);
     top: 1.6rem;
     width: 100%;
     height: auto;

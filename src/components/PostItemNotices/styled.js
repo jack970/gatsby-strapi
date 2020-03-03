@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import media from 'styled-media-query'
 
 export const PostItemLink = styled(Link)`
-    color: black;
+    color: var(--black);
     text-decoration: none;
     transition: color 0.5s;
     width: auto;

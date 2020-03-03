@@ -4,7 +4,7 @@ export const MenuTopWrapper = styled.aside`
     position: fixed;
     height: auto;
     width: 100%;
-    background: #FDB700;
+    background: var(--amarelo);
     top: 0;
     flex-direction: row;
     z-index: 9;

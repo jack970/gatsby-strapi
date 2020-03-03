@@ -13,7 +13,7 @@ export const MenuWrapper = styled.div`
     }
     a {
         text-decoration: none;
-        color: #fff;
+        color: var(--white);
         opacity:1;
         transition: 200ms;
     }
@@ -114,7 +114,7 @@ export const MenuWrapper = styled.div`
         margin: -60px 0 0 -450px;
         padding: 250px 110px 50px 230px;
         padding-top: 25px;
-        background-color: #FDB700;
+        background-color: var(--amarelo);
         opacity: 0.95;
         overflow-x: hidden;
         height: 100%;

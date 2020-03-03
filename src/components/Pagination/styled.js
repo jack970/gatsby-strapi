@@ -5,7 +5,7 @@ export const PaginationWrapper = styled.section`
   align-items: center;
   border-top: 1px solid #c8c8c8;
   font-weight: 700;
-  color:var(--texts);
+  color:var(--black);
   display: flex;
   padding: 1.5rem 5rem;
   justify-content: space-between;
@@ -13,7 +13,7 @@ export const PaginationWrapper = styled.section`
   
 
   a {
-    color:black;
+    color:var(--black);
     text-decoration: none;
     transition: color 0.5s;
     &:hover {

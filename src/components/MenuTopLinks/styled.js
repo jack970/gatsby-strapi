@@ -20,6 +20,7 @@ export const MenuLinksList = styled.ul`
 `
 
 export const MenuLinksItem = styled.li`
+    color: #fff;
     padding: .5rem;
     float: left;
     display: list-item;
@@ -27,7 +28,8 @@ export const MenuLinksItem = styled.li`
     line-height: 0.3rem;
 
     &:hover {
-        background:#343a40;
+        background:var(--black);
+        color: var(--white);
     }
 
      ${media.lessThan('large')`
@@ -45,10 +47,18 @@ export const MenuLinksIcon = styled.i`
 `
 
 export const MenuLinksLink = styled(Link)`
+    color: #fff;
     text-decoration: none;
-    color: white;
     display: flex;
     align-items: center;
     padding: 10px 20px;
 
+    ${MenuLinksItem}:hover & {
+        color: var(--white);
+    }
+
+`
+
+export const MenuLinksGroup = styled.div`
+    width: -webkit-fill-available;
 `

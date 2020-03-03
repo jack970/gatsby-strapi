@@ -53,6 +53,26 @@ const GlobalStyles = createGlobalStyle`
         border-collapse: collapse;
         border-spacing: 0;
     }
+
+    body.light {
+        --amarelo: #FDB700;
+        --texto: #4d4d4d;
+        --white: #fff;
+        --black: #222;
+        --icone: #FDB700;
+        --MenuInner: #fff;
+        --border: #FDB700;
+  }
+
+    body.dark {
+        --amarelo: #1b1b1b;
+        --texto: #fff;
+        --white: #2b2626;
+        --black: #fff;
+        --icone: #fff;
+        --MenuInner: #222222;
+        --border: #222;
+    }
     
 `
 

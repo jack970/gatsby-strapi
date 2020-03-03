@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import media from 'styled-media-query'
 
 export const TransparenciaWrapper = styled.section`
-    background: rgba(236,236,236,0.5);
+    background: rgba(236,236,236,0.2);
     position: relative;
     padding: 3rem 0 3rem;
 
@@ -29,6 +29,7 @@ export const TranspareciadivTitle = styled.div`
 `
 
 export const TransparenciaTitle = styled.h2`
+    color: var(--texto);
     text-align: center;
     font-size: 2rem;
     text-transform: uppercase;
@@ -42,7 +43,7 @@ export const TransparenciaLink = styled(Link)`
 
 export const TransparenciaItem = styled.span`
     width: 12rem;
-    background: #fff;
+    background: var(--white);
     display: block;
     border-radius: 6px;
     padding: 1rem;
@@ -56,9 +57,9 @@ export const TransparenciaItem = styled.span`
 `
 
 export const TransparenciaIconSpan = styled.div`
-    color: #ffcc29;
+    color: var(--icone);
     font-size: 50px;
-    border: 2px solid #ffcc29;
+    border: 2px solid var(--icone);
     border-radius: 50%;
     margin: 0 auto;
     padding: 1rem;
@@ -67,8 +68,8 @@ export const TransparenciaIconSpan = styled.div`
     transition: all .25s ease-in-out !important;
 
     ${TransparenciaItem}:hover & {
-        color: white;
-        background: #ffcc29; 
+        color: var(--white);
+        background: var(--amarelo); 
     }
 `
 
@@ -76,7 +77,7 @@ export const TransparenciaImageIcon = styled.i`
 `
 
 export const TransparenciaTitleItem = styled.h4`
-    color: #4d4d4d;
+    color: var(--texto);
     font-size: 17px;
     text-transform: uppercase;
     padding: 1rem 0 0.6rem 0;
@@ -100,7 +101,7 @@ export const Transparenciabtn = styled.span`
     transition: all 0.4s;
 
     &:hover {
-        color: #fff;
+        color: var(--white);
         background-color: #007bff;
         border-color: #007bff;
     }

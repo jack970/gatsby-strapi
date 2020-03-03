@@ -26,18 +26,17 @@ export const MenuItemBar = styled.li`
 export const MenuLinkItem = styled.div`
     font-weight: 700;
     display: block;
-    border-bottom: 2px solid #fff;
     text-decoration: none;
     transition: border-bottom 0.5s;
 
     &:hover {
-        border-bottom: 2px solid #FDB700;
+        border-bottom: 2px solid var(--icone);
     }
     
     `
 
 export const MenuTextItem = styled.div`
-    color: #111;
+    color: var(--black);
     font-size: 0.9rem;
     text-decoration: none;
     display: block;
@@ -49,14 +48,15 @@ export const MenuTextItem = styled.div`
 export const MenuSubItem = styled.li`
     float: none;
     padding: 10px 10px;
-    transition: background 0.5s;
+    transition: all 0.5s;
 
     &:hover {
-        background: #FDB700;
+        background: var(--amarelo);
+        color: #fff;
     }
 `
 export const MenuSubMenu = styled.ul`
-    background: #111;
+    background: var(--black);
     padding: 0;
     margin: 0;
     position: absolute;
@@ -80,14 +80,10 @@ export const MenuSpanNav = styled.span``
 export const MenuSubLink = styled(Link)`
     width: 100%;
     font-size: 14px;
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid var(--white);
     padding: 0;
     text-decoration: none;
-`
-
-export const MenuSubText = styled.span`
     text-transform: uppercase;
-    font-size: 1rem;
-    color: #fff;
+    color: var(--white);
     font-weight: 400;
 `
