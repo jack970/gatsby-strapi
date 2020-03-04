@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import { Link } from 'gatsby'
 
-export const MenuLinksWrapper = styled.nav``
+export const MenuLinksWrapper = styled.nav`
+`
 
 export const MenuLinksList = styled.ul`
     color: #ececec;
@@ -24,7 +25,7 @@ export const MenuLinksItem = styled.li`
     padding: .5rem;
     float: left;
     display: list-item;
-    transition: background 0.5s;
+    transition: all ease 0.5s;
     line-height: 0.3rem;
 
     &:hover {
@@ -43,6 +44,13 @@ export const MenuLinksIcon = styled.i`
     width: 22px;
     height: 22px;
 
+    &.dark {
+        color: #fff;
+
+        &:hover {
+            color: #e2e240;
+        }
+    }
     
 `
 

@@ -8,7 +8,7 @@ const InnerHeader = () => {
 
     return(<S.InnerHeaderWrapper>
         <S.LogoContainer>
-            <LogoHeader />
+            <LogoHeader/>
             <div id='mobile'>
                 <MenuMobile class='.mobile' />
             </div>

@@ -20,19 +20,18 @@ export const InnerHeaderWrapper = styled.aside`
         display: block;
         top: 0;
         text-align: center;
-        position: absolute;
     `}
 `
 
 export const LogoContainer = styled.div`
-    padding: 2rem 7rem 0;
+    padding: 1rem 7rem 0;
     max-width: 25%;
 
     ${media.lessThan("large")`
         width: 100%;
         max-width: none;
         display: inline-flex;
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 2rem 0 2rem;
         #mobile {
             display: block;

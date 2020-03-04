@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Title = styled.p`
     font-size: 1.5em;
     font-weight: 700;
+    color: var(--black);
 `
 
 export const MenuWrapper = styled.div`
@@ -69,7 +70,7 @@ export const MenuWrapper = styled.div`
         height: 2px;
         margin-bottom: 5px;
         position: relative;
-        background: #1E1E23;
+        background: var(--texto);
         border-radius: 3px;
         z-index: 1;
         transform-origin: 5px 0px;
@@ -92,7 +93,7 @@ export const MenuWrapper = styled.div`
     {
         opacity: 1;
         transform: rotate(45deg) translate(-3px, -1px);
-        background: #36383F;
+        background: var(--texto);
     }
     #menuToggle input:checked ~ span:nth-last-child(3)
     {
@@ -107,17 +108,20 @@ export const MenuWrapper = styled.div`
     
     #menu
     {
-        display:none;
         position: fixed;
         width: 210px;
         box-shadow: 0 0 10px #85888C;
-        margin: -60px 0 0 -450px;
-        padding: 250px 110px 50px 230px;
+        margin: -60px 0 0 -300px;
+        padding: 250px 110px 50px 40px;
         padding-top: 25px;
         background-color: var(--amarelo);
         opacity: 0.95;
         overflow-x: hidden;
         height: 100%;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     }
 
     #menu li:last-child {
@@ -139,8 +143,7 @@ export const MenuWrapper = styled.div`
     
     #menuToggle input:checked ~ ul
     {
-        display: block;
         transform: none;
-        transition: display 2s;
+        display: block;
     }`
 

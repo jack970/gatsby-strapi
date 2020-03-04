@@ -5,9 +5,9 @@ import media from 'styled-media-query'
 export const FooterWrapper = styled.aside`
     background: var(--black);
     bottom: 0;
+    position: absolute;
     flex-direction: row;
     padding: 10px 0;
-    position: absolute;
     width: 100%;
 
     ${media.lessThan("large")`

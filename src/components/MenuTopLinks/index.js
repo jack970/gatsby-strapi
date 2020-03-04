@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import * as S from './styled'
 import links from './contents'
 import Icons from './Icons'
-import { Zap as Light } from 'styled-icons/boxicons-solid/Zap'
+import { Sun as Light } from '@styled-icons/fa-solid/Sun'
 
 const MenuTopLinks = () => {
     const [theme, setTheme] = useState(null)
@@ -30,13 +30,14 @@ const MenuTopLinks = () => {
                 </S.MenuLinksItem>)
                 })}
             </S.MenuLinksGroup>
-            <ul style={{width: '12rem', lineHeight: '2.2'}}>
+            <ul style={{width: '12rem', padding: '.5rem'}}>
                 <li>
-                    <p style={{float: 'left', padding: '4px 0px', fontWeight: '600'}}>CONTRASTE:</p>
+                    <p style={{float: 'left', lineHeight: '1.6rem', fontWeight: '600'}}>CONTRASTE:</p>
                     <S.MenuLinksIcon title="Mudar o tema" style={{ cursor: 'pointer'}}
                     onClick= {() => {
                         window.__setPreferredTheme(isLightMode ? 'dark' : 'light')
-                    }}>
+                    }}
+                    className={theme}>
                         <Light />
                     </S.MenuLinksIcon>
                 </li>

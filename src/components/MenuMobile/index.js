@@ -9,7 +9,7 @@ const MenuMobile = () => (
             <div className="content">
             <nav role="navigation">
                 <div id="menuToggle">
-                <input type="checkbox" />
+                <input type="checkbox" style={{ color: 'var(--texto)'}}/>
                     <span></span>
                     <span></span>
                     <span></span>
