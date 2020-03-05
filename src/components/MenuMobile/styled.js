@@ -56,6 +56,7 @@ export const MenuWrapper = styled.div`
     #menuToggle input
     {
         display: flex;
+        -webkit-tap-highlight-color: transparent;
         width: 40px;
         height: 32px;
         position: absolute;
@@ -78,6 +79,7 @@ export const MenuWrapper = styled.div`
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                     background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                     opacity 0.55s ease;
+
     }
     
     #menuToggle span:first-child

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 
 export const InnerHeaderWrapper = styled.aside`
+    -webkit-tap-highlight-color: transparent;
     background: var(--MenuInner);
     top: 2.5rem;
     width: 100%;
