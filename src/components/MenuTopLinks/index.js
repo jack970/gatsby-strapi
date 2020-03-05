@@ -30,9 +30,9 @@ const MenuTopLinks = () => {
                 </S.MenuLinksItem>)
                 })}
             </S.MenuLinksGroup>
-            <ul style={{width: '12rem', padding: '.5rem'}}>
+            <ul id='ul-tema'>
                 <li>
-                    <p style={{float: 'left', lineHeight: '1.6rem', fontWeight: '600'}}>CONTRASTE:</p>
+                    <p id='texto'>CONTRASTE:</p>
                     <S.MenuLinksIcon title="Mudar o tema" style={{ cursor: 'pointer'}}
                     onClick= {() => {
                         window.__setPreferredTheme(isLightMode ? 'dark' : 'light')

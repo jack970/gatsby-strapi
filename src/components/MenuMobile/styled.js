@@ -11,6 +11,7 @@ export const MenuWrapper = styled.div`
         background-color: #f9f9f9;
         margin: 0;
         padding: 0;
+        transition: all .25s ease-in-out !important;
     }
     a {
         text-decoration: none;
@@ -113,7 +114,7 @@ export const MenuWrapper = styled.div`
         box-shadow: 0 0 10px #85888C;
         margin: -60px 0 0 -300px;
         padding: 250px 250px 50px 40px;
-        padding-top: 25px;
+        padding-top: 2.5rem;
         background-color: var(--amarelo);
         opacity: 0.95;
         overflow-x: hidden;

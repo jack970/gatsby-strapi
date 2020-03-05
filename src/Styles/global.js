@@ -62,6 +62,7 @@ const GlobalStyles = createGlobalStyle`
         --icone: #FDB700;
         --MenuInner: #fff;
         --border: #FDB700;
+        --sublinks: #fff;
   }
 
     body.dark {
@@ -72,6 +73,7 @@ const GlobalStyles = createGlobalStyle`
         --icone: #fff;
         --MenuInner: #222222;
         --border: #222;
+        --sublinks: #007bff;
     }
     
 `

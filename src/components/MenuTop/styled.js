@@ -12,8 +12,8 @@ export const MenuTopWrapper = styled.aside`
     transition: all .25s ease-in-out !important;
 
     ${media.lessThan('large')`
-    display: none;
-    padding: 0;
+        padding: 0;
+        background: transparent;
 `}
 `
 

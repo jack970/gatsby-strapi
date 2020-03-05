@@ -18,7 +18,28 @@ export const MenuLinksList = styled.ul`
         font-size: 17px;
         font-weight: 700;
         display: block;
+
+        #texto {
+            color: var(--texto);
+        }
     `}
+
+    #texto {
+        float: left;
+        line-height: 1.6rem;
+        font-weight: 700;
+    }
+
+    #ul-tema{
+        padding: .5rem;
+        width: 12rem;
+
+        ${media.lessThan('large')`
+            width: auto;
+            float: right;
+            padding: 1rem;
+            `}
+    }
 `
 
 export const MenuLinksItem = styled.li`
@@ -52,6 +73,10 @@ export const MenuLinksIcon = styled.i`
             color: #e2e240;
         }
     }
+
+    ${media.lessThan('large')`
+        color: var(--texto);
+    `}
     
 `
 
@@ -70,4 +95,8 @@ export const MenuLinksLink = styled(Link)`
 
 export const MenuLinksGroup = styled.div`
     width: -webkit-fill-available;
+
+    ${media.lessThan('large')`
+        display: none;
+    `}
 `

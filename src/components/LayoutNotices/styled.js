@@ -5,6 +5,7 @@ export const LayoutWrapper = styled.section`
     display: flex;
     position: relative;
     background: var(--white);
+    transition: all 0.25s ease-in-out 0s !important;
 `
 
 export const LayoutMain = styled.main`

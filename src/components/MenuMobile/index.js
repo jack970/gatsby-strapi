@@ -22,7 +22,7 @@ const MenuMobile = () => (
                             {
                                 link.submenu.map((sublink, i) => (
                                 <li key={i}>
-                                    <Link to={sublink.url} style={{'fontWeight':'700'}}>
+                                    <Link to={sublink.url} style={{'fontWeight':'700', color: 'var(--sublinks)'}}>
                                         {sublink.label}
                                     </Link>
                                 </li>

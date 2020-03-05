@@ -9,6 +9,7 @@ export const FooterWrapper = styled.aside`
     flex-direction: row;
     padding: 10px 0;
     width: 100%;
+    transition: all .25s ease-in-out !important;
 `
 
 export const FooterPosition = styled.div`
