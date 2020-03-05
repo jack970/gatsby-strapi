@@ -5,11 +5,11 @@ import media from 'styled-media-query'
 export const FooterWrapper = styled.aside`
     background: var(--black);
     bottom: 0;
-    position: absolute;
     flex-direction: row;
     padding: 10px 0;
     width: 100%;
     transition: all .25s ease-in-out !important;
+
 `
 
 export const FooterPosition = styled.div`

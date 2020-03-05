@@ -17,10 +17,13 @@ export const LayoutMain = styled.main`
     color: var(--texto);
     margin: 0 auto;
     min-height: 100vh;
-    padding: 8rem 6.75rem 13rem;
+    padding: 8rem 6.75rem 0;
     max-width: 100rem;
     
     ${media.lessThan("large")`
-        padding: 8rem 0 22rem;
+        padding-top: 8rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
     `}
 `

@@ -70,7 +70,7 @@ export const MenuLinksIcon = styled.i`
         color: #fff;
 
         &:hover {
-            color: #e2e240;
+            color: #FDB700;
         }
     }
 

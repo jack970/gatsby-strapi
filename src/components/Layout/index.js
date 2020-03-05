@@ -5,6 +5,7 @@ import InnerHeader from '../InnerHeader'
 import Footer from '../Footer'
 import * as S from './styled'
 import GlobalStyles from "../../Styles/global"
+import InnerFooter from '../InnerFooter'
 
 const Layout = ({ children }) => {
   return (
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
       <InnerHeader />
       <S.LayoutMain>{children}</S.LayoutMain>
       <Footer />
+      <InnerFooter />
     </S.LayoutWrapper>
   )
 }
