@@ -5,6 +5,7 @@ import media from 'styled-media-query'
 export const MenuNavBar = styled.nav`
     padding-left: 0;
     margin-bottom: 0;
+    float: right;
     list-style: none;
 
     ${media.lessThan("large")`

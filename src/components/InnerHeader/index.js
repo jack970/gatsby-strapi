@@ -6,16 +6,19 @@ import MenuMobile from '../MenuMobile'
 
 const InnerHeader = () => {
 
-    return(<S.InnerHeaderWrapper>
-        <S.LogoContainer>
-            <LogoHeader/>
-            <div id='mobile'>
-                <MenuMobile class='.mobile' />
-            </div>
-        </S.LogoContainer>
-        <S.MenuContainer>
-            <MenuLink /> 
-        </S.MenuContainer> 
+    return(
+    <S.InnerHeaderWrapper>
+        <S.InnerPosition>
+            <S.LogoContainer>
+                <LogoHeader/>
+                <div id='mobile'>
+                    <MenuMobile class='.mobile' />
+                </div>
+            </S.LogoContainer>
+            <S.MenuContainer>
+                <MenuLink /> 
+            </S.MenuContainer> 
+        </S.InnerPosition>
     </S.InnerHeaderWrapper>
     
     )

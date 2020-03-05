@@ -31,6 +31,10 @@ export const SubMenuWrapper = styled.aside`
         border-left: 3px solid var(--amarelo);
     }
 
+    #sub-item:last-child {
+        border: none;
+    }
+
     ${media.lessThan('large')`
         display: none;
     `}

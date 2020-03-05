@@ -8,9 +8,10 @@ export const MenuLinksWrapper = styled.nav`
 export const MenuLinksList = styled.ul`
     color: #ececec;
     font-size: 13px;
-    display: inline-block;
     padding: 0 5rem 0;
     display: flex;
+    max-width: 100rem;
+    margin: 0 auto;
 
     ${media.lessThan('large')`
         padding: 0;

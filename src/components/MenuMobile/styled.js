@@ -112,7 +112,7 @@ export const MenuWrapper = styled.div`
         width: 210px;
         box-shadow: 0 0 10px #85888C;
         margin: -60px 0 0 -300px;
-        padding: 250px 110px 50px 40px;
+        padding: 250px 250px 50px 40px;
         padding-top: 25px;
         background-color: var(--amarelo);
         opacity: 0.95;

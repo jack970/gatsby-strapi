@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
+
 export const MenuTopWrapper = styled.aside`
     position: fixed;
     height: auto;
@@ -8,6 +9,7 @@ export const MenuTopWrapper = styled.aside`
     top: 0;
     flex-direction: row;
     z-index: 9;
+    transition: all .25s ease-in-out !important;
 
     ${media.lessThan('large')`
     display: none;

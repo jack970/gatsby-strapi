@@ -6,8 +6,8 @@ import media from 'styled-media-query'
 export const PostItemLink = styled(Link)`
     color: var(--black);
     text-decoration: none;
-    transition: color 0.5s;
     width: auto;
+    transition: all .25s ease-in-out !important;
     
     &:hover {
         color: #1fa1f2;

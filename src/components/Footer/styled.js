@@ -9,11 +9,11 @@ export const FooterWrapper = styled.aside`
     flex-direction: row;
     padding: 10px 0;
     width: 100%;
+`
 
-    ${media.lessThan("large")`
-        padding: 0;
-        width: auto;
-    `}
+export const FooterPosition = styled.div`
+    margin: 0 auto;
+    max-width: 100rem;
 `
 
 export const FooterDescription = styled.p`
@@ -38,7 +38,7 @@ export const FooterRowLinks = styled.div`
 export const FooterColumnLinks = styled.div`
     width: 30.33%;
     padding: 10px;
-
+    text-align: center;
 `
 
 export const FooterTitleColumnLinks = styled.h3`
@@ -46,7 +46,6 @@ export const FooterTitleColumnLinks = styled.h3`
 `
 
 export const FooterLinkRodape = styled(Link)`
-    float: left;
     font-size: 16px;
     color: var(--white);
     text-align: center;
@@ -55,6 +54,10 @@ export const FooterLinkRodape = styled(Link)`
     transition: color 0.5s;
 
     &:hover {
-        color: var(--amarelo);
+        color: #FDB700;
     }
+
+    ${media.lessThan("large")`
+        padding: 0;
+    `}
     `
