@@ -1,7 +1,7 @@
 const Links = [
     {
         label: 'Location',
-        text: 'R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050',
+        text: 'Rua Coronel Afonso Paranhos - St. Central, Catalão - GO, 75701-470',
     },
     {
         label: 'Email',

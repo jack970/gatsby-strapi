@@ -24,23 +24,6 @@ export const InnerWrapper = styled.div`
         border: none;
     }
 `
-export const AngleBg = styled.div`
-    background: #FC9E02;
-    font-size: 14px;
-    position: absolute;
-    width: 40%;
-    right: 0;
-    -webkit-transform: skew(-16deg);
-    height: 100%;
-    margin-right: -5rem;
-
-    ${media.lessThan('large')`
-        -webkit-transform: skew(-10deg);
-        width: 40%;
-        display: none;
-    `}
-`
-
 export const Container = styled.div`
     max-width: 100rem;
     margin: 0 auto;

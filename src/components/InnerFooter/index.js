@@ -6,7 +6,6 @@ import Mapa from './links'
 
 const InnerFooter = () => (
     <S.InnerWrapper>
-        <S.AngleBg/>
         <S.Container>
             <S.Row>
                 <S.ContactBox>
@@ -34,8 +33,6 @@ const InnerFooter = () => (
                 </S.ContactBox>
                 <S.ContactBox>
                     <S.HeaderColumns>Contato</S.HeaderColumns>
-                    <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
-                    <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
                     <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
                     <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
                 </S.ContactBox>
