@@ -31,7 +31,7 @@ const MenuTopLinks = () => {
                 })}
             </S.MenuLinksGroup>
             <ul id='ul-tema'>
-                <li>
+                <li style={{ display: 'flex'}}>
                     <p id='texto'>CONTRASTE:</p>
                     <S.MenuLinksIcon title="Mudar o tema" style={{ cursor: 'pointer'}}
                     onClick= {() => {

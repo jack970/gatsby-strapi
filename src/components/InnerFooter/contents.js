@@ -1,15 +1,15 @@
 const Links = [
     {
-        label: 'SearchAlt',
+        label: 'Location',
         text: 'R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050',
     },
     {
-        label: 'Dollar',
-        text: 'comunicacao@catalao.go.gov.br ouvidoria@catalao.go.gov.br',
+        label: 'Email',
+        text: 'financeiro@ipasc.go.gov.br',
     },
     {
-        label: 'Email',
-        text: '64 3441.5000'
+        label: 'PhoneCall',
+        text: '64 3411-3190'
     }
 ]
 

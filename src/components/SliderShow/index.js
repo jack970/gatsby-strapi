@@ -24,22 +24,25 @@ const SliderShow = ({link1, link2, link3}) => (
         transition={4} // transition duration between images
         duration={8} // how long an image is shown
         // specify images to include (and their order) according to `relativePath`
-        images={["deserto.jpg", "lake.jpg", "mountains.jpg"]} 
+        images={["catalao1.jpg", "catalao2.jpg", "morrinho.jpg"]} 
 
+        style={{
+          textShadow: '2px 2px #FF0000'
+        }}
       >
         <S.SliderShowLink to={link1} >
           <S.SliderShowComment1>
-              Deserto
+             Veja a nossa História
           </S.SliderShowComment1>
         </S.SliderShowLink>
         <S.SliderShowLink to={link2} >
           <S.SliderShowComment1>
-              Lago
+              Acesse o Ipasc
           </S.SliderShowComment1>
         </S.SliderShowLink>
         <S.SliderShowLink to={link3} >
           <S.SliderShowComment1>
-              Deserto
+              Confira as Notícias
           </S.SliderShowComment1>
         </S.SliderShowLink>
     </BackgroundSlider>

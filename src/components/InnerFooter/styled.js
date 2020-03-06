@@ -1,11 +1,18 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import { Link } from 'gatsby'
 
 export const ContactBox = styled.div`
     padding: 20px 15px 10px;
     border-bottom: 1px solid #aaa;
-    z-index: 2;
+    position: relative;
     margin: 0 auto;
+    text-shadow: 2px 1px 7px black;
+    width: 20rem;
+
+    ${media.lessThan('large')`
+        border: none;
+`}
 `
 
 export const InnerWrapper = styled.div`
@@ -22,14 +29,15 @@ export const AngleBg = styled.div`
     font-size: 14px;
     position: absolute;
     width: 40%;
-    margin-left: -3rem;
-    -webkit-transform: skew(16deg);
+    right: 0;
+    -webkit-transform: skew(-16deg);
     height: 100%;
+    margin-right: -5rem;
 
     ${media.lessThan('large')`
-        margin-left: -20rem;
-        -webkit-transform: skew(30deg);
-        width: 90%;
+        -webkit-transform: skew(-10deg);
+        width: 40%;
+        display: none;
     `}
 `
 
@@ -71,4 +79,25 @@ export const ContainerContatos = styled.div`
     color: #fff;
     display:flex;
     margin-top: 20px;
+`
+
+export const ContainerUl = styled.ul`
+    padding-bottom: 2rem;
+`
+
+export const ContainerList = styled.li`    
+    float: left;
+    width: 50%;
+    padding-bottom: 1rem;
+`
+
+export const ContainerLinks = styled(Link)`
+    color: #fff;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color ease .5s; 
+
 `

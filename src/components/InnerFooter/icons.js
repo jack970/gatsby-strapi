@@ -1,10 +1,10 @@
-import { SearchAlt } from "styled-icons/boxicons-regular/SearchAlt"
-import { Dollar } from "styled-icons/boxicons-regular/Dollar"
+import { Location } from "@styled-icons/icomoon/Location"
+import { PhoneCall } from "@styled-icons/boxicons-regular/PhoneCall"
 import { Email } from "styled-icons/material/Email"
 
 const Icons = {
-    SearchAlt,
-    Dollar,
+    Location,
+    PhoneCall,
     Email
 }
 

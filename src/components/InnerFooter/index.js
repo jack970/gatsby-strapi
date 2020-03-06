@@ -2,6 +2,7 @@ import React from 'react'
 import * as S from './styled'
 import Links from './contents'
 import Icons from './icons'
+import Mapa from './links'
 
 const InnerFooter = () => (
     <S.InnerWrapper>
@@ -23,10 +24,13 @@ const InnerFooter = () => (
 
                 <S.ContactBox>
                     <S.HeaderColumns>Mapa do Site</S.HeaderColumns>
-                    <S.Description>R. Nassim Agel, 505fefwefwwefweewfwefwefwefewfwefe - Centro, Catalão - Goiás, 75701-050</S.Description>
-                    <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
-                    <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
-                    <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
+                        <S.ContainerUl>
+                            {Mapa.map((link, i) => (
+                                <S.ContainerList key={i}>
+                                    <S.ContainerLinks to={link.url}>{link.label}</S.ContainerLinks>
+                                </S.ContainerList>
+                            ))}
+                        </S.ContainerUl>
                 </S.ContactBox>
                 <S.ContactBox>
                     <S.HeaderColumns>Contato</S.HeaderColumns>

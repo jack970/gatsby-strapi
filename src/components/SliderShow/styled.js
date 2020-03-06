@@ -20,18 +20,7 @@ export const SliderShowComment1 = styled.div`
     color: #fff;
     font-weight: 700;
     font-size: 25px;
-`
-
-export const SliderShowComment2 = styled.div`
-    color: #fff;
-    font-weight: 700;
-    font-size: 25px;
-`
-
-export const SliderShowComment3 = styled.a`
-    color: #fff;
-    font-weight: 700;
-    font-size: 25px;
+    text-shadow: azure;
 `
 
 export const SliderShowLink = styled(Link)`
