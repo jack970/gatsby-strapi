@@ -76,7 +76,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <SliderShow link1='/institucional/História' link2='/' link3='/notícias'/>  
+      <SliderShow link1='/institucional/Historia' link2='/' link3='/notícias'/>  
       <ContainerNoticias>
         <ContainersubNoticias>
         { postList.map(({ 

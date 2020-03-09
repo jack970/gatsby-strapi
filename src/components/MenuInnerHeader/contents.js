@@ -33,7 +33,7 @@ const links = [
             },
             {
                 label: 'aposentadoria por contribuição',
-                url: '/beneficios/Aposentadoria-por-Contribuiçao'
+                url: '/beneficios/Aposentadoria-por-Contribuicao'
             },
             {
                 label: 'salário maternidade',
@@ -79,7 +79,7 @@ const links = [
             },
             {
                 label: 'legislação municipal',
-                url:'/publicacoes/Legislação-Municipal'
+                url:'/publicacoes/Legislacao-Municipal'
             },
             {
                 label: 'crp',
@@ -95,7 +95,7 @@ const links = [
             },
             {
                 label: 'comitê de investimentos',
-                url:'/publicacoes/Comitê-de-Investimentos'
+                url:'/publicacoes/Comite-de-Investimentos'
             }
             ]
     },

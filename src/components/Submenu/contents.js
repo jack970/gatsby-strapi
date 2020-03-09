@@ -4,7 +4,7 @@ const Link = [
         submenu: [
             {
                 label: 'O QUE É',
-                url: '/conselho-previdencia/o-que-é/'
+                url: '/conselho-previdencia/o-que-e/'
             },
             {
                 label:'Atas do Conselho',
@@ -12,7 +12,7 @@ const Link = [
             },
             {
                 label: 'Calendário de Reuniões',
-                url: '/conselho-previdencia/calendário-de-reuniões',
+                url: '/conselho-previdencia/calendario-de-reunioes',
             },
         ]
     },
@@ -21,15 +21,15 @@ const Link = [
         submenu: [
             {
                 label: 'O QUE É',
-                url: '/conselho-investimentos/o-que-é',
+                url: '/conselho-investimentos/o-que-e',
             },
             {
                 label: 'Atas do Comitê',
-                url: '/conselho-investimentos/atas-do-comitê',
+                url: '/conselho-investimentos/atas-do-comite',
             },
             {
                 label: 'Calendário de Reuniões',
-                url: '/conselho-investimentos/calendário-de-reuniões',
+                url: '/conselho-investimentos/calendario-de-reunioes',
             },
         ]
     }
