@@ -2,6 +2,14 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import { Link } from 'gatsby'
 
+export const ContainerIcon = styled.div`
+    border-radius: 2rem;
+    color: #272727;
+    width: 28px;
+    background: #ffffff;
+    padding: .5rem;
+`
+
 export const ContactBox = styled.div`
     padding: 20px 15px 10px;
     border-bottom: 1px solid #aaa;
@@ -12,7 +20,10 @@ export const ContactBox = styled.div`
 
     ${media.lessThan('large')`
         border: none;
+        width: none;
 `}
+
+  
 `
 
 export const InnerWrapper = styled.div`
@@ -25,7 +36,7 @@ export const InnerWrapper = styled.div`
     }
 `
 export const Container = styled.div`
-    max-width: 100rem;
+    max-width: 60rem;
     margin: 0 auto;
     `
 
@@ -33,7 +44,7 @@ export const Row = styled.div`
     display: flex;
     padding: 2rem;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('750px')`
         display: block;
     `}
 `
@@ -50,12 +61,7 @@ export const Description = styled.div`
     font-size: 15px;
     font-weight: 600;
     padding-top: 5px;
-`
-
-export const ContainerIcon = styled.div`
-    height: 28px;
-    width: 28px;
-    padding-right: 20px;
+    margin-left: 30px;
 `
 
 export const ContainerContatos = styled.div`
@@ -65,22 +71,28 @@ export const ContainerContatos = styled.div`
 `
 
 export const ContainerUl = styled.ul`
-    padding-bottom: 2rem;
 `
 
 export const ContainerList = styled.li`    
     float: left;
     width: 50%;
     padding-bottom: 1rem;
+
+    ${media.lessThan('large')`
+        float: none;
+        width: 100%;
+    `}
 `
 
 export const ContainerLinks = styled(Link)`
-    color: #fff;
+    color: rgba(255, 255, 255, 0.34901960784313724);
     text-decoration: none;
-    color: #fff;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 600;
     transition: color ease .5s; 
 
+    &:hover {
+        color: #FDB700;
+    }
 `

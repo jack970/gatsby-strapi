@@ -1,7 +1,7 @@
 const Mapa = [
     {
         label: 'História',
-        url: '/institucional/História',
+        url: '/institucional/Historia',
     },
     {
         label: 'equipe',
@@ -9,27 +9,27 @@ const Mapa = [
     },
     {
         label: 'junta médica',
-        url: '/institucional/Junta-Médica',
+        url: '/institucional/Junta-Medica',
     },
     {
         label: 'portarias do ipasc',
-        url:'/publicações/Portarias-do-Ipasc',
+        url:'/publicacoes/Portarias-do-Ipasc',
     },
     {
         label: 'portarias do mps',
-        url:'/publicações/Portarias-do-MPS',
+        url:'/publicacoes/Portarias-do-MPS',
     },
     {
         label: 'crp',
-        url:'/publicações/CRP',
+        url:'/publicacoes/CRP',
     },
     {
         label: 'conselho de previdência',
-        url:'/publicações/Conselho-de-Previdência',
+        url:'/publicacoes/Conselho-de-Previdencia',
     },
     {
         label: 'comitê de investimentos',
-        url:'/publicações/Comitê-de-Investimentos',
+        url:'/publicacoes/Comite-de-Investimentos',
     }
 ]
 

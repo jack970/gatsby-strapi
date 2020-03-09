@@ -9,6 +9,8 @@ export const PostItemLink = styled(Link)`
     width: auto;
     -webkit-tap-highlight-color: transparent;
     transition: all .25s ease-in-out !important;
+    display: inline-block;
+    width: 100%;
     
     &:hover {
         color: #1fa1f2;

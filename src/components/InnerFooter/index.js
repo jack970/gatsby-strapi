@@ -31,12 +31,6 @@ const InnerFooter = () => (
                             ))}
                         </S.ContainerUl>
                 </S.ContactBox>
-                <S.ContactBox>
-                    <S.HeaderColumns>Contato</S.HeaderColumns>
-                    <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
-                    <S.Description>R. Nassim Agel, 505 - Centro, Catalão - Goiás, 75701-050</S.Description>
-                </S.ContactBox>
-                
             </S.Row>
         </S.Container>
     </S.InnerWrapper>

@@ -133,7 +133,7 @@ exports.createPages = ({ graphql, actions}) => {
         }
       }
       servicos: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "serviços"}}},
+        filter: {fields: {slug: {eq: "servicos"}}},
         sort: {order: DESC, fields: frontmatter___date}) {
         edges {
           node {
@@ -153,7 +153,7 @@ exports.createPages = ({ graphql, actions}) => {
         }
       }
       publicacoes: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "publicações"}}},
+        filter: {fields: {slug: {eq: "publicacoes"}}},
         sort: {order: DESC, fields: frontmatter___date}) {
         edges {
           node {

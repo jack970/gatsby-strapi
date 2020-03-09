@@ -17,6 +17,7 @@ export const TransparenciaContainer = styled.div`
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    max-width: 70rem;
 `  
 export const TransparenciaRow = styled.div`
     justify-content: center;
