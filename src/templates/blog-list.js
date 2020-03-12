@@ -1,10 +1,9 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import PostItemNotices from '../components/PostItemNotices'
 import Layout from "../components/LayoutNotices"
 import SEO from "../components/seo"
 import styled from 'styled-components'
-import Pagination from '../components/Pagination'
 
 export const TitleWrapper = styled.h1`
     font-size: 4rem;
@@ -12,14 +11,31 @@ export const TitleWrapper = styled.h1`
     color: var(--texto);
 `
 
-const BlogList = props => {
-    const postList = props.data.allMarkdownRemark.edges
+const BlogList = () => {
 
-    const { currentPage, numPages} = props.pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage = currentPage -1 === 1 ? '/notícias' : `/notícias/page/${currentPage -1}`
-    const nextPage =`/notícias/page/${currentPage + 1} `
+    const { allStrapiPosts } = useStaticQuery(graphql`
+    query QueryPostList {
+        allStrapiPosts(sort: {order: DESC, fields: data}) {
+            edges {
+                node {
+                    id
+                    title
+                    data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                    description
+                    image {
+                        childImageSharp {
+                            fluid(maxWidth: 900, maxHeight: 900) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    `)
+
+    const queryPostList = allStrapiPosts.edges
 
     return(
         <Layout>
@@ -27,64 +43,25 @@ const BlogList = props => {
             <TitleWrapper>
                 Notícias
             </TitleWrapper>
-            { postList.map(({ 
+            { queryPostList.map(({ 
             node: { 
-                featuredImg: { childImageSharp: { fluid }},
-                frontmatter: { title, date},
-                fields: {slug, slugUrl},
+                image: { childImageSharp: { fluid }},
+                title,
+                description,
                 id,
-                excerpt
+                data
             }
             }, i) => (
-            <PostItemNotices key={i}
-                slug={`/${slug}${slugUrl}`}
+            <PostItemNotices key={id}
+                slug={`/noticias/${id}`}
                 title={title}
-                description={excerpt}
-                date={date}
+                description={description}
+                date={data}
                 fluid={ fluid}
                 />
             ))}
-            <Pagination isFirst={isFirst}
-             isLast={isLast} 
-             currentPage={currentPage} 
-             numPages={numPages} 
-             prevPage={prevPage} 
-             nextPage={nextPage}/>
       </Layout>
     )
 }
-
-export const query = graphql`
-    query postList($skip: Int!, $limit: Int!) {
-        allMarkdownRemark(
-            filter: {fields: {slug: {eq: "posts"}}},
-            sort: {order: DESC, fields: frontmatter___date},
-            limit: $limit,
-            skip: $skip
-            ) {
-            edges {
-                node {
-                    id
-                    fields {
-                        slug
-                        slugUrl
-                    }
-                    frontmatter {
-                        title
-                        date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                    }
-                    featuredImg {
-                        childImageSharp {
-                            fluid(maxWidth: 1920, maxHeight: 1080) {
-                                ...GatsbyImageSharpFluid
-                            }
-                        }
-                    }
-                    excerpt(pruneLength: 35)
-                }
-            }
-        }
-    }     
-    `
 
 export default BlogList

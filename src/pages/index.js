@@ -42,36 +42,30 @@ export const BtnWrapper = styled(Link)`
 
 const IndexPage = () => {
 
-  const { allMarkdownRemark } = useStaticQuery(graphql`
+  const { allStrapiPosts } = useStaticQuery(graphql`
     query PostList {
-      allMarkdownRemark(limit: 3,  
-        sort: {order: DESC, fields: frontmatter___date},
-        filter: {fields: {slug: {eq: "posts"}}}) {
+      allStrapiPosts(limit: 3, sort: {order: DESC, fields: data}) {
         edges {
           node {
-            fields {
-              slug
-              slugUrl
-            }
-            frontmatter {
-              title
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-            }
-            featuredImg {
+            id
+            title
+            data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            description
+            content
+            image {
               childImageSharp {
-                fluid(maxWidth: 1920, maxHeight: 1080) {
+                fluid(maxWidth: 200, maxHeight: 200) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-          excerpt(pruneLength: 35)
           }
         }
       }
     }
   `)
 
- const postList = allMarkdownRemark.edges
+ const postList = allStrapiPosts.edges
 
   return (
     <Layout>
@@ -81,23 +75,24 @@ const IndexPage = () => {
         <ContainersubNoticias>
         { postList.map(({ 
           node: { 
-            featuredImg: { childImageSharp: { fluid }},
-            frontmatter: { title, date},
-            fields: {slug, slugUrl},
-            excerpt
+            title,
+            description,
+            data,
+            id,
+            image: { childImageSharp: { fluid }}
           }
         }, i) => (
-          <PostItem key={i}
-            slug={`/${slug}${slugUrl}`}
+          <PostItem key={id}
+            slug={`/noticias/${id}`}
             title={title}
-            description={excerpt}
-            date={date}
+            description={ description }
+            date={data}
             fluid={ fluid }
             />
         ))}
         </ContainersubNoticias>
       <BtnContainer>
-        < BtnWrapper to='/notícias'>
+        < BtnWrapper to='/noticias'>
           Ver Notícias
         </BtnWrapper>
       </BtnContainer>

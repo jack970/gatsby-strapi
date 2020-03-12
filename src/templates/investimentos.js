@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import * as S from '../components/Post/styled'
 import SubMenu from '../components/Submenu'
 import styled from 'styled-components'
+import Reactmarkdown from 'react-markdown'
 
 export const Divisao = styled.div`
     display: flex;
@@ -12,32 +13,30 @@ export const Divisao = styled.div`
 export const DivPost = styled.div``
 
 const Investimentos = ({ data }) => {
-    const post_investimentos = data.markdownRemark
+    const post_investimentos = data.strapiConselhoDeInvestimentos
     return(
         <Layout>
-            <SEO title={post_investimentos.frontmatter.title} 
-            description={post_investimentos.frontmatter.description} 
-            image={post_investimentos.featuredImg.childImageSharp.fluid}/>
+            <SEO title={post_investimentos.title} 
+            description={post_investimentos.description} 
+            image={post_investimentos.image.childImageSharp.fluid}/>
             <Divisao>
                 <SubMenu/>
                 <DivPost>
                     <S.PostHeader>
                         <S.PostDate>
-                            Publicado em {post_investimentos.frontmatter.date}
+                            Publicado em {post_investimentos.data}
                         </S.PostDate>
                         <S.PostImage fluid =
-                        {post_investimentos.featuredImg.childImageSharp.fluid}
+                        {post_investimentos.image.childImageSharp.fluid}
                         />
                         <S.PostTitle>
-                            {post_investimentos.frontmatter.title}
+                            {post_investimentos.title}
                         </S.PostTitle>
                         <S.PostDescription>
-                            {post_investimentos.frontmatter.description}
+                            {post_investimentos.description}
                         </S.PostDescription>
                     </S.PostHeader>
-                    <S.MainContent>
-                        <div dangerouslySetInnerHTML={{__html: post_investimentos.html}}></div>
-                    </S.MainContent>
+                    <Reactmarkdown src={post_investimentos.content}/>
                 </DivPost>
             </Divisao>
         </Layout>
@@ -46,22 +45,21 @@ const Investimentos = ({ data }) => {
 
 export const query = graphql`
         query PostInvestimentos($id: String!) {
-            markdownRemark(id: { eq: $id}) {
-                frontmatter {
-                    title
-                    date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                    description
-                }
-                featuredImg {
+            strapiConselhoDeInvestimentos(id: {eq: $id}) {
+                title
+                data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                description
+                content
+                image {
                     childImageSharp {
-                        fluid(maxWidth: 1920, maxHeight: 1080) {
+                        fluid(maxWidth: 1000) {
                             ...GatsbyImageSharpFluid
                         }
                     }
                 }
-            html
             }
         }   
     `
 
 export default Investimentos
+

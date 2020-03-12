@@ -24,55 +24,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `institucional`,
-        path: `${__dirname}/posts_institucional`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `beneficios`,
-        path: `${__dirname}/posts_beneficios`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `conselho-previdencia`,
-        path: `${__dirname}/posts_previdencia`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `conselho-investimentos`,
-        path: `${__dirname}/posts_investimentos`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `servicos`,
-        path: `${__dirname}/posts_serviços`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `publicacoes`,
-        path: `${__dirname}/posts_publicações`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `pdf`,
         path: `${__dirname}/static/utils/pdf`,
       },
@@ -80,6 +31,22 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: 'http://localhost:1337',
+        contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
+          'posts', 
+          'institucionals', 
+          'beneficios', 
+          'publicacoes', 
+          'servicos', 
+          'conselho-de-investimentos', 
+          'conselho-de-previdencia'
+        ],
+        queryLimit: 1000,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

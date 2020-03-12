@@ -4,15 +4,15 @@ const links = [
         submenu: [
             {
                 label: 'História',
-                url: '/institucional/Historia'
+                url: '/institucional/Institucionals_1'
             },
             {
                 label: 'equipe',
-                url: '/institucional/Equipe'
+                url: '/institucional/Institucionals_2'
             },
             {
                 label: 'junta médica',
-                url: '/institucional/Junta-Medica'
+                url: '/institucional/Institucionals_3'
             }
         ]
     },
@@ -21,31 +21,31 @@ const links = [
         submenu: [
             {
                 label: 'aposentadoria por invalidez',
-                url: '/beneficios/Aposentadoria-por-Invalidez'
+                url: '/beneficios/Beneficios_1'
             },
             {
                 label: 'aposentadoria compulsória',
-                url: '/beneficios/Aposentadoria-Compulsoria'
+                url: '/beneficios/Beneficios_2'
             },
             {
                 label: 'aposentadoria por idade',
-                url: '/beneficios/Aposentadoria-por-Idade'
+                url: '/beneficios/Beneficios_3'
             },
             {
                 label: 'aposentadoria por contribuição',
-                url: '/beneficios/Aposentadoria-por-Contribuicao'
+                url: '/beneficios/Beneficios_4'
             },
             {
                 label: 'salário maternidade',
-                url: '/beneficios/Salario-Maternidade'
+                url: '/beneficios/Beneficios_5'
             },
             {
                 label: 'salário família',
-                url: '/beneficios/Salario-Familia'
+                url: '/beneficios/Beneficios_6'
             },
             {
                 label: 'folha de pagamento',
-                url: '/beneficios/Folha-de-Pagamento'
+                url: '/beneficios/Beneficios_7'
             }
         ]
     },
@@ -54,15 +54,15 @@ const links = [
         submenu: [
             {
                 label: 'certidão previdenciária',
-                url:'/servicos/Certidao-Previdenciaria'
+                url:'/servicos/Servicos_1'
             },
             {
                 label: 'contra cheque',
-                url:'/servicos/Contra-Cheque'
+                url:'/servicos/Servicos_2'
             },
             {
                 label: 'comprovante rendimentos',
-                url:'/servicos/Comprovante-Rendimentos'
+                url:'/servicos/Servicos_3'
             }
             ]
     },
@@ -71,31 +71,27 @@ const links = [
         submenu: [
             {
                 label: 'portarias do ipasc',
-                url:'/publicacoes/Portarias-do-Ipasc'
+                url:'/publicacoes/Publicacoes_1'
             },
             {
                 label: 'portarias do mps',
-                url:'/publicacoes/Portarias-do-MPS'
+                url:'/publicacoes/Publicacoes_2'
             },
             {
                 label: 'legislação municipal',
-                url:'/publicacoes/Legislacao-Municipal'
+                url:'/publicacoes/Publicacoes_3'
             },
             {
                 label: 'crp',
-                url:'/publicacoes/CRP'
+                url:'/publicacoes/Publicacoes_4'
             },
             {
                 label: 'demonstrativos contábeis',
-                url:'/publicacoes/Demonstrativos-Contabeis'
+                url:'/publicacoes/Publicacoes_5'
             },
             {
                 label: 'conselho de previdência',
-                url:'/publicacoes/Conselho-de-Previdencia'
-            },
-            {
-                label: 'comitê de investimentos',
-                url:'/publicacoes/Comite-de-Investimentos'
+                url:'/publicacoes/Publicacoes_6'
             }
             ]
     },
@@ -105,11 +101,11 @@ const links = [
         submenu: [
             {
                 label: 'comitê de Investimentos',
-                url:'/conselho-investimentos/o-que-e/'
+                url:'/investimentos/Conselho-de-investimentos_1'
             },
             {
                 label: 'conselho de previdência',
-                url:'/conselho-previdencia/o-que-e/'
+                url:'/previdencia/Conselho-de-previdencia_1'
             }
             ]
     }

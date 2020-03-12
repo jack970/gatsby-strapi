@@ -3,30 +3,31 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import * as S from '../components/Post/styled'
+import Reactmarkdown from 'react-markdown'
 
 const Publicacoes = ({ data }) => {
-    const post_publicacoes = data.markdownRemark
+    const post_publicacoes = data.strapiPublicacoes
     return(
         <Layout>
-            <SEO title={post_publicacoes.frontmatter.title} 
-            description={post_publicacoes.frontmatter.description} 
-            image={post_publicacoes.featuredImg.childImageSharp.fluid}/>
+            <SEO title={post_publicacoes.title} 
+            description={post_publicacoes.description} 
+            image={post_publicacoes.image.childImageSharp.fluid}/>
             <S.PostHeader>
                 <S.PostDate>
-                    Publicado em {post_publicacoes.frontmatter.date}
+                    Publicado em {post_publicacoes.data}
                 </S.PostDate>
                 <S.PostImage fluid =
-                {post_publicacoes.featuredImg.childImageSharp.fluid}
+                {post_publicacoes.image.childImageSharp.fluid}
                 />
                 <S.PostTitle>
-                    {post_publicacoes.frontmatter.title}
+                    {post_publicacoes.title}
                 </S.PostTitle>
                 <S.PostDescription>
-                    {post_publicacoes.frontmatter.description}
+                    {post_publicacoes.description}
                 </S.PostDescription>
             </S.PostHeader>
             <S.MainContent>
-                <div dangerouslySetInnerHTML={{__html: post_publicacoes.html}}></div>
+                <Reactmarkdown src={post_publicacoes.content} />
             </S.MainContent>
         </Layout>
     )
@@ -34,22 +35,20 @@ const Publicacoes = ({ data }) => {
 
 export const query = graphql`
         query PostPublicacoes($id: String!) {
-            markdownRemark(id: { eq: $id}) {
-                frontmatter {
-                    title
-                    date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                    description
-                }
-                featuredImg {
+            strapiPublicacoes(id: { eq: $id}) {
+                title
+                data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                description
+                content
+                image {
                     childImageSharp {
                         fluid(maxWidth: 1920, maxHeight: 1080) {
                             ...GatsbyImageSharpFluid
                         }
                     }
                 }
-            html
             }
-        }    
+        }   
     `
 
 export default Publicacoes

@@ -1,35 +1,35 @@
 const Mapa = [
     {
         label: 'História',
-        url: '/institucional/Historia',
+        url: '/institucional/Institucionals_1',
     },
     {
         label: 'equipe',
-        url: '/institucional/Equipe',
+        url: '/institucional/Institucionals_2',
     },
     {
         label: 'junta médica',
-        url: '/institucional/Junta-Medica',
+        url: '/institucional/Institucionals_3',
     },
     {
         label: 'portarias do ipasc',
-        url:'/publicacoes/Portarias-do-Ipasc',
+        url:'/publicacoes/Publicacoes_1',
     },
     {
         label: 'portarias do mps',
-        url:'/publicacoes/Portarias-do-MPS',
+        url:'/publicacoes/Publicacoes_2',
     },
     {
-        label: 'crp',
-        url:'/publicacoes/CRP',
+        label: 'legislação municipal',
+        url:'/publicacoes/Publicacoes_3',
+    },
+    {
+        label: 'CRP',
+        url:'/publicacoes/Publicacoes_4',
     },
     {
         label: 'conselho de previdência',
-        url:'/publicacoes/Conselho-de-Previdencia',
-    },
-    {
-        label: 'comitê de investimentos',
-        url:'/publicacoes/Comite-de-Investimentos',
+        url:'/publicacoes/Publicacoes_5',
     }
 ]
 

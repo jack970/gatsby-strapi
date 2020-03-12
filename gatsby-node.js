@@ -1,214 +1,56 @@
 const path = require('path')
-const { createFilePath } = require(`gatsby-source-filesystem`)
-const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
-
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-  createTypes(`
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-    }
-    type Frontmatter {
-      title: String!
-      description: String!
-      image: String
-    }
-  `)
-}
-
-
-exports.onCreateNode = async({ 
-  node, 
-  getNode, 
-  actions,
-  store,
-  cache,
-  createNodeId
- }) => {
-  const { createNodeField } = actions
-  const { createNode } = actions
-  // Ensures we are processing only markdown files
-  if (node.internal.type === "MarkdownRemark" && 
-      node.frontmatter.image !== null
-      ) {
-    // Use `createFilePath` to turn markdown files in our `data/faqs` directory into `/faqs/slug`
-    const slug = createFilePath({
-      node,
-      getNode,
-      basePath: "pages",
-    })
-
-    // Creates new query'able field with name of 'slug'
-    createNodeField({
-      node,
-      name: "slug",
-      value: getNode(node.parent).sourceInstanceName,
-    })
-
-    createNodeField({
-      node,
-      name: "slugUrl",
-      value: `/${slug.slice(12)}`,
-    })
-
-    let fileNode = await createRemoteFileNode({
-      url: node.frontmatter.image, // string that points to the URL of the image
-      parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
-      createNode, // helper function in gatsby-node to generate the node
-      createNodeId, // helper function in gatsby-node to generate the node id
-      cache, // Gatsby's cache
-      store, // Gatsby's redux store
-    })
-
-    if (fileNode) {
-      node.featuredImg___NODE = fileNode.id
-    }
-    
-  }
-}
 
 exports.createPages = ({ graphql, actions}) => {
     const {createPage} = actions
 
     return graphql(`
     query MyQuery{
-      notices: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "posts"}}},
-        sort: {order: DESC, fields: frontmatter___date}) {
+      notices: allStrapiPosts(sort: {order: DESC, fields: data}) {
         edges {
           node {
             id
-            fields {
-              slug
-              slugUrl
-            }
-            frontmatter { 
-              title
-              description
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              
-            }
-          excerpt
           }
         }
       }
-      institucional: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "institucional"}}},
-        sort: {order: DESC, fields: frontmatter___date}) {
+      institucional: allStrapiInstitucionals(sort: {order: DESC, fields: data}) {
         edges {
           node {
             id
-            fields {
-              slug
-              slugUrl
-            }
-            frontmatter { 
-              title
-              description
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              
-            }
-          excerpt
           }
         }
       }
-      beneficios: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "beneficios"}}},
-        sort: {order: DESC, fields: frontmatter___date}) {
+      beneficios: allStrapiBeneficios(sort: {order: DESC, fields: data}) {
         edges {
           node {
             id
-            fields {
-              slug
-              slugUrl
-            }
-            frontmatter { 
-              title
-              description
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              
-            }
-          excerpt
           }
         }
       }
-      servicos: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "servicos"}}},
-        sort: {order: DESC, fields: frontmatter___date}) {
+      servicos: allStrapiServicos(sort: {order: DESC, fields: data}) {
         edges {
           node {
             id
-            fields {
-              slug
-              slugUrl
-            }
-            frontmatter { 
-              title
-              description
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              
-            }
-          excerpt
           }
         }
       }
-      publicacoes: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "publicacoes"}}},
-        sort: {order: DESC, fields: frontmatter___date}) {
+      publicacoes: allStrapiPublicacoes(sort: {order: DESC, fields: data}) {
         edges {
           node {
             id
-            fields {
-              slug
-              slugUrl
-            }
-            frontmatter { 
-              title
-              description
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              
-            }
-          excerpt
           }
         }
       }
-      conselho_previdencia: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "conselho-previdencia"}}},
-        sort: {order: DESC, fields: frontmatter___date}) {
+      conselho_previdencia: allStrapiConselhoDePrevidencia(sort: {order: DESC, fields: data}) {
         edges {
           node {
             id
-            fields {
-              slug
-              slugUrl
-            }
-            frontmatter { 
-              title
-              description
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              
-            }
-          excerpt
           }
         }
       }
-      conselho_investimentos: allMarkdownRemark(
-        filter: {fields: {slug: {eq: "conselho-investimentos"}}},
-        sort: {order: DESC, fields: frontmatter___date}) {
+      conselho_investimentos: allStrapiConselhoDeInvestimentos(sort: {order: DESC, fields: data}) {
         edges {
           node {
             id
-            fields {
-              slug
-              slugUrl
-            }
-            frontmatter { 
-              title
-              description
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-              
-            }
-          excerpt
           }
         }
       }
@@ -224,7 +66,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts_insti.forEach(({node}) => {
           createPage ({
-              path: `${node.fields.slug}${node.fields.slugUrl}`,
+              path: `/institucional/${node.id}`,
               component: path.resolve('./src/templates/institucional.js'),
               context: {
                   id: node.id
@@ -234,7 +76,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}${node.fields.slugUrl}`,
+            path: `/noticias/${node.id}`,
             component: path.resolve('./src/templates/blog-post.js'),
             context: {
                 id: node.id
@@ -245,51 +87,51 @@ exports.createPages = ({ graphql, actions}) => {
       //Create Multiples Nodes
       posts_beneficios.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}${node.fields.slugUrl}`,
-            component: path.resolve('./src/templates/beneficios.js'),
-            context: {
-                id: node.id
-            }
+          path: `/beneficios/${node.id}`,
+          component: path.resolve('./src/templates/beneficios.js'),
+          context: {
+              id: node.id
+          }
         })
       })
 
       posts_servicos.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}${node.fields.slugUrl}`,
-            component: path.resolve('./src/templates/serviços.js'),
-            context: {
-                id: node.id
-            }
+          path: `/servicos/${node.id}`,
+          component: path.resolve('./src/templates/serviços.js'),
+          context: {
+              id: node.id
+          }
         })
       })
 
       posts_publicacoes.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}${node.fields.slugUrl}`,
-            component: path.resolve('./src/templates/publicações.js'),
-            context: {
-                id: node.id
-            }
+          path: `/publicacoes/${node.id}`,
+          component: path.resolve('./src/templates/publicações.js'),
+          context: {
+              id: node.id
+          }
         })
       })
 
       posts_investimentos.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}${node.fields.slugUrl}`,
-            component: path.resolve('./src/templates/investimentos.js'),
-            context: {
-                id: node.id
-            }
+          path: `/investimentos/${node.id}`,
+          component: path.resolve('./src/templates/investimentos.js'),
+          context: {
+              id: node.id
+          }
         })
       })
 
       posts_previdencia.forEach(({node}) => {
         createPage ({
-            path: `${node.fields.slug}${node.fields.slugUrl}`,
-            component: path.resolve('./src/templates/previdencia.js'),
-            context: {
-                id: node.id
-            }
+          path: `/previdencia/${node.id}`,
+          component: path.resolve('./src/templates/previdencia.js'),
+          context: {
+              id: node.id
+          }
         })
       })
 
@@ -298,7 +140,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       Array.from({ length: numPages }).forEach((_, index) => {
         createPage({
-          path: index === 0 ? '/notícias' : `notícias/page/${index + 1}`,
+          path: index === 0 ? '/noticias' : `noticias/page/${index + 1}`,
           component: path.resolve('./src/templates/blog-list.js'),
           context: {
             limit: postsPerPage,

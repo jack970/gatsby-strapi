@@ -3,30 +3,31 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import * as S from '../components/Post/styled'
+import Reactmarkdown from 'react-markdown'
 
 const Institucional = ({ data }) => {
-    const post_institucional = data.markdownRemark
+    const post_institucional = data.strapiInstitucionals
     return(
         <Layout>
-            <SEO title={post_institucional.frontmatter.title} 
-            description={post_institucional.frontmatter.description} 
-            image={post_institucional.featuredImg.childImageSharp.fluid}/>
+            <SEO title={post_institucional.title} 
+            description={post_institucional.description} 
+            image={post_institucional.image.childImageSharp.fluid}/>
             <S.PostHeader>
                 <S.PostDate>
-                    Publicado em {post_institucional.frontmatter.date}
+                    Publicado em {post_institucional.data}
                 </S.PostDate>
                 <S.PostImage fluid =
-                {post_institucional.featuredImg.childImageSharp.fluid}
+                {post_institucional.image.childImageSharp.fluid}
                 />
                 <S.PostTitle>
-                    {post_institucional.frontmatter.title}
+                    {post_institucional.title}
                 </S.PostTitle>
                 <S.PostDescription>
-                    {post_institucional.frontmatter.description}
+                    {post_institucional.description}
                 </S.PostDescription>
             </S.PostHeader>
             <S.MainContent>
-                <div dangerouslySetInnerHTML={{__html: post_institucional.html}}></div>
+                <Reactmarkdown source={post_institucional.content}/>
             </S.MainContent>
         </Layout>
     )
@@ -34,20 +35,18 @@ const Institucional = ({ data }) => {
 
 export const query = graphql`
         query PostInstitucional($id: String!) {
-            markdownRemark(id: { eq: $id}) {
-                frontmatter {
-                    title
-                    date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                    description
-                }
-                featuredImg {
+            strapiInstitucionals(id: {eq: $id}) {
+                title
+                data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                description
+                content
+                image {
                     childImageSharp {
-                        fluid(maxWidth: 1920, maxHeight: 1080) {
+                        fluid(maxWidth: 1000) {
                             ...GatsbyImageSharpFluid
                         }
                     }
                 }
-            html
             }
         }   
     `
