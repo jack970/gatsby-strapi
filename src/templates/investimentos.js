@@ -36,7 +36,9 @@ const Investimentos = ({ data }) => {
                             {post_investimentos.description}
                         </S.PostDescription>
                     </S.PostHeader>
-                    <Reactmarkdown src={post_investimentos.content}/>
+                    <S.MainContent>
+                        <Reactmarkdown source={post_investimentos.content}/>
+                    </S.MainContent>
                 </DivPost>
             </Divisao>
         </Layout>

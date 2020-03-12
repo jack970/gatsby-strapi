@@ -37,7 +37,7 @@ const Previdencia = ({ data }) => {
                         </S.PostDescription>
                     </S.PostHeader>
                     <S.MainContent>
-                        <Reactmarkdown src={post_previdencia.content} />
+                        <Reactmarkdown source={post_previdencia.content}/>
                     </S.MainContent>
                 </DivPost>
             </Divisao>

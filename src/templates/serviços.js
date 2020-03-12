@@ -27,7 +27,7 @@ const Serviços = ({ data }) => {
                 </S.PostDescription>
             </S.PostHeader>
             <S.MainContent>
-                <Reactmarkdown src={post_servicos.content} />
+                <Reactmarkdown source={post_servicos.content} />
             </S.MainContent>
         </Layout>
     )
