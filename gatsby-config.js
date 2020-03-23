@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Prefeitura`,
     description: `Site CMS de prefeitura`,
-    author: `@ipasc`,
+    author: `Work - Informática`,
     siteUrl: `https://prefeitura-ipasc.netlify.com/`
   },
   plugins: [
