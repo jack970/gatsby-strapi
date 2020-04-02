@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'http://localhost:1337',
+        apiURL: 'http://3.81.21.8:1337',
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
           'posts', 
           'institucionals', 
@@ -84,7 +84,7 @@ module.exports = {
         background_var: `#663399`,
         theme_var: `#663399`,
         display: `minimal-ui`, 
-        icon: `src/images/IPASC-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/Logo-do-IPASC.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-sitemap',
