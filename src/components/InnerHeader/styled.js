@@ -22,6 +22,7 @@ export const InnerHeaderWrapper = styled.aside`
 
     ${media.lessThan("large")`
         display: block;
+        position: fixed;
         top: 0;
         text-align: center;
     `}

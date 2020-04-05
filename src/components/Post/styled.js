@@ -42,6 +42,10 @@ export const PostImage = styled(Img)`
   width: 40rem;
   height: 40rem;
   margin: 1.875rem auto;
+
+  ${media.lessThan("large")`
+    width: 100%;
+  `}
 `
 
 export const PostDate = styled.p`

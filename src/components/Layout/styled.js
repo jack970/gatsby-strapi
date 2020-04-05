@@ -9,6 +9,10 @@ export const LayoutWrapper = styled.section`
     ${media.lessThan("large")`
         position: absolute;
     `}
+
+    ${media.greaterThan('415px')`
+        position: relative;
+    `}
 `
 
 export const LayoutMain = styled.main`
