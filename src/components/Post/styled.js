@@ -39,7 +39,8 @@ export const PostDescription = styled.h2`
 
 export const PostImage = styled(Img)`
   display: block;
-  max-width: 100%;
+  width: 40rem;
+  height: 40rem;
   margin: 1.875rem auto;
 `
 

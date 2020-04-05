@@ -26,7 +26,9 @@ const BlogPost = ({ data }) => {
                     {post.description}
                 </S.PostDescription>
             </S.PostHeader>
-            <Reactmarkdown source={post.content}/>
+            <S.MainContent>
+                <Reactmarkdown source={post.content}/>
+            </S.MainContent>
         </Layout>
     )
 }
