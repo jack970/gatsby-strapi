@@ -21,7 +21,6 @@ const InnerHeader = () => {
             document.removeEventListener('scroll', handleScroll)
         }
     }, [scrolled])
-    console.log(window.scrollY)
 
     return(
     <S.InnerHeaderWrapper data-active={scrolled}>
