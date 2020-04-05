@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 
 export const MenuTopWrapper = styled.aside`
-    position: fixed;
     height: auto;
     width: 100%;
     background: var(--amarelo);

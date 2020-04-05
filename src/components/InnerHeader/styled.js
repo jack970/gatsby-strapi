@@ -8,12 +8,16 @@ export const InnerHeaderWrapper = styled.aside`
     width: 100%;
     height: auto;
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    position: fixed;
+    position: absolute;
     z-index: 1;
-    transition: all .25s ease-in-out !important;
 
     #mobile {
         display: none;
+    }
+
+    &[data-active='true'] {
+        position: fixed;
+        top: 0;
     }
 
     ${media.lessThan("large")`
