@@ -78,12 +78,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Ipasc -  INSTITUTO DE PREVIDENCIA E ASSISTENCIA DOS SERVIDORES DE CATALÃO`,
+        name: `IPASC - Instituto de Previdência e Assistência aos Servidores de Catalão`,
         short_name: `IPASC`,
         start_url: `/`,
-        background_var: `#f9f9f9`,
-        theme_var: `#f9f9f9`,
-        display: `minimal-ui`, 
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `minimal-ui`,
         icon: `src/images/Logo-do-IPASC.png`, // This path is relative to the root of the site.
       },
     },
