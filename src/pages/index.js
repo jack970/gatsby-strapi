@@ -7,6 +7,7 @@ import SliderShow from '../components/SliderShow'
 import ContainerInfo from '../components/ContainerInfo'
 import Transparencia from "../components/Transparencia"
 import styled from 'styled-components'
+import kebabCase from 'lodash/kebabcase'
 
 export const ContainersubNoticias = styled.div``
 
@@ -42,9 +43,9 @@ export const BtnWrapper = styled(Link)`
 
 const IndexPage = () => {
 
-  const { allStrapiPosts } = useStaticQuery(graphql`
+  const { allStrapiIpascPosts } = useStaticQuery(graphql`
     query PostList {
-      allStrapiPosts(limit: 3, sort: {order: DESC, fields: data}) {
+      allStrapiIpascPosts(limit: 3, sort: {order: DESC, fields: data}) {
         edges {
           node {
             id
@@ -52,7 +53,7 @@ const IndexPage = () => {
             data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
             description
             content
-            image {
+            thumbnail {
               childImageSharp {
                 fluid(maxWidth: 500) {
                   ...GatsbyImageSharpFluid
@@ -65,7 +66,7 @@ const IndexPage = () => {
     }
   `)
 
- const postList = allStrapiPosts.edges
+ const postList = allStrapiIpascPosts.edges
 
   return (
     <Layout>
@@ -79,11 +80,11 @@ const IndexPage = () => {
             description,
             data,
             id,
-            image: { childImageSharp: { fluid }}
+            thumbnail: { childImageSharp: { fluid }}
           }
         }, i) => (
           <PostItem key={id}
-            slug={`/noticias/${id}`}
+            slug={`/${kebabCase(title)}`}
             title={title}
             description={ description }
             date={data}

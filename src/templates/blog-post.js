@@ -6,18 +6,18 @@ import * as S from '../components/Post/styled'
 import Reactmarkdown from 'react-markdown'
 
 const BlogPost = ({ data }) => {
-    const post = data.strapiPosts
+    const post = data.strapiIpascPosts
     return(
         <Layout>
             <SEO title={post.title} 
             description={post.description} 
-            image={post.image.childImageSharp.fluid}/>
+            image={post.thumbnail.childImageSharp.fluid}/>
             <S.PostHeader>
                 <S.PostDate>
                     Publicado em {post.data}
                 </S.PostDate>
                 <S.PostImage fluid =
-                {post.image.childImageSharp.fluid}
+                {post.thumbnail.childImageSharp.fluid}
                 />
                 <S.PostTitle>
                     {post.title}
@@ -35,12 +35,12 @@ const BlogPost = ({ data }) => {
 
 export const query = graphql`
     query Post($id: String!) {
-        strapiPosts(id: {eq: $id}) {
+        strapiIpascPosts(id: {eq: $id}) {
             title
             data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
             description
             content
-            image {
+            thumbnail {
                 childImageSharp {
                     fluid(maxWidth: 1000) {
                         ...GatsbyImageSharpFluid

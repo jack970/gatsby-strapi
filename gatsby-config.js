@@ -21,28 +21,15 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pdf`,
-        path: `${__dirname}/static/utils/pdf`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'http://3.81.21.8:1337',
+        apiURL: 'http://localhost:1337',
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
-          'posts', 
-          'institucionals', 
-          'beneficios', 
-          'publicacoes', 
-          'servicos', 
-          'conselho-de-investimentos', 
-          'conselho-de-previdencia'
+          'ipasc-posts' 
         ],
         queryLimit: 1000,
       },

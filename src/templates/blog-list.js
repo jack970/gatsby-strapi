@@ -5,6 +5,7 @@ import Layout from "../components/LayoutNotices"
 import SEO from "../components/seo"
 import styled from 'styled-components'
 import Pagination from '../components/Pagination'
+import kebabCase from 'lodash/kebabcase'
 
 export const TitleWrapper = styled.h1`
     font-size: 4rem;
@@ -13,23 +14,23 @@ export const TitleWrapper = styled.h1`
 `
 
 const BlogList = props => {
-    const { currentPage, numPages} = props.pageContext
+    const { currentPage, numPages, tag} = props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
     const prevPage = currentPage -1 === 1 ? '/noticias' : `/noticias/page/${currentPage -1}`
     const nextPage =`/noticias/page/${currentPage + 1} `
 
-    const queryPostList = props.data.allStrapiPosts.edges
+    const queryPostList = props.data.allStrapiIpascPosts.edges
 
     return(
         <Layout>
-            <SEO title="Notícias" />
+            <SEO title="" />
             <TitleWrapper>
-                Notícias
+                {tag}
             </TitleWrapper>
             { queryPostList.map(({ 
             node: { 
-                image: { childImageSharp: { fluid }},
+                thumbnail: { childImageSharp: { fluid }},
                 title,
                 description,
                 id,
@@ -37,7 +38,7 @@ const BlogList = props => {
             }
             }) => (
             <PostItemNotices key={id}
-                slug={`/noticias/${id}`}
+                slug={`/${kebabCase(title)}`}
                 title={title}
                 description={description}
                 date={data}
@@ -56,7 +57,7 @@ const BlogList = props => {
 
 export const query = graphql`
 query QueryPostList($skip: Int!, $limit: Int!) {
-    allStrapiPosts(sort: {order: DESC, fields: data},
+    allStrapiIpascPosts(sort: {order: DESC, fields: data},
         limit: $limit,
         skip: $skip) {
         edges {
@@ -65,13 +66,14 @@ query QueryPostList($skip: Int!, $limit: Int!) {
                 title
                 data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
                 description
-                image {
+                thumbnail {
                     childImageSharp {
                         fluid(maxWidth: 900, maxHeight: 900) {
                             ...GatsbyImageSharpFluid
                         }
                     }
                 }
+                tags
             }
         }
     }
