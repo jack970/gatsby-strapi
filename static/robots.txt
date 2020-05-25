@@ -1,5 +1,4 @@
 User-agent: *
+Disallow: /admin/
 
-Dissalow: /admin/
-
-Sitemap: https://prefeitura-ipasc.netlify.com/sitemap.xml
+Sitemap: https://ipasctest.netlify.app/sitemap.xml

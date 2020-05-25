@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Prefeitura`,
-    description: `Site CMS de prefeitura`,
+    title: `IPASC`,
+    description: `Instituto de previdência e assistência dos servidores de Catalão.`,
     author: `Work - Informática`,
     siteUrl: `https://prefeitura-ipasc.netlify.com/`
   },
@@ -59,12 +59,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `IPASC - Instituto de Previdência e Assistência aos Servidores de Catalão`,
+        short_name: `IPASC`,
         start_url: `/`,
-        background_var: `#663399`,
-        theme_var: `#663399`,
-        display: `minimal-ui`, 
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `minimal-ui`,
         icon: `src/images/Logo-do-IPASC.png`, // This path is relative to the root of the site.
       },
     },

@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import * as S from './styled'
 
 const LogoHeader = () => {
@@ -16,7 +16,7 @@ const LogoHeader = () => {
 `)
 
 
-    return <S.WrapperLink to='/' style={{marginLeft: '1rem'}} ><S.WrapperImage fluid={Image.childImageSharp.fluid} /></S.WrapperLink>
+    return <Link to='/' style={{marginLeft: '1rem'}} ><S.WrapperImage fluid={Image.childImageSharp.fluid} /></Link>
 }
 
 export default LogoHeader

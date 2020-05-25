@@ -87,7 +87,7 @@ export const TransparenciaTitleItem = styled.h4`
 `
 
 export const TransparenciaDescription = styled.p`
-    color: #999;
+    color: #222;
     min-height: 92px;
     font-size: 0.9rem;
 `
