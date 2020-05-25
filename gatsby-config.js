@@ -45,12 +45,6 @@ module.exports = {
             }
           },
           {
-            resolve: `gatsby-remark-copy-linked-files`,
-            options: {
-              name: `pdf`,
-            }
-          },
-          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 960,
@@ -77,6 +71,6 @@ module.exports = {
     'gatsby-plugin-sitemap',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
