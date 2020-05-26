@@ -7,7 +7,7 @@ import SliderShow from '../components/SliderShow'
 import ContainerInfo from '../components/ContainerInfo'
 import Transparencia from "../components/Transparencia"
 import styled from 'styled-components'
-import kebabCase from 'lodash/kebabcase'
+import kebabCase from 'lodash/kebabCase'
 
 export const ContainersubNoticias = styled.div``
 

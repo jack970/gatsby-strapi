@@ -5,7 +5,7 @@ import Layout from "../components/LayoutNotices"
 import SEO from "../components/seo"
 import styled from 'styled-components'
 import Pagination from '../components/Pagination'
-import kebabCase from 'lodash/kebabcase'
+import kebabCase from 'lodash/kebabCase'
 
 export const TitleWrapper = styled.h1`
     font-size: 4rem;
