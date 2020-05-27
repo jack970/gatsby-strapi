@@ -10,6 +10,7 @@ exports.createPages = ({ graphql, actions}) => {
         edges {
           node {
             title
+            tags
             id
           }
         }
@@ -27,7 +28,7 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts.forEach(({node}) => {
           createPage ({
-              path: `/${_.kebabCase(node.title)}`,
+              path: `${_.kebabCase(node.tags)}/${_.kebabCase(node.title)}`,
               component: path.resolve('./src/templates/blog-post.js'),
               context: {
                   id: node.id

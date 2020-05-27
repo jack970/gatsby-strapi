@@ -56,8 +56,9 @@ const BlogList = props => {
 }
 
 export const query = graphql`
-query QueryPostList($skip: Int!, $limit: Int!) {
-    allStrapiIpascPosts(sort: {order: DESC, fields: data},
+query QueryPostList($skip: Int!, $limit: Int!, $tag: String!) {
+    allStrapiIpascPosts(sort: {order: DESC, fields: data}
+        filter: {tags: {in: [$tag]}},
         limit: $limit,
         skip: $skip) {
         edges {

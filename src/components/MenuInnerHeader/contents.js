@@ -4,15 +4,15 @@ const links = [
         submenu: [
             {
                 label: 'História',
-                url: 'historia'
+                url: 'institucional/historia'
             },
             {
-                label: 'equipe',
-                url: 'equipe'
+                label: 'Equipe',
+                url: 'institucional/equipe'
             },
             {
                 label: 'junta médica',
-                url: 'junta-medica'
+                url: 'institucional/junta-medica'
             }
         ]
     },
@@ -21,31 +21,31 @@ const links = [
         submenu: [
             {
                 label: 'aposentadoria por invalidez',
-                url: 'aposentadoria-por-invalidez'
+                url: 'beneficios/aposentadoria-por-invalidez'
             },
             {
                 label: 'aposentadoria compulsória',
-                url: 'aposentadoria-compulsoria'
+                url: 'beneficios/aposentadoria-compulsoria'
             },
             {
                 label: 'aposentadoria por idade',
-                url: 'aposentadoria-por-idade'
+                url: 'beneficios/aposentadoria-por-idade'
             },
             {
                 label: 'aposentadoria por contribuição',
-                url: 'aposentadoria-por-contribuição'
+                url: 'beneficios/aposentadoria-por-contribuição'
             },
             {
                 label: 'salário maternidade',
-                url: 'salario-maternidade'
+                url: 'beneficios/salario-maternidade'
             },
             {
                 label: 'salário família',
-                url: 'salario-familia'
+                url: 'beneficios/salario-familia'
             },
             {
                 label: 'folha de pagamento',
-                url: 'folha-de-pagamento'
+                url: 'beneficios/folha-de-pagamento'
             }
         ]
     },
@@ -54,15 +54,15 @@ const links = [
         submenu: [
             {
                 label: 'certidão previdenciária',
-                url:'certidao-previdenciaria'
+                url:'servicos/certidao-previdenciaria'
             },
             {
                 label: 'contra cheque',
-                url:'contra-cheque'
+                url:'servicos/contra-cheque'
             },
             {
                 label: 'comprovante rendimentos',
-                url:'comprovante-rendimentos'
+                url:'servicos/comprovante-rendimentos'
             }
             ]
     },
@@ -71,41 +71,40 @@ const links = [
         submenu: [
             {
                 label: 'portarias do ipasc',
-                url:'portarias-do-ipasc'
+                url:'publicacoes/portarias-do-ipasc'
             },
             {
                 label: 'portarias do mps',
-                url:'portarias-do-mps'
+                url:'publicacoes/portarias-do-mps'
             },
             {
                 label: 'legislação municipal',
-                url:'legislacao-municipal'
+                url:'publicacoes/legislacao-municipal'
             },
             {
                 label: 'crp',
-                url:'crp'
+                url:'publicacoes/crp'
             },
             {
                 label: 'demonstrativos contábeis',
-                url:'demonstrativos-contabeis'
+                url:'publicacoes/demonstrativos-contabeis'
             },
             {
                 label: 'conselho de previdência',
-                url:'conselho-de-previdencia'
+                url:'publicacoes/conselho-de-previdencia'
             }
             ]
     },
     {
         label: 'conselho',
-        url: '/',
         submenu: [
             {
                 label: 'comitê de Investimentos',
-                url:'Conselho-de-investimentos'
+                url:'/comite-de-investimentos/o-que-e'
             },
             {
                 label: 'conselho de previdência',
-                url:'Conselho-de-previdencia'
+                url:'/conselho-de-previdencia/o-que-e'
             }
             ]
     }

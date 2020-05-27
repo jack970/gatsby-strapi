@@ -3,15 +3,50 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import * as S from '../components/Post/styled'
+import styled from 'styled-components'
 import Reactmarkdown from 'react-markdown'
+import SubMenu from '../components/Submenu'
+import kebabCase from 'lodash/kebabCase'
+
+export const Divisao = styled.div`
+    display: flex;
+`
+export const DivPost = styled.div``
 
 const BlogPost = ({ data }) => {
     const post = data.strapiIpascPosts
+    const tag = kebabCase(post.tags)
     return(
         <Layout>
             <SEO title={post.title} 
             description={post.description} 
             image={post.thumbnail.childImageSharp.fluid}/>
+            {tag === 'comite-de-investimentos' || 
+            tag === 'comite-de-previdencia' ? 
+                <Divisao>
+                    <SubMenu />                 
+                    <DivPost>
+                        <S.PostHeader>
+                            <S.PostDate>
+                                Publicado em {post.data}
+                            </S.PostDate>
+                            <S.PostImage fluid =
+                            {post.thumbnail.childImageSharp.fluid}
+                            />
+                            <S.PostTitle>
+                                {post.title}
+                            </S.PostTitle>
+                            <S.PostDescription>
+                                {post.description}
+                            </S.PostDescription>
+                        </S.PostHeader>
+                        <S.MainContent>
+                            <Reactmarkdown source={post.content}/>
+                        </S.MainContent>
+                    </DivPost>
+            </Divisao>
+                : 
+            <>
             <S.PostHeader>
                 <S.PostDate>
                     Publicado em {post.data}
@@ -29,6 +64,9 @@ const BlogPost = ({ data }) => {
             <S.MainContent>
                 <Reactmarkdown source={post.content}/>
             </S.MainContent>
+            </>
+                
+            }
         </Layout>
     )
 }
@@ -36,6 +74,7 @@ const BlogPost = ({ data }) => {
 export const query = graphql`
     query Post($id: String!) {
         strapiIpascPosts(id: {eq: $id}) {
+            tags
             title
             data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
             description

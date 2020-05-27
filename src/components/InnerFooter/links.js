@@ -1,35 +1,35 @@
 const Mapa = [
     {
         label: 'História',
-        url: '/historia',
+        url: 'institucional/historia',
     },
     {
         label: 'equipe',
-        url: '/equipe',
+        url: 'institucional/equipe',
     },
     {
         label: 'junta médica',
-        url: '/junta-medica',
+        url: 'institucional/junta-medica',
     },
     {
         label: 'portarias do ipasc',
-        url:'/portarias-do-ipasc',
+        url:'publicacoes/portarias-do-ipasc',
     },
     {
         label: 'portarias do mps',
-        url:'/portarias-do-mps',
+        url:'publicacoes/portarias-do-mps',
     },
     {
         label: 'legislação municipal',
-        url:'/legislacao-municipal',
+        url:'publicacoes/legislacao-municipal',
     },
     {
         label: 'CRP',
-        url:'/CRP',
+        url:'publicacoes/CRP',
     },
     {
         label: 'conselho de previdência',
-        url:'/conselho-de-previdencia',
+        url:'publicacoes/conselho-de-previdencia',
     }
 ]
 

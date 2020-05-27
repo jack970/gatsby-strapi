@@ -45,13 +45,16 @@ const IndexPage = () => {
 
   const { allStrapiIpascPosts } = useStaticQuery(graphql`
     query PostList {
-      allStrapiIpascPosts(limit: 3, sort: {order: DESC, fields: data}) {
+      allStrapiIpascPosts(limit: 3, 
+        sort: {order: DESC, fields: data},
+        filter: {tags: {eq: "Notícias"}}) {
         edges {
           node {
             id
             title
             data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
             description
+            tags
             content
             thumbnail {
               childImageSharp {
@@ -71,20 +74,21 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <SliderShow link1='/institucional/Historia' link2='/' link3='/notícias'/>  
+      <SliderShow link1='/institucional/historia' link2='/' link3='/noticias'/>  
       <ContainerNoticias>
         <ContainersubNoticias>
         { postList.map(({ 
           node: { 
             title,
             description,
+            tags,
             data,
             id,
             thumbnail: { childImageSharp: { fluid }}
           }
         }, i) => (
           <PostItem key={id}
-            slug={`/${kebabCase(title)}`}
+            slug={`${kebabCase(tags)}/${kebabCase(title)}`}
             title={title}
             description={ description }
             date={data}
