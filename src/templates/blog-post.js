@@ -22,7 +22,7 @@ const BlogPost = ({ data }) => {
             description={post.description} 
             image={post.thumbnail.childImageSharp.fluid}/>
             {tag === 'comite-de-investimentos' || 
-            tag === 'comite-de-previdencia' ? 
+            tag === 'conselho-de-previdencia' ? 
                 <Divisao>
                     <SubMenu />                 
                     <DivPost>

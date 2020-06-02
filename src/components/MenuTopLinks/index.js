@@ -30,7 +30,10 @@ const MenuTopLinks = () => {
                 </S.MenuLinksItem>)
                 })}
             </S.MenuLinksGroup>
-            <ul id='ul-tema'>
+            <ul style={{alignSelf: 'center'}}>
+                <li style={{float: 'left', lineHeight: '1.6rem', padding: '0 2rem'}} >
+                    <a href='https://webmail.ipasc.go.gov.br' id='texto'>WEBMAIL</a>
+                </li>
                 <li style={{ display: 'flex'}}>
                     <p id='texto'>CONTRASTE:</p>
                     <S.MenuLinksIcon title="Mudar o tema" style={{ cursor: 'pointer'}}
