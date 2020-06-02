@@ -53,6 +53,22 @@ export const LogoContainer = styled.div`
         }
     `}
 `
+
+export const Title = styled.h1`
+        margin-top: 5px;
+        font-size: 3rem;
+        text-align: center;
+        color: var(--black);
+        font-family: Impact, Charcoal, sans-serif;
+`
+
+export const Description = styled.p`
+        font-size: .7rem;
+        text-align: center;
+        color: var(--black);
+        width: 15rem;
+`
+
 export const MenuContainer = styled.div`
     padding-top: 2.6rem;
     width: 100%;

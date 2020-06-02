@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import LogoHeader from '../LogoHeader'
+import {Link} from 'gatsby'
 import * as S from './styled'
 import MenuLink from '../MenuInnerHeader'
 import MenuMobile from '../MenuMobile'
@@ -26,7 +26,12 @@ const InnerHeader = () => {
     <S.InnerHeaderWrapper data-active={scrolled}>
         <S.InnerPosition>
             <S.LogoContainer>
-                <LogoHeader/>
+                <div>
+                    <Link to='/' style={{textDecoration: 'none'}}>
+                        <S.Title>IPASC</S.Title>
+                        <S.Description>INSTITUTO DE PREVIDÊNCIA E ASSISTÊNCIA DOS SERVIDORES DE CATALÃO.</S.Description>
+                    </Link>
+                </div>
                 <div id='mobile'>
                     <MenuMobile class='.mobile' />
                 </div>
