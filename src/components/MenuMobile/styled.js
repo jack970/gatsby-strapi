@@ -47,7 +47,6 @@ export const MenuWrapper = styled.div`
         flex-direction: column;
         position: relative;
         top: 25px;
-        left: 25px;
         z-index: 1;
         -webkit-user-select: none;
         user-select: none;

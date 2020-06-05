@@ -88,7 +88,7 @@ const IndexPage = () => {
           }
         }, i) => (
           <PostItem key={id}
-            slug={`${kebabCase(tags)}/${kebabCase(title)}`}
+            slug={`/${kebabCase(tags)}/${kebabCase(title)}`}
             title={title}
             description={ description }
             date={data}

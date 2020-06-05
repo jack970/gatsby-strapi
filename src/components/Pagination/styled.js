@@ -9,8 +9,7 @@ export const PaginationWrapper = styled.section`
   display: flex;
   padding: 1.5rem 5rem;
   justify-content: space-between;
-
-  
+  margin-top: 3rem;
 
   a {
     color:var(--black);

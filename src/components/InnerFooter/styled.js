@@ -20,10 +20,8 @@ export const ContactBox = styled.div`
 
     ${media.lessThan('large')`
         border: none;
-        width: none;
+        width: fit-content;
 `}
-
-  
 `
 
 export const InnerWrapper = styled.div`

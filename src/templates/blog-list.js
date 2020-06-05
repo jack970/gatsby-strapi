@@ -6,21 +6,27 @@ import SEO from "../components/seo"
 import styled from 'styled-components'
 import Pagination from '../components/Pagination'
 import kebabCase from 'lodash/kebabCase'
+import media from 'styled-media-query'
 
 export const TitleWrapper = styled.h1`
-    text-align: center;
-    overflow-wrap: break-word;
-    font-size: 3rem;
     font-weight: 700;
     color: var(--texto);
+    font-size: 3rem;
+
+    ${media.lessThan("large")`
+        text-align: center;
+        overflow-wrap: break-word;
+        font-size: 3rem;
+    `}
 `
 
 const BlogList = props => {
     const { currentPage, numPages, tag} = props.pageContext
+    const slugTag = kebabCase(tag)
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage -1 === 1 ? '/noticias' : `/noticias/page/${currentPage -1}`
-    const nextPage =`/noticias/page/${currentPage + 1} `
+    const prevPage = currentPage -1 === 1 ? `/${slugTag}` : `/${slugTag}/page/${currentPage -1}`
+    const nextPage =`/${slugTag}/page/${currentPage + 1} `
 
     const queryPostList = props.data.allStrapiIpascPosts.edges
 
@@ -40,7 +46,7 @@ const BlogList = props => {
             }
             }) => (
             <PostItemNotices key={id}
-                slug={`/${kebabCase(title)}`}
+                slug={`/${slugTag}/${kebabCase(title)}`}
                 title={title}
                 description={description}
                 date={data}

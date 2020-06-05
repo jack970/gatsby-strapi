@@ -38,14 +38,18 @@ export const PostItemInfo = styled.div`
 
     ${media.lessThan("large")`
     padding: 0;
+    margin-left: 1.3rem;
     `}
 `
 
 export const PostItemImage = styled(Img)`
     height: 10rem;
     width:  20rem;
-    margin-bottom: 2rem;
     border-radius: 2%;
+
+    ${media.lessThan("large")`
+    margin-bottom: 2rem;
+    `}
 `
 
 export const PostItemTitle = styled.h1`
