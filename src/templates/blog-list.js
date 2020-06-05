@@ -8,7 +8,9 @@ import Pagination from '../components/Pagination'
 import kebabCase from 'lodash/kebabCase'
 
 export const TitleWrapper = styled.h1`
-    font-size: 4rem;
+    text-align: center;
+    overflow-wrap: break-word;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--texto);
 `
