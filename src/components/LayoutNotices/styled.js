@@ -5,10 +5,6 @@ export const LayoutWrapper = styled.section`
     position: relative;
     background: var(--white);
     transition: all 0.25s ease-in-out 0s !important;
-
-    ${media.lessThan("large")`
-        position: absolute;
-    `}
 `
 
 export const LayoutMain = styled.main`
@@ -22,7 +18,7 @@ export const LayoutMain = styled.main`
     padding-right: 9rem;
 
     ${media.lessThan("large")`
-        padding: 15rem 0;
+        padding: 10rem 0;
         padding-bottom: 2rem;
     `}
 `

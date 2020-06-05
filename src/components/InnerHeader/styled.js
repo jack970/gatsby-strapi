@@ -8,7 +8,6 @@ export const InnerHeaderWrapper = styled.aside`
     width: 100%;
     height: auto;
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    position: absolute;
     z-index: 1;
 
     #mobile {

@@ -42,7 +42,7 @@ export const Container = styled.div`
 
 export const Row = styled.div`
     display: flex;
-    padding: 2rem;
+    padding: 2rem 0;
 
     ${media.lessThan('750px')`
         display: block;

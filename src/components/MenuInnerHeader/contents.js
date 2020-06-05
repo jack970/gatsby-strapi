@@ -4,15 +4,15 @@ const links = [
         submenu: [
             {
                 label: 'História',
-                url: 'institucional/historia'
+                url: '/institucional/historia'
             },
             {
                 label: 'Equipe',
-                url: 'institucional/equipe'
+                url: '/ institucional/equipe'
             },
             {
                 label: 'junta médica',
-                url: 'institucional/junta-medica'
+                url: '/institucional/junta-medica'
             }
         ]
     },
@@ -21,31 +21,31 @@ const links = [
         submenu: [
             {
                 label: 'aposentadoria por invalidez',
-                url: 'beneficios/aposentadoria-por-invalidez'
+                url: '/beneficios/aposentadoria-por-invalidez'
             },
             {
                 label: 'aposentadoria compulsória',
-                url: 'beneficios/aposentadoria-compulsoria'
+                url: '/beneficios/aposentadoria-compulsoria'
             },
             {
                 label: 'aposentadoria por idade',
-                url: 'beneficios/aposentadoria-por-idade'
+                url: '/beneficios/aposentadoria-por-idade'
             },
             {
                 label: 'aposentadoria por contribuição',
-                url: 'beneficios/aposentadoria-por-contribuição'
+                url: '/beneficios/aposentadoria-por-contribuição'
             },
             {
                 label: 'salário maternidade',
-                url: 'beneficios/salario-maternidade'
+                url: '/beneficios/salario-maternidade'
             },
             {
                 label: 'salário família',
-                url: 'beneficios/salario-familia'
+                url: '/beneficios/salario-familia'
             },
             {
                 label: 'folha de pagamento',
-                url: 'beneficios/folha-de-pagamento'
+                url: '/beneficios/folha-de-pagamento'
             }
         ]
     },
@@ -54,15 +54,15 @@ const links = [
         submenu: [
             {
                 label: 'certidão previdenciária',
-                url:'servicos/certidao-previdenciaria'
+                url:'/servicos/certidao-previdenciaria'
             },
             {
                 label: 'contra cheque',
-                url:'servicos/contra-cheque'
+                url:'/servicos/contra-cheque'
             },
             {
                 label: 'comprovante rendimentos',
-                url:'servicos/comprovante-rendimentos'
+                url:'/servicos/comprovante-rendimentos'
             }
             ]
     },
@@ -71,27 +71,27 @@ const links = [
         submenu: [
             {
                 label: 'portarias do ipasc',
-                url:'publicacoes/portarias-do-ipasc'
+                url:'/publicacoes/portarias-do-ipasc'
             },
             {
                 label: 'portarias do mps',
-                url:'publicacoes/portarias-do-mps'
+                url:'/publicacoes/portarias-do-mps'
             },
             {
                 label: 'legislação municipal',
-                url:'publicacoes/legislacao-municipal'
+                url:'/publicacoes/legislacao-municipal'
             },
             {
                 label: 'crp',
-                url:'publicacoes/crp'
+                url:'/publicacoes/crp'
             },
             {
                 label: 'demonstrativos contábeis',
-                url:'publicacoes/demonstrativos-contabeis'
+                url:'/publicacoes/demonstrativos-contabeis'
             },
             {
                 label: 'conselho de previdência',
-                url:'publicacoes/conselho-de-previdencia'
+                url:'/publicacoes/conselho-de-previdencia'
             }
             ]
     },

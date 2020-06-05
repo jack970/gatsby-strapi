@@ -30,7 +30,7 @@ export const PostItemWrapper = styled.section`
 
 export const PostItemInfo = styled.div`
     font-weight: 700;
-    padding: 2rem 0 0;
+    padding: 2rem 2rem 0;
 
 `
 
@@ -47,7 +47,7 @@ export const PostItemImage = styled(Img)`
 export const PostItemTitle = styled.h1`
     display: flex;
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 2rem;
     
 `
 

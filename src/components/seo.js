@@ -83,7 +83,7 @@ const ogImage = `${url}${image || '/utils/img/lake.png'}`
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `pt`,
   meta: [],
   description: ``,
 }
