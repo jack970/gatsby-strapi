@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 export const PostHeader = styled.header`
   margin: auto;
   max-width: 70rem;
-  padding: 9rem 5rem 0;
+  padding: 0rem 5rem 0;
 
   ${media.lessThan("large")`
   padding: 3rem 0 0;

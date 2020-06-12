@@ -113,7 +113,7 @@ export const MenuWrapper = styled.div`
         position: fixed;
         width: 210px;
         box-shadow: 0 0 10px #85888C;
-        margin: -60px 0 0 -300px;
+        margin: -60px 0 0 -260px;
         padding: 250px 250px 50px 40px;
         padding-top: 2.5rem;
         background-color: var(--amarelo);

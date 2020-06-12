@@ -3,8 +3,7 @@ import {Link} from 'gatsby'
 import media from 'styled-media-query'
 
 export const SubMenuWrapper = styled.aside`
-    padding: 5rem 0;
-    
+    margin-left: 10rem; 
     h3 {
         font-size: 22px;
         font-weight: 600;

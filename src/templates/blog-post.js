@@ -10,6 +10,7 @@ import kebabCase from 'lodash/kebabCase'
 
 export const Divisao = styled.div`
     display: flex;
+    margin-top: 10rem;
 `
 export const DivPost = styled.div``
 
@@ -34,7 +35,7 @@ const BlogPost = ({ data }) => {
                             {post.thumbnail.childImageSharp.fluid}
                             />
                             <S.PostTitle>
-                                {post.title}
+                               {post.tags} • {post.title}
                             </S.PostTitle>
                             <S.PostDescription>
                                 {post.description}
