@@ -8,7 +8,7 @@ const links = [
             },
             {
                 label: 'Equipe',
-                url: '/ institucional/equipe'
+                url: '/institucional/equipe'
             },
             {
                 label: 'junta médica',
