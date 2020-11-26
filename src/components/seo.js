@@ -26,9 +26,9 @@ function SEO({ description, lang, meta, title, image }) {
     `
   )
 
-const metaDescription = description || site.siteMetadata.description
-const url = site.siteMetadata.siteUrl
-const ogImage = `${url}${image || '/utils/img/lake.png'}`
+  const metaDescription = description || site.siteMetadata.description
+  const url = site.siteMetadata.siteUrl
+  const ogImage = `${url}${image || "/utils/img/lake.png"}`
   return (
     <Helmet
       htmlAttributes={{

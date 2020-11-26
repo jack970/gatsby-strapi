@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import media from 'styled-media-query'
+import styled from "styled-components"
+import media from "styled-media-query"
 
 export const PostHeader = styled.header`
   margin: auto;
@@ -12,7 +12,6 @@ export const PostHeader = styled.header`
   max-width: 100%;
 `}
 `
-
 
 export const PostDescription = styled.h2`
   font-size: 2rem;

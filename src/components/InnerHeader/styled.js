@@ -1,26 +1,26 @@
-import styled from 'styled-components'
-import media from 'styled-media-query'
+import styled from "styled-components"
+import media from "styled-media-query"
 
 export const InnerHeaderWrapper = styled.aside`
-    -webkit-tap-highlight-color: transparent;
-    background: var(--MenuInner);
-    position: absolute;
-    top: 2.5rem;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+  background: var(--MenuInner);
+  position: absolute;
+  top: 2.5rem;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 
-    #mobile {
-        display: none;
-    }
+  #mobile {
+    display: none;
+  }
 
-    &[data-active='true'] {
-        position: fixed;
-        top: 0;
-    }
+  &[data-active="true"] {
+    position: fixed;
+    top: 0;
+  }
 
-    ${media.lessThan("large")`
+  ${media.lessThan("large")`
         display: block;
         position: fixed;
         top: 0;
@@ -29,20 +29,20 @@ export const InnerHeaderWrapper = styled.aside`
 `
 
 export const InnerPosition = styled.div`
-    display: flex;
-    margin: 0 auto;
-    max-width: 100rem;
-    padding: 0 7rem;
+  display: flex;
+  margin: 0 auto;
+  max-width: 100rem;
+  padding: 0 7rem;
 
-    ${media.lessThan("large")`
+  ${media.lessThan("large")`
         padding: 0;
     `}
 `
 
 export const LogoContainer = styled.div`
-    max-width: 25%;
+  max-width: 25%;
 
-    ${media.lessThan("large")`
+  ${media.lessThan("large")`
         width: 100%;
         max-width: none;
         display: inline-flex;
@@ -55,25 +55,25 @@ export const LogoContainer = styled.div`
 `
 
 export const Title = styled.h1`
-        margin-top: 5px;
-        font-size: 3rem;
-        text-align: center;
-        color: var(--black);
-        font-family: Impact, Charcoal, sans-serif;
+  margin-top: 5px;
+  font-size: 3rem;
+  text-align: center;
+  color: var(--black);
+  font-family: Impact, Charcoal, sans-serif;
 `
 
 export const Description = styled.p`
-        font-size: .7rem;
-        text-align: center;
-        color: var(--black);
-        width: 15rem;
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--black);
+  width: 15rem;
 `
 
 export const MenuContainer = styled.div`
-    padding-top: 2.6rem;
-    width: 100%;
+  padding-top: 2.6rem;
+  width: 100%;
 
-    ${media.lessThan("large")`
+  ${media.lessThan("large")`
         padding: 0;
         display: none;
     `}

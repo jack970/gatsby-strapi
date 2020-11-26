@@ -3,7 +3,7 @@ module.exports = {
     title: `IPASC`,
     description: `Instituto de previdência e assistência dos servidores de Catalão.`,
     author: `Work - Informática`,
-    siteUrl: `https://prefeitura-ipasc.netlify.com/`
+    siteUrl: `https://prefeitura-ipasc.netlify.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,12 +25,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: 'gatsby-source-strapi',
+      resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.NODE_ENV === 'production' ? 
-                'http://54.224.4.59:1337' : 'http://localhost:1337',
-        contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
-          'ipasc-posts' 
+        apiURL: "http://localhost:1337" || "http://localhost:1337",
+        contentTypes: [
+          // List of the Content Types you want to be able to request from Gatsby.
+          "posts-do-ipasc",
         ],
         queryLimit: 1000,
       },
@@ -43,17 +43,17 @@ module.exports = {
             resolve: `gatsby-remark-relative-images`,
             options: {
               name: `uploads`,
-            }
+            },
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 960,
               linkImagesToOriginal: false,
-            }
+            },
           },
-          'gatsby-remark-lazy-load',
-          'gatsby-remark-prismjs',
+          "gatsby-remark-lazy-load",
+          "gatsby-remark-prismjs",
         ],
       },
     },
@@ -69,7 +69,7 @@ module.exports = {
         icon: `src/images/Logo-do-IPASC.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-sitemap',
+    "gatsby-plugin-sitemap",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,

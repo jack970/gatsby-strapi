@@ -13,8 +13,8 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body {...props.bodyAttributes} className='light'>
-      <script
+      <body {...props.bodyAttributes} className="light">
+        <script
           dangerouslySetInnerHTML={{
             __html: `
             (function() {
@@ -41,7 +41,7 @@ export default function HTML(props) {
           }}
         />
         {props.preBodyComponents}
-        <noscript key='noscript' id='gatsby-noscript'>
+        <noscript key="noscript" id="gatsby-noscript">
           Ative o Javascript para ter uma melhor experiência.
         </noscript>
         <div

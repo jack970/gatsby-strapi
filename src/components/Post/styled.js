@@ -1,16 +1,16 @@
 import styled from "styled-components"
-import media from 'styled-media-query'
-import Img from 'gatsby-image'
+import media from "styled-media-query"
+import Img from "gatsby-image"
 
 export const PostHeader = styled.header`
   margin: auto;
   max-width: 70rem;
-  padding: 0rem 5rem 0;
+  padding: 7rem 5rem 0;
 
   ${media.lessThan("large")`
-  padding: 3rem 0 0;
-  max-width: 100%;
-`}
+    padding: 3rem 0 0;
+    max-width: 100%;
+  `}
 `
 
 export const PostTitle = styled.h1`
@@ -39,8 +39,9 @@ export const PostDescription = styled.h2`
 
 export const PostImage = styled(Img)`
   display: block;
-  width: 40rem;
-  height: 40rem;
+  width: 60%;
+  border-radius: 10%;
+  height: 30rem;
   margin: 1.875rem auto;
 
   ${media.lessThan("large")`
@@ -163,7 +164,7 @@ export const MainContent = styled.section`
   h2 {
     font-size: 2.1rem;
 
-     ${media.lessThan("large")`
+    ${media.lessThan("large")`
       font-size: 1.375rem;
     `}
   }
