@@ -6,12 +6,15 @@ export const SliderShowWrapper = styled.div`
   align-content: center;
   height: 10rem;
   z-index: 0;
+  margin-top: 5.5rem;
   position: relative;
-  padding: 7rem 2rem;
+  padding: 3rem 2rem;
 
   ${media.lessThan("large")`
-        height: 0;
-    `}
+    margin-top: 0;  
+    height: 0;
+    padding: 7rem 2rem;
+  `}
 `
 
 export const SliderShowComment1 = styled.div`

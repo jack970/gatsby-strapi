@@ -3,7 +3,7 @@ module.exports = {
     title: `IPASC`,
     description: `Instituto de previdência e assistência dos servidores de Catalão.`,
     author: `Work - Informática`,
-    siteUrl: `https://prefeitura-ipasc.netlify.com/`,
+    siteUrl: process.env.GATSBY_SITE_URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "http://localhost:1337" || "http://localhost:1337",
+        apiURL: process.env.GATSBY_STRAPI_DEVELOPMENT || process.env.PRODUCTION,
         contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
           "posts-do-ipasc",

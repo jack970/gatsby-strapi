@@ -104,7 +104,7 @@ const IndexPage = () => {
           )}
         </ContainersubNoticias>
         <BtnContainer>
-          <BtnWrapper to="/noticias">Ver Notícias</BtnWrapper>
+          <BtnWrapper to="/noticias">Ler Notícias</BtnWrapper>
         </BtnContainer>
       </ContainerNoticias>
       <ContainerInfo />

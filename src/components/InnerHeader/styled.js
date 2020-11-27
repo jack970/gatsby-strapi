@@ -10,22 +10,24 @@ export const InnerHeaderWrapper = styled.aside`
   height: auto;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  transition: opacity ease 1.5s;
 
   #mobile {
     display: none;
   }
 
   &[data-active="true"] {
+    opacity: 93%;
     position: fixed;
     top: 0;
   }
 
   ${media.lessThan("large")`
-        display: block;
-        position: fixed;
-        top: 0;
-        text-align: center;
-    `}
+    display: block;
+    position: fixed;
+    top: 0;
+    text-align: center;
+  `}
 `
 
 export const InnerPosition = styled.div`
@@ -36,22 +38,23 @@ export const InnerPosition = styled.div`
 
   ${media.lessThan("large")`
         padding: 0;
-    `}
+  `}
 `
 
 export const LogoContainer = styled.div`
   max-width: 25%;
 
   ${media.lessThan("large")`
-        width: 100%;
-        max-width: none;
-        display: inline-flex;
-        justify-content: space-between;
-        padding: 2rem 0 2rem;
-        #mobile {
-            display: block;
-        }
-    `}
+    width: 100%;
+    max-width: none;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 2rem 0 2rem;
+
+    #mobile {
+        display: block;
+    }
+  `}
 `
 
 export const Title = styled.h1`
@@ -74,7 +77,7 @@ export const MenuContainer = styled.div`
   width: 100%;
 
   ${media.lessThan("large")`
-        padding: 0;
-        display: none;
-    `}
+    padding: 0;
+    display: none;
+  `}
 `

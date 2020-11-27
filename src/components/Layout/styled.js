@@ -16,9 +16,9 @@ export const LayoutMain = styled.main`
   max-width: 100rem;
 
   ${media.lessThan("large")`
-        padding-top: 8rem;
-        padding-left: 0;
-        padding-right: 0;
-        padding-bottom: 0;
-    `}
+    padding-top: 7rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  `}
 `
