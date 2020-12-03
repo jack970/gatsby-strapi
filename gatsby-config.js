@@ -58,7 +58,7 @@ module.exports = {
         short_name: `IPASC`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#fff`,
+        theme_color: `#FDB700`,
         display: `minimal-ui`,
         icon: `src/images/Logo-do-IPASC.png`, // This path is relative to the root of the site.
       },

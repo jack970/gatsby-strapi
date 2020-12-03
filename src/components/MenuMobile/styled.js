@@ -51,7 +51,7 @@ export const MenuWrapper = styled.div`
     user-select: none;
   }
 
-  #menuToggle input {
+  #checkToggle {
     display: flex;
     -webkit-tap-highlight-color: transparent;
     width: 40px;
@@ -62,7 +62,7 @@ export const MenuWrapper = styled.div`
     z-index: 2;
   }
 
-  #menuToggle span {
+  #menuIcon {
     display: flex;
     width: 29px;
     height: 2px;
@@ -115,10 +115,6 @@ export const MenuWrapper = styled.div`
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
 
-  #menu li:last-child {
-    padding-bottom: 2rem;
-  }
-
   #submenu {
     display: none;
   }
@@ -128,6 +124,10 @@ export const MenuWrapper = styled.div`
     transition-delay: 2s;
     text-transform: uppercase;
     text-align: left;
+  }
+
+  #menu li:nth-last-child(1) {
+    padding-bottom: 3rem;
   }
 
   #menuToggle input:checked ~ ul {

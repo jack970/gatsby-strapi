@@ -2,6 +2,7 @@ import React from "react"
 import * as S from "./styled"
 import links from "../MenuInnerHeader/contents"
 import { Link } from "gatsby"
+import Search from "../Search"
 
 const MenuMobile = () => (
   <S.MenuWrapper>
@@ -9,14 +10,14 @@ const MenuMobile = () => (
       <div className="content">
         <nav role="navigation">
           <div id="menuToggle">
-            <input type="checkbox" style={{ color: "var(--texto)" }} />
-            <span></span>
-            <span></span>
-            <span></span>
+            <input id="checkToggle" type="checkbox" style={{ color: "var(--texto)" }} />
+            <span id="menuIcon"></span>
+            <span id="menuIcon"></span>
+            <span id="menuIcon"></span>
             <ul id="menu">
               {links.map((link, i) => (
                 <li key={i}>
-                  <input type="checkbox" style={{ width: "200px" }} />
+                  <input id="checkToggle" type="checkbox" style={{ width: "200px" }} />
                   <S.Title>{link.label}</S.Title>
                   <ul id="submenu">
                     {link.submenu.map((sublink, i) => (
@@ -35,6 +36,11 @@ const MenuMobile = () => (
                   </ul>
                 </li>
               ))}
+              <div style={{
+                marginTop: "2rem" 
+              }}>
+                <Search />
+              </div>
             </ul>
           </div>
         </nav>

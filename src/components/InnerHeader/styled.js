@@ -75,6 +75,9 @@ export const Description = styled.p`
 export const MenuContainer = styled.div`
   padding-top: 2.6rem;
   width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
 
   ${media.lessThan("large")`
     padding: 0;

@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import * as S from "./styled"
 import MenuLink from "../MenuInnerHeader"
 import MenuMobile from "../MenuMobile"
+import Search from "../Search"
 
 const InnerHeader = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -41,6 +42,7 @@ const InnerHeader = () => {
         </S.LogoContainer>
         <S.MenuContainer>
           <MenuLink />
+          <Search />
         </S.MenuContainer>
       </S.InnerPosition>
     </S.InnerHeaderWrapper>
