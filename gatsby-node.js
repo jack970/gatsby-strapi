@@ -1,22 +1,63 @@
 const path = require('path')
+const { createFilePath } = require(`gatsby-source-filesystem`)
 const _ = require("lodash")
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `/${slug.slice(12)}`
+    })
+  }
+}
+
 
 exports.createPages = ({ graphql, actions}) => {
     const {createPage} = actions
 
     return graphql(`
-    query MyQuery{
-      notices: allStrapiIpascPosts(sort: {order: DESC, fields: data}) {
+    {
+      notices: allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+      ) {
         edges {
           node {
-            title
-            tags
-            id
+            fields {
+              slug
+            }
+            frontmatter {
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              description
+              title
+            }
+          }
+          next {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            }
+          }
+          previous {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            }
           }
         }
       }
-      tagsGroup: allStrapiIpascPosts {
-        group(field: tags) {
+      tagsGroup: allMarkdownRemark {
+        group(field: frontmatter___tags) {
           fieldValue
           totalCount
         }
@@ -28,10 +69,10 @@ exports.createPages = ({ graphql, actions}) => {
 
       posts.forEach(({node}) => {
           createPage ({
-              path: `${_.kebabCase(node.tags)}/${_.kebabCase(node.title)}`,
+              path: node.fields.slug,
               component: path.resolve('./src/templates/blog-post.js'),
               context: {
-                  id: node.id
+                  slug: node.fields.slug
               }
           })
       })

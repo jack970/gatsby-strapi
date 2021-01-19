@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import * as S from '../components/Post/styled'
 import styled from 'styled-components'
-import Reactmarkdown from 'react-markdown'
 import SubMenu from '../components/Submenu'
 import kebabCase from 'lodash/kebabCase'
 
@@ -15,8 +14,8 @@ export const Divisao = styled.div`
 export const DivPost = styled.div``
 
 const BlogPost = ({ data }) => {
-    const post = data.strapiIpascPosts
-    const tag = kebabCase(post.tags)
+    const post = data.markdownRemark
+    const tag = kebabCase(post.frontmatter.tags)
     return(
         <Layout>
             <SEO title={post.title} 
@@ -29,20 +28,20 @@ const BlogPost = ({ data }) => {
                     <DivPost>
                         <S.PostHeader>
                             <S.PostDate>
-                                Publicado em {post.data}
+                                Publicado em {post.frontmatter.data}
                             </S.PostDate>
                             <S.PostImage fluid =
                             {post.thumbnail.childImageSharp.fluid}
                             />
                             <S.PostTitle>
-                               {post.tags} • {post.title}
+                               {post.frontmatter.tags} • {post.frontmatter.title}
                             </S.PostTitle>
                             <S.PostDescription>
-                                {post.description}
+                                {post.frontmatter.description}
                             </S.PostDescription>
                         </S.PostHeader>
                         <S.MainContent>
-                            <Reactmarkdown source={post.content}/>
+                            <div dangerouslySetInnerHTML={{ __html: post.html}} />
                         </S.MainContent>
                     </DivPost>
             </Divisao>
@@ -50,42 +49,44 @@ const BlogPost = ({ data }) => {
             <>
             <S.PostHeader>
                 <S.PostDate>
-                    Publicado em {post.data}
+                    Publicado em {post.frontmatter.date}
                 </S.PostDate>
                 <S.PostImage fluid =
-                {post.thumbnail.childImageSharp.fluid}
+                {post.frontmatter.thumbnail.childImageSharp.fluid}
                 />
                 <S.PostTitle>
-                    {post.title}
+                    {post.frontmatter.title}
                 </S.PostTitle>
                 <S.PostDescription>
-                    {post.description}
+                    {post.frontmatter.description}
                 </S.PostDescription>
             </S.PostHeader>
             <S.MainContent>
-                <Reactmarkdown source={post.content}/>
+                <div dangerouslySetInnerHTML={{ __html: post.html}} />
             </S.MainContent>
             </>
-                
             }
         </Layout>
     )
 }
 
 export const query = graphql`
-    query Post($id: String!) {
-        strapiIpascPosts(id: {eq: $id}) {
-            tags
-            title
-            data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-            description
-            content
-            thumbnail {
-                childImageSharp {
-                    fluid(maxWidth: 1000) {
-                        ...GatsbyImageSharpFluid
+    query Post($slug: String!) {
+        markdownRemark(id: {eq: $slug}) {
+            html
+            frontmatter {
+                tags
+                title
+                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                description
+                thumbnail {
+                    childImageSharp {
+                        fluid(maxWidth: 1000) {
+                            ...GatsbyImageSharpFluid
+                        }
                     }
                 }
+    
             }
         }
     }

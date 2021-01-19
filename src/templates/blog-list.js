@@ -28,7 +28,7 @@ const BlogList = props => {
     const prevPage = currentPage -1 === 1 ? `/${slugTag}` : `/${slugTag}/page/${currentPage -1}`
     const nextPage =`/${slugTag}/page/${currentPage + 1} `
 
-    const queryPostList = props.data.allStrapiIpascPosts.edges
+    const queryPostList = props.data.allMarkdownRemark.edges
 
     return(
         <Layout>
@@ -41,15 +41,14 @@ const BlogList = props => {
                 thumbnail: { childImageSharp: { fluid }},
                 title,
                 description,
-                id,
-                data
+                date
             }
-            }) => (
-            <PostItemNotices key={id}
+            }, i) => (
+            <PostItemNotices key={i}
                 slug={`/${slugTag}/${kebabCase(title)}`}
                 title={title}
                 description={description}
-                date={data}
+                date={ date}
                 fluid={ fluid}
                 />
             ))}
@@ -65,24 +64,25 @@ const BlogList = props => {
 
 export const query = graphql`
 query QueryPostList($skip: Int!, $limit: Int!, $tag: String!) {
-    allStrapiIpascPosts(sort: {order: DESC, fields: data}
-        filter: {tags: {in: [$tag]}},
+    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}
+        filter: {frontmatter: {tags: {in: [$tag]}}}
         limit: $limit,
         skip: $skip) {
         edges {
             node {
-                id
-                title
-                data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                description
-                thumbnail {
-                    childImageSharp {
-                        fluid(maxWidth: 900, maxHeight: 900) {
-                            ...GatsbyImageSharpFluid
+                frontmatter {
+                    title
+                    date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                    description
+                    thumbnail {
+                        childImageSharp {
+                            fluid(maxWidth: 900, maxHeight: 900) {
+                                ...GatsbyImageSharpFluid
+                            }
                         }
                     }
+                    tags
                 }
-                tags
             }
         }
     }

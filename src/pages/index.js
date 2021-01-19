@@ -43,23 +43,23 @@ export const BtnWrapper = styled(Link)`
 
 const IndexPage = () => {
 
-  const { allStrapiIpascPosts } = useStaticQuery(graphql`
+  const { allMarkdownRemark } = useStaticQuery(graphql`
     query PostList {
-      allStrapiIpascPosts(limit: 3, 
-        sort: {order: DESC, fields: data},
-        filter: {tags: {eq: "Notícias"}}) {
+      allMarkdownRemark(limit: 3, 
+        sort: {order: DESC, fields: frontmatter___date},
+        filter: {frontmatter: {tags: {eq: "Notícias"}}}) {
         edges {
           node {
-            id
-            title
-            data(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-            description
-            tags
-            content
-            thumbnail {
-              childImageSharp {
-                fluid(maxWidth: 300) {
-                  ...GatsbyImageSharpFluid
+            frontmatter {
+              title
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              description
+              tags
+              thumbnail {
+                childImageSharp {
+                  fluid(maxWidth: 300) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }
@@ -69,7 +69,7 @@ const IndexPage = () => {
     }
   `)
 
- const postList = allStrapiIpascPosts.edges
+ const postList = allMarkdownRemark.edges
 
   return (
     <Layout>
@@ -78,20 +78,21 @@ const IndexPage = () => {
       <ContainerNoticias>
         <ContainersubNoticias>
         { postList.map(({ 
-          node: { 
-            title,
-            description,
-            tags,
-            data,
-            id,
-            thumbnail: { childImageSharp: { fluid }}
+          node: {
+            frontmatter: {
+              title,
+              description,
+              tags,
+              date,
+              thumbnail: { childImageSharp: { fluid }}
+            } 
           }
         }, i) => (
-          <PostItem key={id}
-            slug={`/${kebabCase(tags)}/${kebabCase(title)}`}
+          <PostItem key={i}
+            slug={`/${kebabCase(title)}`}
             title={title}
             description={ description }
-            date={data}
+            date={date}
             fluid={ fluid }
             />
         ))}
