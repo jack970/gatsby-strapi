@@ -12,11 +12,11 @@ export const LayoutMain = styled.main`
     float: none;
     margin: 0 auto;
     max-width: 100rem;
-    min-height: 100vh;
-    padding-top: 9.2rem;
+    
+    padding-top: 3rem;
     padding-left: 9rem;
     padding-right: 9rem;
-    padding-bottom: 2rem;
+    
 
     ${media.lessThan("large")`
         padding: 10rem 0 0;

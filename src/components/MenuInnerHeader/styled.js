@@ -16,11 +16,13 @@ export const MenuNavBar = styled.nav`
 export const MenuUlBar = styled.ul``
 
 export const MenuItemBar = styled.li`
+    z-index: 1;
     float: left;
+    position: relative;
     display: list-item;
 
     ${media.lessThan("large")`
-    float: none;
+        float: none;
     `}
     `
 

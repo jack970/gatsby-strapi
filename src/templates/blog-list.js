@@ -37,15 +37,20 @@ const BlogList = props => {
                 {tag}
             </TitleWrapper>
             { queryPostList.map(({ 
-            node: { 
-                thumbnail: { childImageSharp: { fluid }},
-                title,
-                description,
-                date
+            node: {
+                fields: {
+                    slug
+                },
+                frontmatter: {
+                    thumbnail: { childImageSharp: { fluid }},
+                    title,
+                    description,
+                    date
+                }
             }
             }, i) => (
             <PostItemNotices key={i}
-                slug={`/${slugTag}/${kebabCase(title)}`}
+                slug={slug}
                 title={title}
                 description={description}
                 date={ date}
@@ -70,6 +75,9 @@ query QueryPostList($skip: Int!, $limit: Int!, $tag: String!) {
         skip: $skip) {
         edges {
             node {
+                fields {
+                    slug    
+                }
                 frontmatter {
                     title
                     date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")

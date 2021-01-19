@@ -78,11 +78,10 @@ exports.createPages = ({ graphql, actions}) => {
       })
 
       const postsPerPage = 2
-      const numPages = Math.ceil(posts.length / postsPerPage)
-
+      const numPages = Math.ceil( tag.totalCount / postsPerPage)
+      
       tags.forEach((tag, i) => {
         const link = `/${_.kebabCase(tag.fieldValue)}`
-        const numPages = Math.ceil( tag.totalCount / postsPerPage)
 
         Array.from({
           length: numPages,

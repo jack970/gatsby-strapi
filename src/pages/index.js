@@ -7,7 +7,6 @@ import SliderShow from '../components/SliderShow'
 import ContainerInfo from '../components/ContainerInfo'
 import Transparencia from "../components/Transparencia"
 import styled from 'styled-components'
-import kebabCase from 'lodash/kebabCase'
 
 export const ContainersubNoticias = styled.div``
 
@@ -50,6 +49,9 @@ const IndexPage = () => {
         filter: {frontmatter: {tags: {eq: "Notícias"}}}) {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
               title
               date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
@@ -79,6 +81,9 @@ const IndexPage = () => {
         <ContainersubNoticias>
         { postList.map(({ 
           node: {
+            fields: {
+              slug
+            },
             frontmatter: {
               title,
               description,
@@ -89,7 +94,7 @@ const IndexPage = () => {
           }
         }, i) => (
           <PostItem key={i}
-            slug={`/${kebabCase(title)}`}
+            slug={slug}
             title={title}
             description={ description }
             date={date}
