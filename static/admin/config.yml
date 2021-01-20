@@ -30,6 +30,7 @@ collections:
     fields:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["Notícias"]}
       - {label: "Data", name: "date", widget: "datetime", format: 'YYYY-MM-DD hh:mm:ss'}
       - {label: "Thumbnail", name: "thumbnail", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}
