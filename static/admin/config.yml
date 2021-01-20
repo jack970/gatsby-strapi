@@ -32,5 +32,6 @@ collections:
       - {label: "Descrição", name: "description", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list", default: ["Notícias"], max: 3, min: 1}
       - {label: "Data", name: "date", widget: "datetime", format: 'YYYY-MM-DD hh:mm:ss'}
+      - {label: "Manual PDF", name: "manual_pdf", widget: "file"}
       - {label: "Thumbnail", name: "thumbnail", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}
