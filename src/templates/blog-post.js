@@ -18,6 +18,7 @@ const BlogPost = ({ data }) => {
     const post = data.markdownRemark
     const postFrontmatter = post.frontmatter
     const tag = post.frontmatter.tags
+
     return(
         <Layout>
             <SEO title={postFrontmatter.title} 
@@ -26,7 +27,7 @@ const BlogPost = ({ data }) => {
             {tag.includes("Comitê de Investimentos") || 
             tag.includes("Comitê de Previdência") ? 
                 <Divisao>
-                    <SubMenu />                 
+                    <SubMenu />           
                     <DivPost>
                         <S.PostHeader>
                             <S.PostDate>
@@ -52,12 +53,17 @@ const BlogPost = ({ data }) => {
             <S.PostHeader>
                 <S.PostBadge>
                     Categorias: &nbsp;
-                    {tag.map(label => 
-                        <S.PostBadgetLink to={`/${kebabCase(label)}`}>{
-                            label}
+                    {tag.map((label, i) => 
+                        <S.PostBadgetLink key={i} to={`/${kebabCase(label)}`}>
+                            {label}
                         </S.PostBadgetLink>
                     )}
-                </S.PostBadge>  
+                </S.PostBadge>
+                {
+                 postFrontmatter.links_pdf && (
+                    <S.PostBadgetLink to={postFrontmatter.links_pdf}>Link aqui</S.PostBadgetLink>
+                    )   
+                }
                 <S.PostDate>
                     Publicado em {postFrontmatter.date}
                 </S.PostDate>
@@ -85,6 +91,7 @@ export const query = graphql`
         markdownRemark(fields: {slug: {eq: $slug}}) {
             html
             frontmatter {
+                links_pdf
                 tags
                 title
                 date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
