@@ -1,5 +1,5 @@
 ---
-title: "Primeiro Post"
+title: "Primeiro Post2"
 thumbnail: ../static/utils/img/catalao1.jpg
 description: "descricao do post"
 tags: ["teste", "Notícias"]
