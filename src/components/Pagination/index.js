@@ -3,7 +3,6 @@ import * as S from './styled'
 import { Link } from 'gatsby'
 import propTypes from 'prop-types'
 
-
 const Pagination = ({isFirst, isLast, currentPage, numPages, prevPage, nextPage}) => (
     <S.PaginationWrapper>
         {

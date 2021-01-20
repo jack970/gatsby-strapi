@@ -5,8 +5,8 @@ import Layout from "../components/LayoutNotices"
 import SEO from "../components/seo"
 import styled from 'styled-components'
 import Pagination from '../components/Pagination'
-import kebabCase from 'lodash/kebabCase'
 import media from 'styled-media-query'
+import { kebabCase } from 'lodash'
 
 export const TitleWrapper = styled.h1`
     font-weight: 700;
@@ -23,9 +23,10 @@ export const TitleWrapper = styled.h1`
 const BlogList = props => {
     const { currentPage, numPages, tag} = props.pageContext
     const isFirst = currentPage === 1
+    const kebabTag = kebabCase(tag)
     const isLast = currentPage === numPages
-    const prevPage = currentPage -1 === 1 ? `/${tag}` : `/${tag}/page/${currentPage -1}`
-    const nextPage =`/${tag}/page/${currentPage + 1} `
+    const prevPage = currentPage -1 === 1 ? `/${kebabTag}` : `/${kebabTag}/page/${currentPage -1}`
+    const nextPage =`/${kebabTag}/page/${currentPage + 1} `
 
     const queryPostList = props.data.allMarkdownRemark.edges
 
