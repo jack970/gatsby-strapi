@@ -22,11 +22,10 @@ export const TitleWrapper = styled.h1`
 
 const BlogList = props => {
     const { currentPage, numPages, tag} = props.pageContext
-    const slugTag = kebabCase(tag)
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage -1 === 1 ? `/${slugTag}` : `/${slugTag}/page/${currentPage -1}`
-    const nextPage =`/${slugTag}/page/${currentPage + 1} `
+    const prevPage = currentPage -1 === 1 ? `/${tag}` : `/${tag}/page/${currentPage -1}`
+    const nextPage =`/${tag}/page/${currentPage + 1} `
 
     const queryPostList = props.data.allMarkdownRemark.edges
 
