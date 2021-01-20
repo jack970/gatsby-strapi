@@ -15,7 +15,7 @@ logo_url: https://ipasc.netlify.app/icons/icon-192x192.png
 site_url: https://ipasc.netlify.app
 
 publish_mode: editorial_workflow
-media_folder: static/utils/img
+media_folder: static/utils/
 public_folder: utils/img
 locale: 'pt'
 
@@ -30,7 +30,8 @@ collections:
     fields:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list", default: ["Notícias"]}
+      - {label: "Tags", name: "tags", widget: "list", default: ["Notícias"], max: 3, min: 1}
       - {label: "Data", name: "date", widget: "datetime", format: 'YYYY-MM-DD hh:mm:ss'}
+      - {label: "Manual PDF", name: "manual_pdf", widget: "file", default: "static/pdf/general-manual.pdf"}
       - {label: "Thumbnail", name: "thumbnail", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}
