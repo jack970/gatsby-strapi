@@ -6,6 +6,7 @@ import * as S from '../components/Post/styled'
 import styled from 'styled-components'
 import SubMenu from '../components/Submenu'
 import { kebabCase } from 'lodash'
+import PDFGenerator from '../components/ListPDF'
 
 export const Divisao = styled.div`
     display: flex;
@@ -17,8 +18,7 @@ const BlogPost = ({ data }) => {
     
     const post = data.markdownRemark
     const postFrontmatter = post.frontmatter
-    const tag = post.frontmatter.tags
-
+    const tag = postFrontmatter.tags
     return(
         <Layout>
             <SEO title={postFrontmatter.title} 
@@ -59,11 +59,7 @@ const BlogPost = ({ data }) => {
                         </S.PostBadgetLink>
                     )}
                 </S.PostBadge>
-                {
-                 postFrontmatter.links_pdf && (
-                    <S.PostBadgetLink to={postFrontmatter.links_pdf}>Link aqui</S.PostBadgetLink>
-                    )   
-                }
+                <PDFGenerator listPdf={postFrontmatter.pdf} /> 
                 <S.PostDate>
                     Publicado em {postFrontmatter.date}
                 </S.PostDate>
@@ -91,9 +87,12 @@ export const query = graphql`
         markdownRemark(fields: {slug: {eq: $slug}}) {
             html
             frontmatter {
-                links_pdf
                 tags
                 title
+                pdf {
+                    alt
+                    url
+                }
                 date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
                 description
                 thumbnail {

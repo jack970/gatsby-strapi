@@ -1,7 +1,5 @@
 backend:
   name: git-gateway
-  repo: jack970/ipasc
-  branch: master
   preview_context: netlify/netlify-cms-www/deploy-preview
   commit_messages:
     create: 'Post Criado {{collection}} “{{slug}}”'
@@ -9,6 +7,8 @@ backend:
     delete: 'Post Deletado {{collection}} “{{slug}}”'
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
+
+local_backend: true
 
 display_url: https://ipasc.netlify.app
 logo_url: https://ipasc.netlify.app/icons/icon-192x192.png
@@ -25,13 +25,18 @@ collections:
     description: "Crie um novo post para o Blog."
     folder: posts
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    preview_path: /{{title}}
+    preview_path: /{{tags}}/{{title}}
     create: true
     fields:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Descrição", name: "description", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list", default: ["Notícias"], max: 3, min: 1}
       - {label: "Data", name: "date", widget: "datetime", format: 'YYYY-MM-DD hh:mm:ss'}
-      - {label: "Manual PDF", name: "manual_pdf", widget: "file"}
+      - name: pdf
+        label: "PDF"
+        widget: list
+        fields:
+          - { label: "Titulo PDF", name: "alt", widget: "string" }
+          - { label: "Arquivo PDF", name: "url", widget: "file" }
       - {label: "Thumbnail", name: "thumbnail", widget: "image"}
       - {label: "Corpo", name: "body", widget: "markdown"}

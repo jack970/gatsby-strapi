@@ -23,6 +23,7 @@ const InnerHeader = () => {
     }, [scrolled])
 
     return(
+    <>
     <S.InnerHeaderWrapper data-active={scrolled}>
         <S.InnerPosition>
             <S.LogoContainer>
@@ -41,7 +42,7 @@ const InnerHeader = () => {
             </S.MenuContainer> 
         </S.InnerPosition>
     </S.InnerHeaderWrapper>
-    
+    </>
     )
 }
 
