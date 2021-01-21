@@ -15,8 +15,8 @@ logo_url: https://ipasc.netlify.app/icons/icon-192x192.png
 site_url: https://ipasc.netlify.app
 
 publish_mode: editorial_workflow
-media_folder: static/utils/
-public_folder: utils/img
+media_folder: static/utils/img
+public_folder: utils/img/
 locale: 'pt'
 
 collections:
