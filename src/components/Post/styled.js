@@ -63,6 +63,18 @@ export const PostImage = styled(Img)`
   `}
 `
 
+export const ButtonPDF = styled.button`
+    padding: 0.3rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    margin-right: 1rem;
+    border-radius: 0.125rem;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    color: #fff !important;
+    background-color: #fb3 !important;
+`
+
 export const PostDate = styled.p`
   font-size: 1.1rem;
   font-weight: 400;

@@ -6,7 +6,7 @@ import * as S from '../components/Post/styled'
 import styled from 'styled-components'
 import SubMenu from '../components/Submenu'
 import { kebabCase } from 'lodash'
-import PDFGenerator from '../components/ListPDF'
+import ButtonModalPdf from "../components/ButtonModal"
 
 export const Divisao = styled.div`
     display: flex;
@@ -46,6 +46,11 @@ const BlogPost = ({ data }) => {
                         <S.MainContent>
                             <div dangerouslySetInnerHTML={{ __html: post.html}} />
                         </S.MainContent>
+                        <S.PostBadge>
+                        Links dos PDF: {post.frontmatter.pdf.map((pdf, i) => (
+                                <ButtonModalPdf key={i} pdfAlt={pdf.alt} pdfUrl={pdf.url}/>
+                            ))}
+                        </S.PostBadge>
                     </DivPost>
             </Divisao>
                 : 
@@ -59,7 +64,11 @@ const BlogPost = ({ data }) => {
                         </S.PostBadgetLink>
                     )}
                 </S.PostBadge>
-                <PDFGenerator listPdf={postFrontmatter.pdf} /> 
+                <S.PostBadge>
+                Links dos PDF: {post.frontmatter.pdf.map((pdf, i) => (
+                        <ButtonModalPdf key={i} pdfAlt={pdf.alt} pdfUrl={pdf.url}/>
+                    ))}
+                </S.PostBadge>
                 <S.PostDate>
                     Publicado em {postFrontmatter.date}
                 </S.PostDate>
