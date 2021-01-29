@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import SubMenu from '../components/Submenu'
 import { kebabCase } from 'lodash'
 import ButtonModalPdf from "../components/ButtonModal"
+import RecomendPosts from '../components/RecomendPosts'
 
 export const Divisao = styled.div`
     display: flex;
@@ -14,11 +15,13 @@ export const Divisao = styled.div`
 `
 export const DivPost = styled.div``
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext }) => {
     
     const post = data.markdownRemark
     const postFrontmatter = post.frontmatter
     const tag = postFrontmatter.tags
+    const next = pageContext.next
+    const previous = pageContext.previous
     return(
         <Layout>
             <SEO title={postFrontmatter.title} 
@@ -47,10 +50,17 @@ const BlogPost = ({ data }) => {
                             <div dangerouslySetInnerHTML={{ __html: post.html}} />
                         </S.MainContent>
                         <S.PostBadge>
-                        Links dos PDF: {post.frontmatter.pdf.map((pdf, i) => (
+                        {
+                            post.frontmatter.pdf && post.frontmatter.pdf > 0 && (
+                            <div>Baixar PDF: &nbsp;
+                                {post.frontmatter.pdf.map((pdf, i) => (
                                 <ButtonModalPdf key={i} pdfAlt={pdf.alt} pdfUrl={pdf.url}/>
-                            ))}
+                                ))}
+                            </div>
+                            )
+                        }
                         </S.PostBadge>
+                        <RecomendPosts next={next} previous={previous} />
                     </DivPost>
             </Divisao>
                 : 
@@ -65,9 +75,15 @@ const BlogPost = ({ data }) => {
                     )}
                 </S.PostBadge>
                 <S.PostBadge>
-                Links dos PDF: {post.frontmatter.pdf.map((pdf, i) => (
-                        <ButtonModalPdf key={i} pdfAlt={pdf.alt} pdfUrl={pdf.url}/>
-                    ))}
+                        {
+                            post.frontmatter.pdf && post.frontmatter.pdf > 0 && (
+                            <div>Baixar PDF: &nbsp;
+                                {post.frontmatter.pdf.map((pdf, i) => (
+                                <ButtonModalPdf key={i} pdfAlt={pdf.alt} pdfUrl={pdf.url}/>
+                                ))}
+                            </div>
+                            )
+                        }
                 </S.PostBadge>
                 <S.PostDate>
                     Publicado em {postFrontmatter.date}
@@ -85,6 +101,7 @@ const BlogPost = ({ data }) => {
             <S.MainContent>
                 <div dangerouslySetInnerHTML={{ __html: post.html}} />
             </S.MainContent>
+            <RecomendPosts next={next} previous={previous} />
             </>
             }
         </Layout>

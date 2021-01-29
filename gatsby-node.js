@@ -67,12 +67,14 @@ exports.createPages = ({ graphql, actions}) => {
       const posts = result.data.notices.edges
       const tags = result.data.tagsGroup.group
 
-      posts.forEach(({node}) => {
+      posts.forEach(({node, next, previous}) => {
           createPage ({
               path: node.fields.slug,
               component: path.resolve('./src/templates/blog-post.js'),
               context: {
-                  slug: node.fields.slug
+                  slug: node.fields.slug,
+                  previous: previous,
+                  next: next,
               }
           })
       })
