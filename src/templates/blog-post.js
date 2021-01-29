@@ -6,8 +6,8 @@ import * as S from '../components/Post/styled'
 import styled from 'styled-components'
 import SubMenu from '../components/Submenu'
 import { kebabCase } from 'lodash'
-import ButtonModalPdf from "../components/ButtonModal"
 import RecomendPosts from '../components/RecomendPosts'
+import OpenModalButton from '../components/ButtonModal'
 
 export const Divisao = styled.div`
     display: flex;
@@ -50,15 +50,7 @@ const BlogPost = ({ data, pageContext }) => {
                             <div dangerouslySetInnerHTML={{ __html: post.html}} />
                         </S.MainContent>
                         <S.PostBadge>
-                        {
-                            post.frontmatter.pdf && post.frontmatter.pdf > 0 && (
-                            <div>Baixar PDF: &nbsp;
-                                {post.frontmatter.pdf.map((pdf, i) => (
-                                <ButtonModalPdf key={i} pdfAlt={pdf.alt} pdfUrl={pdf.url}/>
-                                ))}
-                            </div>
-                            )
-                        }
+                            <OpenModalButton pdfGenerator={post.frontmatter.pdf} />
                         </S.PostBadge>
                         <RecomendPosts next={next} previous={previous} />
                     </DivPost>
@@ -75,15 +67,7 @@ const BlogPost = ({ data, pageContext }) => {
                     )}
                 </S.PostBadge>
                 <S.PostBadge>
-                        {
-                            post.frontmatter.pdf && post.frontmatter.pdf > 0 && (
-                            <div>Baixar PDF: &nbsp;
-                                {post.frontmatter.pdf.map((pdf, i) => (
-                                <ButtonModalPdf key={i} pdfAlt={pdf.alt} pdfUrl={pdf.url}/>
-                                ))}
-                            </div>
-                            )
-                        }
+                    <OpenModalButton pdfGenerator={post.frontmatter.pdf} />
                 </S.PostBadge>
                 <S.PostDate>
                     Publicado em {postFrontmatter.date}

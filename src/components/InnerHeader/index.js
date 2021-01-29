@@ -34,7 +34,7 @@ const InnerHeader = () => {
                     </Link>
                 </div>
                 <div id='mobile'>
-                    <MenuMobile class='.mobile' />
+                    <MenuMobile className='.mobile' />
                 </div>
             </S.LogoContainer>
             <S.MenuContainer>
