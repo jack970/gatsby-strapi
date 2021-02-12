@@ -9,10 +9,14 @@ const InnerHeader = () => {
     
     useEffect(() => {
         const handleScroll = () => {
-            const isScrolled = window.scrollY > 40;
+            let currentScrollY = window.scrollY
+            const isScrolled = currentScrollY > 40;
+            
             if (isScrolled !== scrolled) {
                 setScrolled(!scrolled);
+                console.log(scrolled)
             }
+            
         };
 
         document.addEventListener('scroll', handleScroll, { passive: true});
@@ -21,12 +25,12 @@ const InnerHeader = () => {
             document.removeEventListener('scroll', handleScroll)
         }
     }, [scrolled])
-
+    console.log(scrolled)
     return(
     <>
     <S.InnerHeaderWrapper data-active={scrolled}>
         <S.InnerPosition>
-            <S.LogoContainer>
+            <S.LogoContainer data-active={scrolled}>
                 <div>
                     <Link to='/' style={{textDecoration: 'none'}}>
                         <S.Title>IPASC</S.Title>

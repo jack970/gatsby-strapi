@@ -15,15 +15,15 @@ export const InnerHeaderWrapper = styled.aside`
     }
 
     &[data-active='true'] {
-        position: fixed;
+	    position: sticky;
         top: 0;
     }
 
     ${media.lessThan("large")`
         display: block;
-        position: fixed;
+	    position: sticky;
         top: 0;
-        text-align: center;
+        text-align: center;        
     `}
 `
 
@@ -40,7 +40,7 @@ export const InnerPosition = styled.div`
 
 export const LogoContainer = styled.div`
     max-width: 25%;
-
+    transition: all ease .3s;
     ${media.lessThan("large")`
         width: 100%;
         max-width: none;
@@ -50,6 +50,10 @@ export const LogoContainer = styled.div`
         #mobile {
             display: block;
         }
+
+        &[data-active='true'] {
+            padding: 1rem 0 1rem;
+        }    
     `}
 `
 

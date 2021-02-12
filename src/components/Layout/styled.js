@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import media from 'styled-media-query'
 
 export const LayoutWrapper = styled.section`
     position: relative;
@@ -14,11 +13,4 @@ export const LayoutMain = styled.main`
     margin: 0 auto;
     min-height: 100vh;
     max-width: 100rem;
-    
-    ${media.lessThan("large")`
-        padding-top: 8rem;
-        padding-left: 0;
-        padding-right: 0;
-        padding-bottom: 0;
-    `}
 `

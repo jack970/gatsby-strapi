@@ -63,7 +63,7 @@ const GlobalStyles = createGlobalStyle`
         --white: #fff;
         --black: #222;
         --icone: #FDB700;
-        --MenuInner: #fff;
+        --MenuInner: #ffffffdb;
         --border: #FDB700;
         --sublinks: #fff;
   }

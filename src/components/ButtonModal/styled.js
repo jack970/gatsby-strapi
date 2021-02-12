@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const ModalWrapper = styled.div`
     position: fixed;
@@ -12,6 +13,15 @@ export const ModalWrapper = styled.div`
     flex-flow: column nowrap;
     justify-content: center; /* aligns on vertical for column */
     align-items: center; /* aligns on horizontal for column */  
+`
+
+export const PDFView = styled.iframe`
+    height: 600px;
+
+    ${media.lessThan("large")`
+        height: 250px;
+    `}
+
 `
 
 export const ModalHeader = styled.div`
@@ -31,6 +41,10 @@ export const ModalContent = styled.div`
     border: 1px solid rgba(0,0,0,.2);
     border-radius: .3rem;
     outline: 0;
+
+    ${media.lessThan("large")`
+        width: 90%;
+    `}
 `
 
 export const ModalBody = styled.div`

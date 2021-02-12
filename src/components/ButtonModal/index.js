@@ -23,7 +23,7 @@ const ButtonModalPdf = ({pdfUrl, pdfAlt}) => {
                         <S.ModalButtonClose onClick={() => setOpenModal(!openModal)}>×</S.ModalButtonClose>
                     </S.ModalHeader>
                     <S.ModalBody>
-                        <embed src={pdfUrl} type="application/pdf" width="100%" height="600px" />
+                        <S.PDFView src={pdfUrl} type="application/pdf" width="100%" height="100%" />
                     </S.ModalBody>
                     <S.ModalFooter>
                         <S.ModalButtonDownload href={pdfUrl} theme={theme.secondColor} download={pdfAlt}>Baixar</S.ModalButtonDownload>
